@@ -1,45 +1,9 @@
 .hero {
-  padding: 140px 0 96px;
+  padding: 116px 0 72px;
 }
 
 .hero__inner {
   max-width: 720px;
-}
-
-/* Dos pills con un separador "+" en el medio: representan el perfil doble
-   sin recurrir a un solapamiento visual que termina tapando texto. */
-.hero__roles {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 28px;
-  flex-wrap: wrap;
-}
-
-.hero__role-pill {
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 600;
-  padding: 7px 16px;
-  border-radius: 999px;
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
-  white-space: nowrap;
-}
-
-.hero__role-pill--analyst {
-  color: var(--color-accent-dark);
-  border-color: var(--color-accent);
-}
-
-.hero__role-pill--dev {
-  color: var(--color-text-muted);
-}
-
-.hero__role-connector {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--color-accent);
 }
 
 .hero__name {
@@ -71,6 +35,6 @@
 
 @media (max-width: 640px) {
   .hero {
-    padding: 108px 0 64px;
+    padding: 96px 0 56px;
   }
 }

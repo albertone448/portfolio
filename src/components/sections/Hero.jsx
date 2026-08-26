@@ -8,12 +8,6 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="container hero__inner">
-        <div className="hero__roles" aria-hidden="true">
-          <span className="hero__role-pill hero__role-pill--analyst">Data Analyst</span>
-          <span className="hero__role-connector">+</span>
-          <span className="hero__role-pill hero__role-pill--dev">Full Stack Developer</span>
-        </div>
-
         <h1 className="hero__name">{t('hero.greeting')}</h1>
         <p className="hero__role-text">{t('hero.role')}</p>
         <p className="hero__tagline">{t('hero.tagline')}</p>
