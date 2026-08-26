@@ -1,0 +1,196 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "experience": "Experience",
+    "contact": "Contact",
+    "cv": "Download CV"
+  },
+  "hero": {
+    "greeting": "Alberto Núñez Trejos",
+    "role": "Data Analyst & Full Stack Developer",
+    "tagline": "Systems Engineer with a dual profile: I analyze data to find the reasoning behind the numbers, and I build the software that generates them.",
+    "ctaProjects": "View projects",
+    "ctaCv": "Download CV"
+  },
+  "about": {
+    "eyebrow": "About me",
+    "title": "Where I come from and where I'm headed",
+    "paragraphs": [
+      "I'm a Systems Engineer graduated from Universidad Nacional de Costa Rica, with a diploma in Application Programming. My path started in full stack development, but from early on I was more drawn to the question of what to do with the data that software ends up producing.",
+      "I formalized that curiosity by working with Python, Pandas, and Tableau on personal sports analytics projects, while still building real production systems. I did my professional internships at Grupo Eulalia, where I built a work order module in React for a truck repair workshop, and at Ticotek, where I designed the database schema and API for a shipment control system.",
+      "Right now I'm actively looking for work as a Data Analyst or Business Intelligence Analyst in Costa Rica, without leaving full stack development behind. I don't see myself moving from one field to the other. I'm comfortable working in both: understanding a business need, building the system that solves it, and then sitting down with that data to explain what's happening and why."
+    ]
+  },
+  "projects": {
+    "eyebrow": "Projects",
+    "title": "What I've built and analyzed",
+    "intro": "Three intentionally different projects: two data analysis pieces with an interactive dashboard, and one full stack app running in real production.",
+    "viewProject": "View details",
+    "status": {
+      "done": "Done",
+      "inProgress": "In progress",
+      "pendingMedia": "Screenshots pending"
+    },
+    "items": {
+      "barca": {
+        "title": "FC Barcelona: what explains the successful seasons?",
+        "summary": "An analysis of which variables consistently correlate with the club's good and bad seasons, split by coaching era so the patterns don't get diluted.",
+        "tags": ["Python", "Pandas", "Tableau"]
+      },
+      "messi": {
+        "title": "Messi: the statistically unrepeatable at World Cups",
+        "summary": "Is there a historical player who comes close to standing out across several mutually exclusive functional roles at once, or is this a true outlier?",
+        "tags": ["Python", "Pandas", "Tableau"]
+      },
+      "pulperia": {
+        "title": "Store credit system for a family grocery store",
+        "summary": "A full stack app in active use that replaced the paper credit ledger my family's corner store used every day.",
+        "tags": ["React", "Firebase", "Vercel"]
+      }
+    }
+  },
+  "skills": {
+    "eyebrow": "Skills",
+    "title": "Tools I use day to day",
+    "categories": {
+      "analysis": {
+        "title": "Analysis",
+        "items": ["Python", "Pandas", "SQL"]
+      },
+      "visualization": {
+        "title": "Visualization",
+        "items": ["Tableau", "Matplotlib"]
+      },
+      "development": {
+        "title": "Development",
+        "items": ["React", ".NET", "Java", "PHP"]
+      }
+    }
+  },
+  "experience": {
+    "eyebrow": "Experience",
+    "title": "Professional background",
+    "intro": "Short version here. The full detail, with metrics and responsibilities, is in the CV.",
+    "cvLink": "View full CV (PDF)",
+    "items": [
+      {
+        "role": "Frontend Developer, Professional Internship",
+        "company": "Grupo Eulalia",
+        "period": "July 2025 – November 2025",
+        "description": "Built a React work order module for a truck repair workshop, turning basic inventory logging into a full tracking system from incident report to job completion."
+      },
+      {
+        "role": "Full-Stack Developer, Professional Internship",
+        "company": "Ticotek",
+        "period": "February 2024 – July 2025",
+        "description": "Designed the MySQL database schema and built the PHP API for a shipment, delivery, and payment control system for a tech retail store, along with the React front end for driver coordination."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk",
+    "intro": "I'm actively looking for Data Analyst / BI Analyst opportunities in Costa Rica, and I'm also open to full stack development roles. If my profile fits something you have in mind, reach out.",
+    "emailLabel": "Email",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "projectDetail": {
+    "back": "Back to projects",
+    "repoLink": "View repository on GitHub",
+    "barca": {
+      "title": "FC Barcelona: what explains the successful seasons?",
+      "status": "Done",
+      "tags": ["Python", "Pandas", "Tableau"],
+      "questionLabel": "Business question",
+      "question": "Which variables consistently correlate with FC Barcelona's successful seasons, and which ones with the bad ones? Does transfer spending predict success better than other factors, like possession, squad age, coach continuity, or minutes played by academy players?",
+      "findingLabel": "Main finding",
+      "context": [
+        "For this analysis I defined \"success\" as a continuous variable (LaLiga points or goal difference), instead of reducing it to a simple champion yes/no. That makes it possible to compare bad seasons against each other too, not just spot the best one.",
+        "I split the analysis by coaching era (Guardiola, post-Messi, Xavi, Flick) because mixing such different periods dilutes the real patterns: what explains a successful season under one playing style doesn't necessarily hold under another.",
+        "I was careful not to confuse correlation with causation. A year with a bigger transfer budget can be a result of the club already being in a good financial and sporting position, not the spending itself causing the following success."
+      ],
+      "methodologyTitle": "Variables analyzed",
+      "methodology": "Average possession, goals for and against, average squad age, net transfer spending, minutes played by La Masía academy players, and coaching changes, all cross-referenced against each season's result.",
+      "dataSourcesTitle": "Data sources",
+      "dataSources": [
+        "datahub.io — historical LaLiga results going back to the 1993-94 season",
+        "FBref — possession and xG per season, pulled with pd.read_html in Pandas",
+        "Kaggle and manual compilation — transfer spending per season"
+      ],
+      "dashboardTitle": "Dashboard",
+      "dashboardIntro": "The Tableau Public dashboard includes a timeline of points per season, an era-to-era comparison view, and an interactive correlation matrix across the analyzed variables."
+    },
+    "messi": {
+      "title": "Messi: the statistically unrepeatable at World Cups",
+      "status": "In progress",
+      "statusNote": "This project doesn't have any data collected or a dashboard yet. What you're seeing here is the full outline; the analysis and visuals come next.",
+      "tags": ["Python", "Pandas", "Tableau"],
+      "questionLabel": "Business question",
+      "question": "Is there a historical World Cup player who comes close to the simultaneous combination of excellence across functional roles that are normally mutually exclusive, or is Messi a true statistical outlier?",
+      "thesisTitle": "The important precision behind this thesis",
+      "thesis": [
+        "The point of this analysis isn't that Messi is the number one in every individual category. In fact, he isn't: Mbappé ended up with more total World Cup goals than him after 2026.",
+        "The actual point is different: football demands roles that require almost mutually exclusive skill sets, and what's statistically abnormal isn't winning a single category, it's showing up in the top range (top 3-5) of several different functional roles at the same time."
+      ],
+      "rolesTitle": "The four functional roles being compared",
+      "rolesIntro": "Functional roles, not nominal positions on the pitch, since the same player shifts position over the course of a career.",
+      "roles": [
+        {
+          "name": "Finisher",
+          "description": "Converts chances into goals: goals, xG, shot conversion, shots on target."
+        },
+        {
+          "name": "Unbalancer",
+          "description": "Creates individual danger by taking on defenders: successful dribbles, fouls drawn, progressive carries."
+        },
+        {
+          "name": "Playmaker (the final pass)",
+          "description": "Creates the direct chance: assists, key passes, xA, big chances created."
+        },
+        {
+          "name": "Deep-lying orchestrator",
+          "description": "Circulates the ball and progresses the attack from deeper zones: progressive passes, pass completion rate, passes into the final third."
+        }
+      ],
+      "comparisonTitle": "Comparison players",
+      "comparisonPlayers": "Cristiano Ronaldo, Neymar, Mbappé, Ronaldinho, and Maradona (still need to confirm whether the same level of statistical detail is available for the 1986 World Cup).",
+      "dataSourcesTitle": "Planned data sources",
+      "dataSources": [
+        "SofaScore — event-level stats documented back to the 1966 World Cup, no official API",
+        "FBref — reliable advanced metrics from the 2018 World Cup onward",
+        "Kaggle — base goal data per match and per World Cup"
+      ],
+      "noteTitle": "An honest caveat",
+      "note": "The idea that this means Messi is \"underrated\" is my own personal reflection, not a conclusion that follows directly from the data. I'm presenting it separately from the objective findings of the analysis."
+    },
+    "pulperia": {
+      "title": "Store credit system for a family grocery store",
+      "status": "Screenshots pending",
+      "statusNote": "The app is finished and in active use. The only thing missing is the screenshot session with sensitive data masked out, so this section is intentionally incomplete for now.",
+      "tags": ["React", "Firebase", "Vercel"],
+      "problemTitle": "The real problem",
+      "problem": [
+        "My family's corner store kept track of \"fiado\" (informal customer credit) in a paper notebook, with everything that implies: illegible handwriting, lost pages, no way to audit who wrote what or when, and no backup if the notebook got damaged or lost.",
+        "I built this app to replace that notebook with a system the store staff could use just as naturally as they used paper, but with real traceability and access from any device."
+      ],
+      "featuresTitle": "What it does",
+      "features": [
+        "Real-time updates with Firebase Realtime Database: multiple people can log sales and payments at the same time and see updates instantly on every device.",
+        "Full traceability: nothing gets deleted, every record keeps track of who created or edited it and when.",
+        "PIN-based profiles: several family members share one login, but every action stays tied to a specific person.",
+        "Receipt printing formatted for an 80mm thermal printer, with an option to share the receipt over WhatsApp.",
+        "Automatic WhatsApp alerts to the customer on every transaction, using a dedicated number for the store."
+      ],
+      "screenshotsTitle": "Screenshots",
+      "screenshotsPlaceholder": "This is where 3-4 screenshots of the real usage flow will go: the main view with the customer list, logging a sale or payment, the receipt or WhatsApp notification, and the PIN-based profile system. Names, phone numbers, and profile photos will be blurred before publishing; amounts without an attached name aren't sensitive.",
+      "stackTitle": "Tech stack",
+      "stack": "React and Vite on the front end, Firebase (Realtime Database and Authentication) as the backend, deployed on Vercel with continuous deployment from GitHub. All the infrastructure runs on each service's free tier."
+    }
+  }
+}

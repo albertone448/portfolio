@@ -1,0 +1,196 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "experience": "Experiencia",
+    "contact": "Contacto",
+    "cv": "Descargar CV"
+  },
+  "hero": {
+    "greeting": "Alberto Núñez Trejos",
+    "role": "Data Analyst & Full Stack Developer",
+    "tagline": "Ingeniero en Sistemas con un perfil doble: analizo datos para encontrar el porqué detrás de los números, y construyo el software que los genera.",
+    "ctaProjects": "Ver proyectos",
+    "ctaCv": "Descargar CV"
+  },
+  "about": {
+    "eyebrow": "Sobre mí",
+    "title": "De dónde vengo y hacia dónde voy",
+    "paragraphs": [
+      "Soy Ingeniero en Sistemas graduado de la Universidad Nacional de Costa Rica, con un diplomado en Programación de Aplicaciones. Mi camino profesional empezó en desarrollo full stack, pero desde el inicio me llamó más la pregunta de qué hacer con los datos que ese software termina generando.",
+      "Esa curiosidad la formalicé trabajando con Python, Pandas y Tableau en proyectos personales de análisis deportivo, mientras seguía construyendo sistemas reales en producción. Hice mis pasantías profesionales en Grupo Eulalia, donde construí un módulo de órdenes de trabajo en React para un taller de camiones, y en Ticotek, donde diseñé el esquema de base de datos y la API de un sistema de control de despachos.",
+      "Hoy busco trabajo activamente como Data Analyst o Business Intelligence Analyst en Costa Rica, sin dejar de lado el desarrollo full stack. No me veo migrando de un área a otra, sino trabajando cómodo en ambas: entender una necesidad de negocio, construir el sistema que la resuelve, y después sentarme con esos datos para explicar qué está pasando y por qué."
+    ]
+  },
+  "projects": {
+    "eyebrow": "Proyectos",
+    "title": "Lo que he construido y analizado",
+    "intro": "Tres proyectos distintos a propósito: dos de análisis de datos con dashboard interactivo, y uno de desarrollo full stack en producción real.",
+    "viewProject": "Ver detalle",
+    "status": {
+      "done": "Terminado",
+      "inProgress": "En progreso",
+      "pendingMedia": "Pendiente de capturas"
+    },
+    "items": {
+      "barca": {
+        "title": "FC Barcelona: ¿qué explica las temporadas exitosas?",
+        "summary": "Análisis de qué variables se correlacionan con las temporadas buenas y malas del club, separado por eras de entrenador para no diluir los patrones.",
+        "tags": ["Python", "Pandas", "Tableau"]
+      },
+      "messi": {
+        "title": "Messi: lo estadísticamente irrepetible en Mundiales",
+        "summary": "¿Existe algún jugador histórico que se acerque a destacar en varios roles funcionales excluyentes entre sí al mismo tiempo, o es un caso atípico?",
+        "tags": ["Python", "Pandas", "Tableau"]
+      },
+      "pulperia": {
+        "title": "Sistema de fiado para pulpería familiar",
+        "summary": "App full stack en uso activo que reemplazó el libro de crédito en papel de la pulpería de mi familia.",
+        "tags": ["React", "Firebase", "Vercel"]
+      }
+    }
+  },
+  "skills": {
+    "eyebrow": "Habilidades",
+    "title": "Herramientas que uso a diario",
+    "categories": {
+      "analysis": {
+        "title": "Análisis",
+        "items": ["Python", "Pandas", "SQL"]
+      },
+      "visualization": {
+        "title": "Visualización",
+        "items": ["Tableau", "Matplotlib"]
+      },
+      "development": {
+        "title": "Desarrollo",
+        "items": ["React", ".NET", "Java", "PHP"]
+      }
+    }
+  },
+  "experience": {
+    "eyebrow": "Experiencia",
+    "title": "Trayectoria profesional",
+    "intro": "Versión resumida. El detalle completo, con métricas y responsabilidades, está en el CV.",
+    "cvLink": "Ver CV completo (PDF)",
+    "items": [
+      {
+        "role": "Frontend Developer, pasantía profesional",
+        "company": "Grupo Eulalia",
+        "period": "Julio 2025 – Noviembre 2025",
+        "description": "Construí en React un módulo de órdenes de trabajo para un taller de camiones, que pasó de registrar movimientos de inventario a dar seguimiento completo desde el reporte de un incidente hasta el cierre del trabajo."
+      },
+      {
+        "role": "Full-Stack Developer, pasantía profesional",
+        "company": "Ticotek",
+        "period": "Febrero 2024 – Julio 2025",
+        "description": "Diseñé el esquema de base de datos en MySQL y construí la API en PHP de un sistema de control de despachos, entregas y pagos para una tienda de retail tecnológico, junto con el front end en React para la coordinación de repartidores."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Hablemos",
+    "intro": "Estoy buscando activamente oportunidades como Data Analyst / BI Analyst en Costa Rica, abierto también a roles de desarrollo full stack. Si mi perfil encaja con algo que tenés en mente, escribime.",
+    "emailLabel": "Correo",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados."
+  },
+  "projectDetail": {
+    "back": "Volver a proyectos",
+    "repoLink": "Ver repositorio en GitHub",
+    "barca": {
+      "title": "FC Barcelona: ¿qué explica las temporadas exitosas?",
+      "status": "Terminado",
+      "tags": ["Python", "Pandas", "Tableau"],
+      "questionLabel": "Pregunta de negocio",
+      "question": "¿Qué variables se correlacionan de forma consistente con las temporadas exitosas del FC Barcelona, y cuáles con las malas? ¿El gasto en fichajes predice el éxito mejor que otros factores, como la posesión, la edad de la plantilla, la continuidad del entrenador o los minutos que juegan los canteranos?",
+      "findingLabel": "Hallazgo principal",
+      "context": [
+        "Para este análisis definí \"éxito\" como una variable continua (puntos en LaLiga o diferencia de gol), en vez de reducirlo a un simple campeón sí/no. Esto permite comparar temporadas malas entre sí y no solo identificar la mejor.",
+        "Separé el análisis por eras del club (Guardiola, post-Messi, Xavi, Flick) porque mezclar períodos tan distintos diluye los patrones reales: lo que explica una temporada exitosa bajo un estilo de juego no necesariamente aplica bajo otro.",
+        "Tuve especial cuidado en no confundir correlación con causalidad. Un año con más presupuesto para fichajes puede deberse a que el club ya venía de una buena situación financiera y deportiva, no a que el gasto por sí solo cause el éxito siguiente."
+      ],
+      "methodologyTitle": "Variables analizadas",
+      "methodology": "Posesión promedio, goles a favor y en contra, edad promedio de plantilla, gasto neto en fichajes, minutos jugados por canteranos de La Masía, y cambios de entrenador, todo cruzado contra el resultado de cada temporada.",
+      "dataSourcesTitle": "Fuentes de datos",
+      "dataSources": [
+        "datahub.io — resultados históricos de LaLiga desde la temporada 1993-94",
+        "FBref — posesión y xG por temporada, extraído con pd.read_html en Pandas",
+        "Kaggle y recopilación manual — gasto en fichajes por temporada"
+      ],
+      "dashboardTitle": "Dashboard",
+      "dashboardIntro": "El dashboard en Tableau Public incluye una línea de tiempo de puntos por temporada, un comparador entre eras del club, y una matriz de correlación interactiva entre las variables analizadas."
+    },
+    "messi": {
+      "title": "Messi: lo estadísticamente irrepetible en Mundiales",
+      "status": "En progreso",
+      "statusNote": "Este proyecto todavía no tiene datos recolectados ni dashboard. Lo que ves acá es el planteamiento completo; el análisis y las visualizaciones vienen después.",
+      "tags": ["Python", "Pandas", "Tableau"],
+      "questionLabel": "Pregunta de negocio",
+      "question": "¿Existe algún jugador histórico en Mundiales que se acerque a la combinación simultánea de excelencia en roles funcionales que normalmente son excluyentes entre sí, o es Messi un caso estadísticamente atípico?",
+      "thesisTitle": "La precisión importante de esta tesis",
+      "thesis": [
+        "El punto de este análisis no es que Messi sea el número uno absoluto en cada categoría individual. De hecho, no lo es: Mbappé terminó con más goles totales de Mundial que él después de 2026.",
+        "El punto es otro: el fútbol exige roles con habilidades casi excluyentes entre sí, y lo estadísticamente anormal no es ganar una sola categoría, sino aparecer en el rango top (top 3-5) de varios roles funcionales distintos al mismo tiempo."
+      ],
+      "rolesTitle": "Los cuatro roles funcionales de comparación",
+      "rolesIntro": "Roles funcionales, no posiciones nominales en la cancha, porque un mismo jugador cambia de posición a lo largo de su carrera.",
+      "roles": [
+        {
+          "name": "Finalizador",
+          "description": "Convierte ocasiones en gol: goles, xG, conversión de tiros, tiros a puerta."
+        },
+        {
+          "name": "Desequilibrante",
+          "description": "Genera peligro individual encarando rivales: regates exitosos, faltas recibidas, conducciones progresivas."
+        },
+        {
+          "name": "Creador de juego (el último pase)",
+          "description": "Genera la ocasión directa: asistencias, pases clave, xA, grandes ocasiones creadas."
+        },
+        {
+          "name": "Organizador de juego",
+          "description": "Hace circular el balón y progresa el ataque desde zonas retrasadas: pases progresivos, porcentaje de acierto, pases al último tercio."
+        }
+      ],
+      "comparisonTitle": "Jugadores de comparación",
+      "comparisonPlayers": "Cristiano Ronaldo, Neymar, Mbappé, Ronaldinho y Maradona (pendiente confirmar si hay el mismo nivel de detalle estadístico disponible para el Mundial de 1986).",
+      "dataSourcesTitle": "Fuentes de datos planeadas",
+      "dataSources": [
+        "SofaScore — estadísticas de eventos documentadas desde el Mundial de 1966, sin API oficial",
+        "FBref — métricas avanzadas confiables desde el Mundial de 2018",
+        "Kaggle — datos base de goles por partido y por Mundial"
+      ],
+      "noteTitle": "Una aclaración honesta",
+      "note": "La idea de que esto significa que Messi está \"infravalorado\" es una reflexión personal mía, no una conclusión que se desprenda directamente de los datos. La presento por separado de los hallazgos objetivos del análisis."
+    },
+    "pulperia": {
+      "title": "Sistema de fiado para pulpería familiar",
+      "status": "Pendiente de capturas",
+      "statusNote": "La app está terminada y en uso activo. Lo único que falta es la sesión de capturas de pantalla con los datos sensibles enmascarados, así que por ahora esta sección se ve incompleta a propósito.",
+      "tags": ["React", "Firebase", "Vercel"],
+      "problemTitle": "El problema real",
+      "problem": [
+        "La pulpería de mi familia llevaba el control de fiado (crédito informal a clientes) en un cuaderno de papel, con todo lo que eso implica: letra ilegible, páginas perdidas, imposible de auditar quién anotó qué o cuándo, y ningún respaldo si el cuaderno se dañaba o se perdía.",
+        "Construí esta app para reemplazar ese cuaderno por un sistema que el personal de la tienda pudiera usar tal cual usaba el papel, pero con trazabilidad real y acceso desde cualquier dispositivo."
+      ],
+      "featuresTitle": "Qué hace",
+      "features": [
+        "Tiempo real con Firebase Realtime Database: varias personas registran ventas y pagos al mismo tiempo y ven las actualizaciones al instante en cada dispositivo.",
+        "Trazabilidad completa: nada se elimina, cada registro guarda quién lo creó o editó y cuándo.",
+        "Perfiles con PIN: varios miembros de la familia comparten el login, pero cada acción queda vinculada a una persona específica.",
+        "Impresión de recibos formateada para impresora térmica de 80mm, con opción de compartir el recibo por WhatsApp.",
+        "Alertas automáticas por WhatsApp al cliente en cada transacción, usando un número dedicado de la tienda."
+      ],
+      "screenshotsTitle": "Capturas de pantalla",
+      "screenshotsPlaceholder": "Acá van 3-4 capturas del flujo real de uso: la vista principal con la lista de clientes, el registro de una venta o pago, el recibo o la notificación de WhatsApp, y el sistema de perfiles con PIN. Los nombres, teléfonos y fotos de clientes se van a difuminar antes de publicarlas; los montos sin nombre asociado no son información sensible.",
+      "stackTitle": "Stack técnico",
+      "stack": "React y Vite en el front end, Firebase (Realtime Database y Authentication) como backend, desplegado en Vercel con integración continua desde GitHub. Toda la infraestructura corre en el nivel gratuito de cada servicio."
+    }
+  }
+}
