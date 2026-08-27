@@ -192,26 +192,34 @@
     },
     "pulperia": {
       "title": "Store credit system for a family grocery store",
-      "status": "Screenshots pending",
-      "statusNote": "The app is finished and in active use. The only thing missing is the screenshot session with sensitive data masked out, so this section is intentionally incomplete for now.",
+      "status": "Done",
       "tags": ["React", "Firebase", "Vercel"],
       "problemTitle": "The real problem",
       "problem": [
         "My family's corner store kept track of \"fiado\" (informal customer credit) in a paper notebook, with everything that implies: illegible handwriting, lost pages, no way to audit who wrote what or when, and no backup if the notebook got damaged or lost.",
-        "I built this app to replace that notebook with a system the store staff could use just as naturally as they used paper, but with real traceability and access from any device."
+        "I built this app to replace that notebook with a system the store staff could use just as naturally as they used paper, but with real traceability and access from any device. It's in active daily use by the store staff."
       ],
       "featuresTitle": "What it does",
       "features": [
         "Real-time updates with Firebase Realtime Database: multiple people can log sales and payments at the same time and see updates instantly on every device.",
-        "Full traceability: nothing gets deleted, every record keeps track of who created or edited it and when.",
-        "PIN-based profiles: several family members share one login, but every action stays tied to a specific person.",
-        "Receipt printing formatted for an 80mm thermal printer, with an option to share the receipt over WhatsApp.",
-        "Automatic WhatsApp alerts to the customer on every transaction, using a dedicated number for the store."
+        "A single shared Firebase Authentication account for the whole store, with a PIN-based profile selector: whoever is on shift picks their name and enters a 4-digit PIN, so every action stays tied to a specific person without needing individual accounts.",
+        "Full traceability: nothing gets permanently deleted (deleted clients can be restored), every record keeps track of who created or edited it and when.",
+        "Reversible account suspension for customers who stop paying, without losing their history or mixing them in with active accounts.",
+        "Daily summary broken down by payment method (cash, card, SINPE) to balance the register, with 80mm thermal receipt printing and a one-tap copy for WhatsApp.",
+        "A separate Node.js service, running with PM2 on the store's computer, that listens for database changes and sends automatic WhatsApp and email alerts to each customer whenever a purchase or payment is logged.",
+        "Automatic daily database backup to Google Cloud Storage."
       ],
       "screenshotsTitle": "Screenshots",
-      "screenshotsPlaceholder": "This is where 3-4 screenshots of the real usage flow will go: the main view with the customer list, logging a sale or payment, the receipt or WhatsApp notification, and the PIN-based profile system. Names, phone numbers, and profile photos will be blurred before publishing; amounts without an attached name aren't sensitive.",
+      "screenshotsIntro": "Real usage flow, with customer names, phone numbers, and photos blurred out. Amounts without an attached name aren't sensitive information.",
+      "screenshots": {
+        "profileSelector": "Profile selector: whoever is on shift picks their name and enters their PIN.",
+        "clientList": "Customer list, sorted by debt, with the overall credit total and how much of it is on suspended accounts.",
+        "clientDetail": "A customer's detail page: current debt, credit limit, historical stats, and the buttons to log a purchase or a payment.",
+        "dailySummary": "Daily summary by payment method, for balancing the register, with print or copy-for-WhatsApp options.",
+        "dailyMovements": "Feed of every transaction for the day, in chronological order."
+      },
       "stackTitle": "Tech stack",
-      "stack": "React and Vite on the front end, Firebase (Realtime Database and Authentication) as the backend, deployed on Vercel with continuous deployment from GitHub. All the infrastructure runs on each service's free tier."
+      "stack": "React and Vite on the front end, Firebase (Realtime Database and Authentication) as the backend, a separate Node.js service for automatic notifications, deployed on Vercel with continuous deployment from GitHub. All the infrastructure runs on each service's free tier."
     }
   }
 }

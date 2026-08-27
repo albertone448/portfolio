@@ -1,9 +1,15 @@
 .project-banner {
+  display: block;
   width: 100%;
-  height: auto;
-  max-height: 180px;
+  height: 180px;
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
   background: var(--color-bg);
   margin-bottom: 40px;
+}
+
+@media (max-width: 640px) {
+  .project-banner {
+    height: 130px;
+  }
 }

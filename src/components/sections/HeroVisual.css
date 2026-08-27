@@ -1,0 +1,12 @@
+.hero-visual {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  justify-self: end;
+}
+
+@media (max-width: 900px) {
+  .hero-visual {
+    display: none;
+  }
+}

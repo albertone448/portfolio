@@ -40,11 +40,20 @@ export const projects = [
   },
   {
     slug: 'pulperia',
-    status: PROJECT_STATUS.PENDING_MEDIA,
+    status: PROJECT_STATUS.DONE,
     // Los colores del Barça viven únicamente en la página de este proyecto que
     // no es el Barça, así que acá no aplica. Este acento es propio de la app.
     accentColor: null,
-    screenshots: [], // se llena cuando exista la sesión de capturas con blur aplicado
+    // Archivos en /public/screenshots/pulperia/, en el orden real de uso de
+    // la app: login por perfil -> lista de clientes -> ficha de un cliente ->
+    // resumen del día -> feed de movimientos del día.
+    screenshots: [
+      { file: '01-selector-perfil.jpg', captionKey: 'profileSelector' },
+      { file: '02-lista-clientes.jpg', captionKey: 'clientList' },
+      { file: '03-ficha-cliente.jpg', captionKey: 'clientDetail' },
+      { file: '04-resumen-dia.jpg', captionKey: 'dailySummary' },
+      { file: '05-movimientos-dia.jpg', captionKey: 'dailyMovements' },
+    ],
     repoUrl: null,
   },
 ]

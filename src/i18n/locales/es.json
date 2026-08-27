@@ -192,26 +192,34 @@
     },
     "pulperia": {
       "title": "Sistema de fiado para pulpería familiar",
-      "status": "Pendiente de capturas",
-      "statusNote": "La app está terminada y en uso activo. Lo único que falta es la sesión de capturas de pantalla con los datos sensibles enmascarados, así que por ahora esta sección se ve incompleta a propósito.",
+      "status": "Terminado",
       "tags": ["React", "Firebase", "Vercel"],
       "problemTitle": "El problema real",
       "problem": [
         "La pulpería de mi familia llevaba el control de fiado (crédito informal a clientes) en un cuaderno de papel, con todo lo que eso implica: letra ilegible, páginas perdidas, imposible de auditar quién anotó qué o cuándo, y ningún respaldo si el cuaderno se dañaba o se perdía.",
-        "Construí esta app para reemplazar ese cuaderno por un sistema que el personal de la tienda pudiera usar tal cual usaba el papel, pero con trazabilidad real y acceso desde cualquier dispositivo."
+        "Construí esta app para reemplazar ese cuaderno por un sistema que el personal de la tienda pudiera usar tal cual usaba el papel, pero con trazabilidad real y acceso desde cualquier dispositivo. Está en uso activo diario por el personal de la tienda."
       ],
       "featuresTitle": "Qué hace",
       "features": [
         "Tiempo real con Firebase Realtime Database: varias personas registran ventas y pagos al mismo tiempo y ven las actualizaciones al instante en cada dispositivo.",
-        "Trazabilidad completa: nada se elimina, cada registro guarda quién lo creó o editó y cuándo.",
-        "Perfiles con PIN: varios miembros de la familia comparten el login, pero cada acción queda vinculada a una persona específica.",
-        "Impresión de recibos formateada para impresora térmica de 80mm, con opción de compartir el recibo por WhatsApp.",
-        "Alertas automáticas por WhatsApp al cliente en cada transacción, usando un número dedicado de la tienda."
+        "Una sola cuenta de Firebase Authentication para toda la tienda, con un selector de perfil por PIN de 4 dígitos: cada persona que atiende elige su nombre e ingresa su PIN, así cada acción queda vinculada a quién la hizo, sin necesitar cuentas individuales.",
+        "Trazabilidad completa: nada se elimina de forma permanente (clientes eliminados se pueden restaurar), cada registro guarda quién lo creó o editó y cuándo.",
+        "Suspensión de cuentas (reversible) para clientes que dejan de pagar, sin perder su historial ni mezclarlos con los activos.",
+        "Resumen del día por método de pago (efectivo, tarjeta, SINPE) para cuadrar caja, con impresión térmica de 80mm y copiado directo para WhatsApp.",
+        "Un servicio aparte en Node.js, corriendo con PM2 en la computadora de la tienda, que escucha los cambios en la base de datos y manda alertas automáticas por WhatsApp y correo a cada cliente cuando se le anota una compra o un pago.",
+        "Backup automático diario de la base de datos a Google Cloud Storage."
       ],
       "screenshotsTitle": "Capturas de pantalla",
-      "screenshotsPlaceholder": "Acá van 3-4 capturas del flujo real de uso: la vista principal con la lista de clientes, el registro de una venta o pago, el recibo o la notificación de WhatsApp, y el sistema de perfiles con PIN. Los nombres, teléfonos y fotos de clientes se van a difuminar antes de publicarlas; los montos sin nombre asociado no son información sensible.",
+      "screenshotsIntro": "Flujo real de uso, con nombres, teléfonos y fotos de clientes difuminados. Los montos sin nombre asociado no son información sensible.",
+      "screenshots": {
+        "profileSelector": "Selector de perfil: cada persona que atiende elige su nombre e ingresa su PIN.",
+        "clientList": "Lista de clientes, ordenada por deuda, con el total general de fiado y cuánto corresponde a cuentas suspendidas.",
+        "clientDetail": "Ficha de un cliente: deuda actual, límite de crédito, estadísticas históricas, y los botones para anotar una compra o registrar un pago.",
+        "dailySummary": "Resumen del día por método de pago, para cuadrar caja, con opción de imprimir o copiar para WhatsApp.",
+        "dailyMovements": "Feed de todos los movimientos del día, en orden cronológico."
+      },
       "stackTitle": "Stack técnico",
-      "stack": "React y Vite en el front end, Firebase (Realtime Database y Authentication) como backend, desplegado en Vercel con integración continua desde GitHub. Toda la infraestructura corre en el nivel gratuito de cada servicio."
+      "stack": "React y Vite en el front end, Firebase (Realtime Database y Authentication) como backend, un servicio aparte en Node.js para las notificaciones automáticas, desplegado en Vercel con integración continua desde GitHub. Toda la infraestructura corre en el nivel gratuito de cada servicio."
     }
   }
 }
