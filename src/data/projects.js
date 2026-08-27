@@ -29,7 +29,7 @@ export const projects = [
     // TODO: confirmar si ya se configuró la "vista previa de dispositivo móvil"
     // en Tableau antes de dar esto por terminado del todo en mobile.
     dashboardMobileConfigured: false,
-    repoUrl: null,
+    repoUrl: 'https://github.com/albertone448/always-barca',
   },
   {
     slug: 'messi',
@@ -54,7 +54,7 @@ export const projects = [
       { file: '04-resumen-dia.jpg', captionKey: 'dailySummary' },
       { file: '05-movimientos-dia.jpg', captionKey: 'dailyMovements' },
     ],
-    repoUrl: null,
+    repoUrl: 'https://github.com/albertone448/pulperia-fiado',
   },
 ]
 
