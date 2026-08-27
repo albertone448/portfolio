@@ -1,5 +1,5 @@
 .project-detail {
-  padding: 140px 0 96px;
+  padding: 116px 0 80px;
 }
 
 .project-detail__back {
@@ -10,7 +10,7 @@
   font-weight: 600;
   color: var(--color-text-muted);
   text-decoration: none;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .project-detail__back:hover {
@@ -18,8 +18,8 @@
 }
 
 .project-detail__header {
-  max-width: 720px;
-  margin-bottom: 48px;
+  max-width: 760px;
+  margin-bottom: 40px;
 }
 
 .project-detail__title {
@@ -50,8 +50,7 @@
 .project-detail__body {
   display: flex;
   flex-direction: column;
-  gap: 48px;
-  max-width: 760px;
+  gap: 40px;
 }
 
 .project-detail__section-title {
@@ -63,10 +62,15 @@
   margin-bottom: 14px;
 }
 
+/* El ancho máximo vive acá, no en .project-detail__body: así el texto se lee
+   cómodo (columna angosta) mientras que las secciones anchas (dashboards,
+   capturas) pueden ocupar todo el ancho del contenedor sin que quede un
+   margen vacío enorme al costado en pantallas grandes. */
 .project-detail__paragraphs {
   display: flex;
   flex-direction: column;
   gap: 14px;
+  max-width: 720px;
   color: var(--color-text-muted);
   font-size: 1.02rem;
 }
@@ -79,6 +83,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-width: 720px;
   padding-left: 20px;
   color: var(--color-text-muted);
   font-size: 0.98rem;
@@ -97,4 +102,23 @@
 
 .project-detail--barca .status-badge--done::before {
   background: var(--color-barca-garnet);
+}
+
+.barca-dashboards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.barca-dashboards__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.barca-dashboards__description {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  max-width: 640px;
+  margin-bottom: 16px;
 }

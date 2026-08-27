@@ -7,13 +7,19 @@ import './TableauEmbed.css'
  * simple, que es el enfoque recomendado por Tableau para embeds responsive:
  * https://public.tableau.com/views/{workbook}/{vista}?:embed=y
  *
- * El responsive real del dashboard (cómo se acomodan los objetos en pantallas
- * angostas) se controla desde Tableau con "Vista previa de dispositivo móvil",
- * no desde acá. Este componente solo se encarga de que el iframe ocupe el
- * ancho disponible y mantenga una relación de aspecto razonable.
+ * Los dashboards de este proyecto están publicados con tamaño fijo (1200x927,
+ * según el propio código de embed de Tableau), no con tamaño automático. Un
+ * iframe angosto no reduce ese contenido, lo recorta. Por eso el frame se
+ * fuerza a un ancho mínimo igual al tamaño real del dashboard, y el
+ * contenedor .tableau-embed absorbe el desborde con scroll horizontal propio
+ * en vez de romper el layout de la página en pantallas angostas.
+ *
+ * El responsive real del dashboard (cómo se acomodan los objetos en celular)
+ * se controla desde Tableau con "Vista previa de dispositivo móvil", no desde
+ * acá; ver dashboardMobileConfigured en src/data/projects.js.
  */
-export default function TableauEmbed({ dashboardPath, title, height = 800 }) {
-  const src = `https://public.tableau.com/views/${dashboardPath}?:showVizHome=no&:embed=true&:tabs=yes&:toolbar=yes&:language=es-ES`
+export default function TableauEmbed({ dashboardPath, title, height = 927 }) {
+  const src = `https://public.tableau.com/views/${dashboardPath}?:showVizHome=no&:embed=true&:tabs=no&:toolbar=yes&:language=es-ES`
 
   return (
     <div className="tableau-embed">

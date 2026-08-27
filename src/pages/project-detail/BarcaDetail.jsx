@@ -19,10 +19,18 @@ export default function BarcaDetail() {
       title={d('title')}
       tags={tags}
       accentClass="project-detail--barca"
+      bannerVariant="barca"
     >
       <section>
         <h2 className="project-detail__section-title">{d('questionLabel')}</h2>
         <p className="project-detail__paragraphs">{d('question')}</p>
+      </section>
+
+      <section>
+        <h2 className="project-detail__section-title">{d('findingLabel')}</h2>
+        <p className="project-detail__paragraphs">
+          <strong>{d('finding')}</strong>
+        </p>
       </section>
 
       <section>
@@ -47,14 +55,34 @@ export default function BarcaDetail() {
         </ul>
       </section>
 
-      {/* El dashboard va al final a propósito: primero el contexto narrativo
-          (pregunta de negocio, metodología, fuentes), y hasta acá el iframe. */}
+      <section>
+        <h2 className="project-detail__section-title">{d('limitationsTitle')}</h2>
+        <p className="project-detail__paragraphs">{d('limitations')}</p>
+      </section>
+
+      {/* Los dashboards van al final a propósito: primero el contexto
+          narrativo (pregunta, hallazgo, metodología, fuentes, límites), y
+          hasta acá los iframes. Cada uno usa el ancho completo disponible,
+          no la columna angosta de texto, porque necesitan ese espacio real. */}
       <section>
         <h2 className="project-detail__section-title">{d('dashboardTitle')}</h2>
-        <p className="project-detail__paragraphs" style={{ marginBottom: 20 }}>
+        <p className="project-detail__paragraphs" style={{ marginBottom: 28 }}>
           {d('dashboardIntro')}
         </p>
-        <TableauEmbed dashboardPath={project.dashboardPath} title={d('title')} />
+
+        <div className="barca-dashboards">
+          {project.dashboards.map(({ path, titleKey }) => (
+            <div key={path} className="barca-dashboards__item">
+              <h3 className="barca-dashboards__title">
+                {d(`dashboards.${titleKey}.title`)}
+              </h3>
+              <p className="barca-dashboards__description">
+                {d(`dashboards.${titleKey}.description`)}
+              </p>
+              <TableauEmbed dashboardPath={path} title={d(`dashboards.${titleKey}.title`)} />
+            </div>
+          ))}
+        </div>
       </section>
 
       {project.repoUrl && (

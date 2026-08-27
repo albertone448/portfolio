@@ -1,18 +1,25 @@
 .tableau-embed {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   background: var(--color-surface);
+  /* En pantallas angostas esto se vuelve un scroll horizontal contenido
+     dentro de la caja, en vez de que el dashboard se vea recortado o rompa
+     el ancho del resto de la página. */
+  -webkit-overflow-scrolling: touch;
 }
 
 .tableau-embed__frame {
-  width: 100%;
-  border: 0;
   display: block;
+  width: 100%;
+  min-width: 1180px;
+  border: 0;
 }
 
 @media (max-width: 640px) {
   .tableau-embed__frame {
-    height: 620px !important;
+    min-width: 900px;
+    height: 700px !important;
   }
 }

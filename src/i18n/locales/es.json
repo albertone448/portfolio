@@ -30,13 +30,13 @@
     "viewProject": "Ver detalle",
     "status": {
       "done": "Terminado",
-      "inProgress": "En progreso",
+      "inProgress": "Próximamente",
       "pendingMedia": "Pendiente de capturas"
     },
     "items": {
       "barca": {
         "title": "FC Barcelona: ¿qué explica las temporadas exitosas?",
-        "summary": "Análisis de qué variables se correlacionan con las temporadas buenas y malas del club, separado por eras de entrenador para no diluir los patrones.",
+        "summary": "33 temporadas analizadas con correlación de Pearson y ANOVA: la continuidad técnica y el valor de plantilla explican el rendimiento, el gasto en fichajes no.",
         "tags": ["Python", "Pandas", "Tableau"]
       },
       "messi": {
@@ -106,25 +106,46 @@
     "barca": {
       "title": "FC Barcelona: ¿qué explica las temporadas exitosas?",
       "status": "Terminado",
-      "tags": ["Python", "Pandas", "Tableau"],
+      "tags": ["Python", "Pandas", "SciPy", "Tableau Public"],
       "questionLabel": "Pregunta de negocio",
-      "question": "¿Qué variables se correlacionan de forma consistente con las temporadas exitosas del FC Barcelona, y cuáles con las malas? ¿El gasto en fichajes predice el éxito mejor que otros factores, como la posesión, la edad de la plantilla, la continuidad del entrenador o los minutos que juegan los canteranos?",
+      "question": "¿Qué explica mejor las temporadas exitosas del FC Barcelona: el gasto en fichajes, las decisiones de cuerpo técnico, o factores como el valor de mercado de la plantilla y el uso de canteranos?",
       "findingLabel": "Hallazgo principal",
+      "finding": "El gasto en fichajes y el uso de canteranos no explican el rendimiento de forma estadísticamente significativa. Lo que sí lo explica es la continuidad del cuerpo técnico y el valor de mercado de la plantilla.",
       "context": [
-        "Para este análisis definí \"éxito\" como una variable continua (puntos en LaLiga o diferencia de gol), en vez de reducirlo a un simple campeón sí/no. Esto permite comparar temporadas malas entre sí y no solo identificar la mejor.",
+        "Analicé 33 temporadas del FC Barcelona (1993/94 a 2025/26) con datos reales recopilados y cruzados a mano donde no había cobertura automática confiable, no un dataset genérico bajado sin revisar.",
         "Separé el análisis por eras del club (Guardiola, post-Messi, Xavi, Flick) porque mezclar períodos tan distintos diluye los patrones reales: lo que explica una temporada exitosa bajo un estilo de juego no necesariamente aplica bajo otro.",
         "Tuve especial cuidado en no confundir correlación con causalidad. Un año con más presupuesto para fichajes puede deberse a que el club ya venía de una buena situación financiera y deportiva, no a que el gasto por sí solo cause el éxito siguiente."
       ],
-      "methodologyTitle": "Variables analizadas",
-      "methodology": "Posesión promedio, goles a favor y en contra, edad promedio de plantilla, gasto neto en fichajes, minutos jugados por canteranos de La Masía, y cambios de entrenador, todo cruzado contra el resultado de cada temporada.",
+      "methodologyTitle": "Metodología",
+      "methodology": "Crucé cinco variables (gasto neto en fichajes, cambios de entrenador, minutos jugados por canteranos de La Masía, valor de mercado de la plantilla, y continuidad del cuerpo técnico) contra el rendimiento de cada temporada, usando correlación de Pearson y ANOVA para separar lo que es estadísticamente significativo de lo que solo parece una tendencia.",
       "dataSourcesTitle": "Fuentes de datos",
       "dataSources": [
         "datahub.io — resultados históricos de LaLiga desde la temporada 1993-94",
-        "FBref — posesión y xG por temporada, extraído con pd.read_html en Pandas",
-        "Kaggle y recopilación manual — gasto en fichajes por temporada"
+        "FBref — posesión y xG por temporada, extraído con BeautifulSoup y Pandas",
+        "Kaggle y recopilación manual — gasto en fichajes y valor de plantilla, con validación cruzada donde no había cobertura automática confiable"
       ],
-      "dashboardTitle": "Dashboard",
-      "dashboardIntro": "El dashboard en Tableau Public incluye una línea de tiempo de puntos por temporada, un comparador entre eras del club, y una matriz de correlación interactiva entre las variables analizadas."
+      "limitationsTitle": "Limitaciones",
+      "limitations": "Hay temporadas con cobertura de datos más débil que otras, sobre todo en los años 90, y algunas son atípicas por contexto extradeportivo (crisis institucionales, cambios de directiva) que ninguna variable estadística captura bien. Prefiero dejar esto explícito a que el análisis parezca más certero de lo que es.",
+      "dashboardTitle": "Dashboards",
+      "dashboardIntro": "Cuatro dashboards enlazados en Tableau Public, cada uno cubre una fase distinta del análisis.",
+      "dashboards": {
+        "overview": {
+          "title": "Rendimiento, gasto y entrenador por temporada",
+          "description": "Punto de partida: cómo se mueven el rendimiento, el gasto neto en fichajes y los cambios de entrenador a lo largo de las 33 temporadas."
+        },
+        "academy": {
+          "title": "Uso de canteranos",
+          "description": "Minutos jugados por jugadores de La Masía por temporada, y si ese uso se correlaciona con el rendimiento."
+        },
+        "squadValue": {
+          "title": "Valor de plantilla",
+          "description": "Valor de mercado de la plantilla por temporada, una de las dos variables que sí resultaron estadísticamente significativas."
+        },
+        "conclusions": {
+          "title": "Conclusiones",
+          "description": "Resultados de la correlación de Pearson y el ANOVA para las cinco variables, con las limitaciones metodológicas documentadas."
+        }
+      }
     },
     "messi": {
       "title": "Messi: lo estadísticamente irrepetible en Mundiales",

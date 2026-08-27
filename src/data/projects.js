@@ -17,9 +17,15 @@ export const projects = [
     slug: 'barca',
     status: PROJECT_STATUS.DONE,
     accentColor: null,
-    // Path del workbook publicado en Tableau Public: público en
-    // https://public.tableau.com/views/{dashboardPath}
-    dashboardPath: 'AlwaysBara/Dashboard1',
+    // Los 4 dashboards viven en el mismo workbook de Tableau Public, cada uno
+    // publicado como una vista independiente. "titleKey" apunta a la entrada
+    // correspondiente en projectDetail.barca.dashboards del diccionario i18n.
+    dashboards: [
+      { path: 'AlwaysBara/Dashboard1', titleKey: 'overview' },
+      { path: 'AlwaysBara/UsodecanteranosFase2', titleKey: 'academy' },
+      { path: 'AlwaysBara/Fase3Valordeplantilla', titleKey: 'squadValue' },
+      { path: 'AlwaysBara/Dashboard4', titleKey: 'conclusions' },
+    ],
     // TODO: confirmar si ya se configuró la "vista previa de dispositivo móvil"
     // en Tableau antes de dar esto por terminado del todo en mobile.
     dashboardMobileConfigured: false,
@@ -29,8 +35,7 @@ export const projects = [
     slug: 'messi',
     status: PROJECT_STATUS.IN_PROGRESS,
     accentColor: null,
-    dashboardUrl: null,
-    dashboardMobileConfigured: false,
+    dashboards: [],
     repoUrl: null,
   },
   {

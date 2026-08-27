@@ -13,7 +13,7 @@ export default function MessiDetail() {
   const tags = t('projectDetail.messi.tags', { returnObjects: true })
 
   return (
-    <ProjectDetailLayout status={project.status} title={d('title')} tags={tags}>
+    <ProjectDetailLayout status={project.status} title={d('title')} tags={tags} bannerVariant="messi">
       <section>
         <p className="project-detail__paragraphs" style={{ fontStyle: 'italic' }}>
           {d('statusNote')}

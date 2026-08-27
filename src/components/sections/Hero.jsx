@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { ArrowDown, Download } from 'lucide-react'
+import { ArrowDown } from 'lucide-react'
 import './Hero.css'
 
 export default function Hero() {
@@ -16,10 +16,6 @@ export default function Hero() {
           <a href="#proyectos" className="btn btn-primary">
             {t('hero.ctaProjects')}
             <ArrowDown size={16} />
-          </a>
-          <a href="/cv/Alberto_Nunez_Trejos_CV.pdf" download className="btn btn-secondary">
-            <Download size={16} />
-            {t('hero.ctaCv')}
           </a>
         </div>
       </div>

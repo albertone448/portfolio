@@ -4,9 +4,7 @@ import './Contact.css'
 
 const EMAIL = 'albertone448@gmail.com'
 const LINKEDIN_URL = 'https://linkedin.com/in/albertone448'
-// TODO: el CV no incluye el usuario de GitHub, reemplazar por el real antes
-// de publicar. Este es un placeholder, no un dato confirmado.
-const GITHUB_URL = 'https://github.com/TU-USUARIO-AQUI'
+const GITHUB_URL = 'https://github.com/albertone448'
 
 export default function Contact() {
   const { t } = useTranslation()
@@ -44,7 +42,7 @@ export default function Contact() {
             <Github size={20} />
             <div>
               <span className="contact__link-label">{t('contact.githubLabel')}</span>
-              <span className="contact__link-value">github.com/tu-usuario-aqui</span>
+              <span className="contact__link-value">github.com/albertone448</span>
             </div>
           </a>
         </div>

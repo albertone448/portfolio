@@ -2,9 +2,10 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import StatusBadge from '../StatusBadge'
+import ProjectBanner from './ProjectBanner'
 import './ProjectDetailLayout.css'
 
-export default function ProjectDetailLayout({ status, title, tags, accentClass, children }) {
+export default function ProjectDetailLayout({ status, title, tags, accentClass, bannerVariant, children }) {
   const { t } = useTranslation()
 
   return (
@@ -14,6 +15,8 @@ export default function ProjectDetailLayout({ status, title, tags, accentClass, 
           <ArrowLeft size={16} />
           {t('projectDetail.back')}
         </Link>
+
+        <ProjectBanner variant={bannerVariant} />
 
         <header className="project-detail__header">
           <StatusBadge status={status} />

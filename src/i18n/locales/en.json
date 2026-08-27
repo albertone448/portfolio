@@ -30,13 +30,13 @@
     "viewProject": "View details",
     "status": {
       "done": "Done",
-      "inProgress": "In progress",
+      "inProgress": "Coming soon",
       "pendingMedia": "Screenshots pending"
     },
     "items": {
       "barca": {
         "title": "FC Barcelona: what explains the successful seasons?",
-        "summary": "An analysis of which variables consistently correlate with the club's good and bad seasons, split by coaching era so the patterns don't get diluted.",
+        "summary": "33 seasons analyzed with Pearson correlation and ANOVA: coaching continuity and squad value explain performance, transfer spending doesn't.",
         "tags": ["Python", "Pandas", "Tableau"]
       },
       "messi": {
@@ -106,25 +106,46 @@
     "barca": {
       "title": "FC Barcelona: what explains the successful seasons?",
       "status": "Done",
-      "tags": ["Python", "Pandas", "Tableau"],
+      "tags": ["Python", "Pandas", "SciPy", "Tableau Public"],
       "questionLabel": "Business question",
-      "question": "Which variables consistently correlate with FC Barcelona's successful seasons, and which ones with the bad ones? Does transfer spending predict success better than other factors, like possession, squad age, coach continuity, or minutes played by academy players?",
+      "question": "What better explains FC Barcelona's successful seasons: transfer spending, coaching decisions, or factors like squad market value and academy player usage?",
       "findingLabel": "Main finding",
+      "finding": "Transfer spending and academy usage don't explain performance in a statistically significant way. What does explain it is coaching continuity and squad market value.",
       "context": [
-        "For this analysis I defined \"success\" as a continuous variable (LaLiga points or goal difference), instead of reducing it to a simple champion yes/no. That makes it possible to compare bad seasons against each other too, not just spot the best one.",
+        "I analyzed 33 FC Barcelona seasons (1993/94 through 2025/26) using real data I collected and cross-checked by hand wherever automated coverage wasn't reliable, not a generic dataset pulled without review.",
         "I split the analysis by coaching era (Guardiola, post-Messi, Xavi, Flick) because mixing such different periods dilutes the real patterns: what explains a successful season under one playing style doesn't necessarily hold under another.",
         "I was careful not to confuse correlation with causation. A year with a bigger transfer budget can be a result of the club already being in a good financial and sporting position, not the spending itself causing the following success."
       ],
-      "methodologyTitle": "Variables analyzed",
-      "methodology": "Average possession, goals for and against, average squad age, net transfer spending, minutes played by La Masía academy players, and coaching changes, all cross-referenced against each season's result.",
+      "methodologyTitle": "Methodology",
+      "methodology": "I cross-referenced five variables (net transfer spending, coaching changes, minutes played by La Masía academy players, squad market value, and coaching continuity) against each season's performance, using Pearson correlation and ANOVA to separate what's statistically significant from what only looks like a trend.",
       "dataSourcesTitle": "Data sources",
       "dataSources": [
         "datahub.io — historical LaLiga results going back to the 1993-94 season",
-        "FBref — possession and xG per season, pulled with pd.read_html in Pandas",
-        "Kaggle and manual compilation — transfer spending per season"
+        "FBref — possession and xG per season, extracted with BeautifulSoup and Pandas",
+        "Kaggle and manual compilation — transfer spending and squad value, with cross-validation wherever automated coverage wasn't reliable"
       ],
-      "dashboardTitle": "Dashboard",
-      "dashboardIntro": "The Tableau Public dashboard includes a timeline of points per season, an era-to-era comparison view, and an interactive correlation matrix across the analyzed variables."
+      "limitationsTitle": "Limitations",
+      "limitations": "Some seasons have weaker data coverage than others, especially in the 90s, and a few are outliers due to off-field context (institutional crises, board changes) that no statistical variable captures well. I'd rather state that explicitly than let the analysis look more certain than it is.",
+      "dashboardTitle": "Dashboards",
+      "dashboardIntro": "Four linked dashboards on Tableau Public, each covering a different phase of the analysis.",
+      "dashboards": {
+        "overview": {
+          "title": "Performance, spending, and coach per season",
+          "description": "The starting point: how performance, net transfer spending, and coaching changes move together across the 33 seasons."
+        },
+        "academy": {
+          "title": "Academy usage",
+          "description": "Minutes played by La Masía academy players per season, and whether that usage correlates with performance."
+        },
+        "squadValue": {
+          "title": "Squad value",
+          "description": "Squad market value per season, one of the two variables that did turn out to be statistically significant."
+        },
+        "conclusions": {
+          "title": "Conclusions",
+          "description": "Results of the Pearson correlation and ANOVA across the five variables, with the methodological limitations documented."
+        }
+      }
     },
     "messi": {
       "title": "Messi: the statistically unrepeatable at World Cups",

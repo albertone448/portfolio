@@ -14,7 +14,7 @@ export default function PulperiaDetail() {
   const tags = t('projectDetail.pulperia.tags', { returnObjects: true })
 
   return (
-    <ProjectDetailLayout status={project.status} title={d('title')} tags={tags}>
+    <ProjectDetailLayout status={project.status} title={d('title')} tags={tags} bannerVariant="pulperia">
       <section>
         <p className="project-detail__paragraphs" style={{ fontStyle: 'italic' }}>
           {d('statusNote')}
