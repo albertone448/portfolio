@@ -18,15 +18,15 @@
     "eyebrow": "About me",
     "title": "Where I come from and where I'm headed",
     "paragraphs": [
-      "I'm a Systems Engineer graduated from Universidad Nacional de Costa Rica, with a diploma in Application Programming. My path started in full stack development, but from early on I was more drawn to the question of what to do with the data that software ends up producing.",
-      "I formalized that curiosity by working with Python, Pandas, and Tableau on personal sports analytics projects, while still building real production systems. I did my professional internships at Grupo Eulalia, where I built a work order module in React for a truck repair workshop, and at Ticotek, where I designed the database schema and API for a shipment control system.",
-      "Right now I'm actively looking for work as a Data Analyst or Business Intelligence Analyst in Costa Rica, without leaving full stack development behind. I don't see myself moving from one field to the other. I'm comfortable working in both: understanding a business need, building the system that solves it, and then sitting down with that data to explain what's happening and why."
+      "I'm a Systems Engineer, graduated from Universidad Nacional de Costa Rica, with a diploma in Application Programming. I started my career in full stack development, but soon became more interested in a different question: what to do with the data that software ends up producing.",
+      "I pursued that curiosity by working with Python, Pandas, and Tableau on personal sports analytics projects, while still building real production systems. I did my professional internships at Grupo Eulalia, where I developed a work order module in React for a truck repair workshop, and at Ticotek, where I designed the database schema and API for a shipment control system.",
+      "Right now I'm actively looking for a role as a Data Analyst or Business Intelligence Analyst in Costa Rica, without leaving full stack development behind. I don't see myself moving from one field to the other. I work comfortably across both: understanding a business need, building the system that solves it, and then analyzing that data to explain what's happening and why."
     ]
   },
   "projects": {
     "eyebrow": "Projects",
     "title": "What I've built and analyzed",
-    "intro": "Three intentionally different projects: two data analysis pieces with an interactive dashboard, and one full stack app running in real production.",
+    "intro": "I picked these three projects for how different they are from each other: two data analysis pieces with an interactive dashboard, and one full stack app already running in production.",
     "viewProject": "View details",
     "status": {
       "done": "Done",
@@ -92,7 +92,7 @@
   "contact": {
     "eyebrow": "Contact",
     "title": "Let's talk",
-    "intro": "I'm actively looking for Data Analyst / BI Analyst opportunities in Costa Rica, and I'm also open to full stack development roles. If my profile fits something you have in mind, reach out.",
+    "intro": "I'm actively pursuing opportunities as a Data Analyst or BI Analyst in Costa Rica, and I'm also open to full stack development roles. If my profile fits what you have in mind, let's talk.",
     "emailLabel": "Email",
     "linkedinLabel": "LinkedIn",
     "githubLabel": "GitHub"

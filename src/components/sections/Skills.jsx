@@ -16,9 +16,9 @@ export default function Skills() {
           {CATEGORIES.map((category) => {
             const items = t(`skills.categories.${category}.items`, { returnObjects: true })
             return (
-              <div key={category} className="skills__group">
-                <h3 className="skills__group-title">{t(`skills.categories.${category}.title`)}</h3>
-                <ul className="skills__list">
+              <div key={category} className="skills__card">
+                <h3 className="skills__card-title">{t(`skills.categories.${category}.title`)}</h3>
+                <ul className="skills__tags">
                   {items.map((item) => (
                     <li key={item}>{item}</li>
                   ))}

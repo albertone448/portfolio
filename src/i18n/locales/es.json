@@ -18,15 +18,15 @@
     "eyebrow": "Sobre mí",
     "title": "De dónde vengo y hacia dónde voy",
     "paragraphs": [
-      "Soy Ingeniero en Sistemas graduado de la Universidad Nacional de Costa Rica, con un diplomado en Programación de Aplicaciones. Mi camino profesional empezó en desarrollo full stack, pero desde el inicio me llamó más la pregunta de qué hacer con los datos que ese software termina generando.",
-      "Esa curiosidad la formalicé trabajando con Python, Pandas y Tableau en proyectos personales de análisis deportivo, mientras seguía construyendo sistemas reales en producción. Hice mis pasantías profesionales en Grupo Eulalia, donde construí un módulo de órdenes de trabajo en React para un taller de camiones, y en Ticotek, donde diseñé el esquema de base de datos y la API de un sistema de control de despachos.",
-      "Hoy busco trabajo activamente como Data Analyst o Business Intelligence Analyst en Costa Rica, sin dejar de lado el desarrollo full stack. No me veo migrando de un área a otra, sino trabajando cómodo en ambas: entender una necesidad de negocio, construir el sistema que la resuelve, y después sentarme con esos datos para explicar qué está pasando y por qué."
+      "Soy Ingeniero en Sistemas, graduado de la Universidad Nacional de Costa Rica, con un diplomado en Programación de Aplicaciones. Empecé mi carrera en desarrollo full stack, pero pronto me interesó una pregunta distinta: qué hacer con los datos que ese software termina generando.",
+      "Profundicé esa curiosidad trabajando con Python, Pandas y Tableau en proyectos personales de análisis deportivo, mientras seguía construyendo sistemas en producción real. Hice mis pasantías profesionales en Grupo Eulalia, donde desarrollé un módulo de órdenes de trabajo en React para un taller de camiones, y en Ticotek, donde diseñé el esquema de base de datos y la API de un sistema de control de despachos.",
+      "Hoy busco activamente un puesto como Data Analyst o Business Intelligence Analyst en Costa Rica, sin dejar atrás el desarrollo full stack. No me veo migrando de un área a otra, sino trabajando con soltura en ambas: entender una necesidad de negocio, construir el sistema que la resuelve, y luego analizar esos datos para explicar qué está pasando y por qué."
     ]
   },
   "projects": {
     "eyebrow": "Proyectos",
     "title": "Lo que he construido y analizado",
-    "intro": "Tres proyectos distintos a propósito: dos de análisis de datos con dashboard interactivo, y uno de desarrollo full stack en producción real.",
+    "intro": "Elegí estos tres proyectos por lo distintos que son entre sí: dos de análisis de datos con dashboard interactivo, y uno de desarrollo full stack ya en producción real.",
     "viewProject": "Ver detalle",
     "status": {
       "done": "Terminado",
@@ -92,7 +92,7 @@
   "contact": {
     "eyebrow": "Contacto",
     "title": "Hablemos",
-    "intro": "Estoy buscando activamente oportunidades como Data Analyst / BI Analyst en Costa Rica, abierto también a roles de desarrollo full stack. Si mi perfil encaja con algo que tenés en mente, escribime.",
+    "intro": "Estoy en búsqueda activa de oportunidades como Data Analyst o BI Analyst en Costa Rica, con apertura también a roles de desarrollo full stack. Si mi perfil se ajusta a lo que tenés en mente, conversemos.",
     "emailLabel": "Correo",
     "linkedinLabel": "LinkedIn",
     "githubLabel": "GitHub"
