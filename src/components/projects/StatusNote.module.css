@@ -1,0 +1,21 @@
+.note {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 20px 22px;
+  border: 1px dashed color-mix(in srgb, var(--note-accent, var(--color-accent)) 45%, var(--color-border));
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--note-accent, var(--color-accent)) 8%, var(--color-surface-elevated));
+}
+
+.icon {
+  flex-shrink: 0;
+  color: var(--note-accent, var(--color-accent));
+  margin-top: 2px;
+}
+
+.note p {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  font-size: var(--fs-small);
+}

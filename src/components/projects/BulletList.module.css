@@ -1,0 +1,44 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.list li {
+  position: relative;
+  padding-left: 26px;
+  line-height: 1.65;
+}
+
+.list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--bullet-accent, var(--color-accent));
+}
+
+.list[data-numbered='true'] {
+  counter-reset: item;
+}
+
+.list[data-numbered='true'] li {
+  counter-increment: item;
+  padding-left: 32px;
+}
+
+.list[data-numbered='true'] li::before {
+  content: counter(item);
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: none;
+  top: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--bullet-accent, var(--color-accent));
+  font-weight: 600;
+}

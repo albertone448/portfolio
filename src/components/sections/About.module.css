@@ -1,0 +1,63 @@
+.section {
+  padding-block: 96px;
+}
+
+.grid {
+  display: grid;
+  gap: 40px;
+}
+
+.title {
+  margin-top: 14px;
+  font-size: var(--fs-section);
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.paragraph {
+  margin-top: 20px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.education {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-elevated);
+  padding: 28px;
+  align-self: start;
+}
+
+.icon {
+  color: var(--color-accent);
+}
+
+.eduLabel {
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-tiny);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.university {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: var(--fs-small);
+}
+
+.degree {
+  margin-top: 6px;
+  font-size: var(--fs-small);
+  color: var(--color-text-secondary);
+}
+
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: 7fr 4fr;
+    gap: 64px;
+  }
+}

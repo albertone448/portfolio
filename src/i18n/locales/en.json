@@ -1,137 +1,201 @@
 {
+  "meta": {
+    "title": "Alberto Núñez Trejos | Systems Engineer",
+    "description": "Systems Engineer working across software engineering, QA automation and data analysis. Production systems in React, .NET and PHP, and data analysis with Python, Pandas and Tableau."
+  },
   "nav": {
-    "about": "About",
-    "projects": "Projects",
-    "skills": "Skills",
+    "work": "Work",
     "experience": "Experience",
-    "contact": "Contact",
-    "cv": "Download CV"
+    "about": "About",
+    "resume": "Resume",
+    "langSwitch": "Switch language",
+    "skipToContent": "Skip to content"
   },
   "hero": {
-    "greeting": "Alberto Núñez Trejos",
-    "role": "Data Analyst & Full Stack Developer",
-    "tagline": "Systems Engineer with a dual profile: I analyze data to find the reasoning behind the numbers, and I build the software that generates them.",
-    "ctaProjects": "View projects",
-    "ctaCv": "Download CV"
-  },
-  "about": {
-    "eyebrow": "About me",
-    "title": "Where I come from and where I'm headed",
-    "paragraphs": [
-      "I'm a Systems Engineer, graduated from Universidad Nacional de Costa Rica, with a diploma in Application Programming. I started my career in full stack development, but soon became more interested in a different question: what to do with the data that software ends up producing.",
-      "I pursued that curiosity by working with Python, Pandas, and Tableau on personal sports analytics projects, while still building real production systems. I did my professional internships at Grupo Eulalia, where I developed a work order module in React for a truck repair workshop, and at Ticotek, where I designed the database schema and API for a shipment control system.",
-      "Right now I'm actively looking for a role as a Data Analyst or Business Intelligence Analyst in Costa Rica, without leaving full stack development behind. I don't see myself moving from one field to the other. I work comfortably across both: understanding a business need, building the system that solves it, and then analyzing that data to explain what's happening and why."
-    ]
-  },
-  "projects": {
-    "eyebrow": "Projects",
-    "title": "What I've built and analyzed",
-    "intro": "I picked these three projects for how different they are from each other: two data analysis pieces with an interactive dashboard, and one full stack app already running in production.",
-    "viewProject": "View details",
-    "status": {
-      "done": "Done",
-      "inProgress": "Coming soon",
-      "pendingMedia": "Screenshots pending"
-    },
-    "items": {
-      "barca": {
-        "title": "FC Barcelona: what explains the successful seasons?",
-        "summary": "33 seasons analyzed with Pearson correlation and ANOVA: coaching continuity and squad value explain performance, transfer spending doesn't.",
-        "tags": ["Python", "Pandas", "Tableau"]
+    "name": "Alberto Núñez Trejos",
+    "role": "Systems Engineer",
+    "tagline": "I build production software, automate the testing around it, and analyze the data it generates.",
+    "pillars": ["Software Engineering", "QA Automation", "Data Analysis"],
+    "ctaWork": "View selected work",
+    "ctaResume": "Download résumé",
+    "location": "Costa Rica",
+    "panels": {
+      "software": {
+        "label": "Software",
+        "headline": "Store Credit Management System",
+        "detail": "React · Firebase · Node.js — in production"
       },
-      "messi": {
-        "title": "Messi: the statistically unrepeatable at World Cups",
-        "summary": "Is there a historical player who comes close to standing out across several mutually exclusive functional roles at once, or is this a true outlier?",
-        "tags": ["Python", "Pandas", "Tableau"]
+      "quality": {
+        "label": "QA Automation",
+        "headline": "85%+ Jest coverage",
+        "detail": "Selenium · PHPUnit · TDD"
       },
-      "pulperia": {
-        "title": "Store credit system for a family grocery store",
-        "summary": "A full stack app in active use that replaced the paper credit ledger my family's corner store used every day.",
-        "tags": ["React", "Firebase", "Vercel"]
+      "data": {
+        "label": "Data",
+        "headline": "33 seasons, Pearson & ANOVA",
+        "detail": "Python · Pandas · Tableau Public"
       }
     }
   },
-  "skills": {
-    "eyebrow": "Skills",
-    "title": "Tools I use day to day",
-    "categories": {
-      "analysis": {
-        "title": "Analysis",
-        "items": ["Python", "Pandas", "SQL"]
+  "work": {
+    "eyebrow": "Selected work",
+    "title": "Three projects, one working pattern",
+    "intro": "A production system built for a real business, a statistical analysis with published dashboards, and a research project in progress. Each one is presented the way its evidence actually looks.",
+    "viewCaseStudy": "View case study",
+    "status": {
+      "production": "In production",
+      "completed": "Completed",
+      "in-progress": "In progress"
+    },
+    "items": {
+      "storeCredit": {
+        "category": "Software",
+        "title": "Store Credit Management System",
+        "description": "A production app that replaced the paper credit ledger my family's grocery store used every day, built and deployed from scratch and still in active use by staff.",
+        "highlights": ["Real-time sync across devices", "Full audit trail on every record", "Automatic WhatsApp & email alerts"]
       },
-      "visualization": {
-        "title": "Visualization",
-        "items": ["Tableau", "Matplotlib"]
+      "alwaysBarca": {
+        "category": "Data analysis",
+        "title": "Always Barça: what explains the successful seasons?",
+        "description": "33 seasons of FC Barcelona tested with Pearson correlation and ANOVA to find out whether transfer spending, coaching, or squad value actually predicts performance.",
+        "highlights": ["33 seasons analyzed", "4 linked Tableau dashboards", "Coaching & squad value, not spending"],
+        "visualEyebrow": "Tableau Public · 4 dashboards",
+        "visualFacts": ["Pearson correlation across 5 variables", "ANOVA by coaching era", "1993/94 – 2025/26"]
       },
-      "development": {
-        "title": "Development",
-        "items": ["React", ".NET", "Java", "PHP"]
+      "messiOutlier": {
+        "category": "Data analysis",
+        "title": "Messi: the statistically unrepeatable at World Cups",
+        "description": "A comparative analysis of World Cup performance across functional roles that are normally mutually exclusive, still in the research phase.",
+        "highlights": ["Research in progress", "5 comparison players", "No fabricated results yet"],
+        "visualEyebrow": "Research in progress",
+        "visualFacts": ["4 functional roles", "5 comparison players", "No results published yet"]
       }
     }
   },
   "experience": {
     "eyebrow": "Experience",
     "title": "Professional background",
-    "intro": "Short version here. The full detail, with metrics and responsibilities, is in the CV.",
-    "cvLink": "View full CV (PDF)",
-    "items": [
-      {
+    "intro": "Two technical internships and three years of bilingual customer-facing work before that. Full detail, responsibilities and metrics are in the résumé.",
+    "viewCv": "View full résumé (PDF)",
+    "items": {
+      "grupoEulalia": {
         "role": "Frontend Developer, Professional Internship",
-        "company": "Grupo Eulalia",
-        "period": "July 2025 – November 2025",
-        "description": "Built a React work order module for a truck repair workshop, turning basic inventory logging into a full tracking system from incident report to job completion."
+        "description": "Built a React work order module for a truck repair workshop, turning basic inventory logging into a full maintenance system with cost analysis, mechanic efficiency tracking and failure pattern identification.",
+        "metrics": ["30+ vehicles tracked", "40% faster decisions", "85%+ Jest coverage"]
       },
-      {
+      "ticotek": {
         "role": "Full-Stack Developer, Professional Internship",
-        "company": "Ticotek",
-        "period": "February 2024 – July 2025",
-        "description": "Designed the MySQL database schema and built the PHP API for a shipment, delivery, and payment control system for a tech retail store, along with the React front end for driver coordination."
+        "description": "Designed a normalized MySQL schema and a PHP REST API for a shipment control system, then built the React front end for real-time delivery, driver and payment tracking.",
+        "metrics": ["60% faster queries", "50+ weekly deliveries", "95%+ test reliability"]
+      },
+      "foundever": {
+        "role": "Customer Service Representative",
+        "description": "Bilingual support for a bank's credit card department: billing disputes, fraud cases and technical issues, plus onboarding new team members.",
+        "metrics": ["92% first-call resolution", "4.7/5 satisfaction score"]
       }
-    ]
+    }
+  },
+  "toolkit": {
+    "eyebrow": "Technical toolkit",
+    "title": "What I build and analyze with",
+    "categories": {
+      "softwareEngineering": "Software Engineering",
+      "dataAnalytics": "Data & Analytics",
+      "databases": "Databases",
+      "testingQuality": "Testing & Quality",
+      "workflow": "Workflow"
+    }
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "Systems Engineering, applied broadly",
+    "paragraph": "I'm a Systems Engineer from Universidad Nacional de Costa Rica, with hands-on experience across the software lifecycle: building production systems in React, .NET and PHP, automating the tests that keep them reliable, and running the statistical analysis that explains what the data those systems produce actually means. I don't see software and data analysis as two separate tracks, I move between them depending on what the problem needs.",
+    "educationTitle": "Education",
+    "university": "Universidad Nacional de Costa Rica",
+    "degree": "Bachelor in Systems Engineering",
+    "diploma": "Diploma in Application Programming"
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Let's talk",
-    "intro": "I'm actively pursuing opportunities as a Data Analyst or BI Analyst in Costa Rica, and I'm also open to full stack development roles. If my profile fits what you have in mind, let's talk.",
+    "title": "Let's build something useful.",
+    "intro": "Available for software engineering, QA automation and data analysis opportunities in Costa Rica.",
     "emailLabel": "Email",
     "linkedinLabel": "LinkedIn",
     "githubLabel": "GitHub"
   },
   "footer": {
+    "tagline": "Systems Engineer · Software · QA · Data",
     "rights": "All rights reserved."
   },
+  "notFound": {
+    "title": "Page not found",
+    "back": "Back home"
+  },
   "projectDetail": {
-    "back": "Back to projects",
-    "repoLink": "View repository on GitHub",
-    "barca": {
-      "title": "FC Barcelona: what explains the successful seasons?",
-      "status": "Done",
-      "tags": ["Python", "Pandas", "SciPy", "Tableau Public"],
-      "questionLabel": "Business question",
-      "question": "What better explains FC Barcelona's successful seasons: transfer spending, coaching decisions, or factors like squad market value and academy player usage?",
-      "findingLabel": "Main finding",
-      "finding": "Transfer spending and academy usage don't explain performance in a statistically significant way. What does explain it is coaching continuity and squad market value.",
-      "context": [
-        "I analyzed 33 FC Barcelona seasons (1993/94 through 2025/26) using real data I collected and cross-checked by hand wherever automated coverage wasn't reliable, not a generic dataset pulled without review.",
-        "I split the analysis by coaching era (Guardiola, post-Messi, Xavi, Flick) because mixing such different periods dilutes the real patterns: what explains a successful season under one playing style doesn't necessarily hold under another.",
-        "I was careful not to confuse correlation with causation. A year with a bigger transfer budget can be a result of the club already being in a good financial and sporting position, not the spending itself causing the following success."
+    "back": "Back to work",
+    "repoLink": "View repository",
+    "liveLink": "Open interactive dashboard",
+    "yearLabel": "Year",
+    "statusLabel": "Status",
+    "stackLabel": "Stack",
+    "nextProject": "Next project",
+    "storeCredit": {
+      "title": "Store Credit Management System",
+      "description": "A production app that replaced a paper credit ledger with a real-time system the whole store staff relies on daily.",
+      "overviewTitle": "Overview",
+      "overview": "My family runs a small neighborhood grocery store that, like many in Costa Rica, extends informal credit to regular customers, known locally as \"fiado\". For years that credit was tracked in a paper notebook: illegible handwriting, lost pages, no way to audit who wrote what or when, and no backup if the notebook itself got damaged.",
+      "problemTitle": "The problem",
+      "problem": "The notebook worked until it didn't. Balances got miscounted, entries got disputed, and there was no way for more than one person to update it at the same time without creating conflicting records. I built this app to solve that specific problem, not to build a generic point-of-sale system.",
+      "roleTitle": "My role",
+      "role": "I designed, built and deployed the entire system alone: data model, front end, notification service and infrastructure, based on how the store staff actually work day to day.",
+      "architectureTitle": "Architecture",
+      "architectureIntro": "A React client talks to Firebase directly for reads and writes. A separate Node.js service, running continuously with PM2 on a machine at the store, listens for database changes and triggers outbound notifications.",
+      "architectureSteps": ["React client", "Firebase Authentication + PIN profiles", "Firebase Realtime Database", "Node.js notification service (PM2)", "WhatsApp & email alerts"],
+      "featuresTitle": "Core features",
+      "features": [
+        "Real-time sync: multiple staff members can log sales and payments at the same time and see updates instantly on every device.",
+        "A single shared Firebase Authentication account with a PIN-based profile selector, so every action stays tied to a specific person without individual logins.",
+        "Full audit trail: nothing is permanently deleted, every record keeps who created or edited it and when, and suspended accounts can be restored.",
+        "Daily summary broken down by payment method, with 80mm thermal receipt printing and one-tap copy for WhatsApp.",
+        "Automatic WhatsApp and email alerts sent to each customer on every transaction, handled by the separate notification service so the client app never blocks on it.",
+        "Automatic daily database backup to Google Cloud Storage."
       ],
-      "methodologyTitle": "Methodology",
-      "methodology": "I cross-referenced five variables (net transfer spending, coaching changes, minutes played by La Masía academy players, squad market value, and coaching continuity) against each season's performance, using Pearson correlation and ANOVA to separate what's statistically significant from what only looks like a trend.",
+      "screenshotsTitle": "Screenshots",
+      "screenshotsIntro": "The real usage flow, with customer names, phone numbers and profile photos blurred. Amounts without an attached name aren't sensitive.",
+      "gallery": {
+        "profileSelector": "Profile selector: whoever is on shift picks their name and enters their PIN.",
+        "clientList": "Customer list sorted by debt, with the store's total outstanding credit.",
+        "clientDetail": "A customer's detail view: current debt, credit limit, history, and the buttons to log a purchase or payment.",
+        "dailySummary": "Daily summary by payment method, used to balance the register at closing.",
+        "dailyMovements": "Feed of every transaction for the day, in chronological order."
+      },
+      "outcomeTitle": "Outcome",
+      "outcome": "The app has fully replaced the paper ledger and is used every day by store staff, with zero infrastructure cost since it runs entirely on free-tier services.",
+      "stack": "React, Vite, Firebase (Realtime Database, Authentication), Node.js, PM2, Vercel with continuous deployment from GitHub, Google Cloud Storage for backups."
+    },
+    "alwaysBarca": {
+      "title": "Always Barça",
+      "description": "33 seasons. Multiple variables. One question: what actually explains FC Barcelona's successful seasons?",
+      "questionTitle": "Research question",
+      "question": "Does transfer spending predict FC Barcelona's sporting success better than other factors, like squad market value, coaching continuity, or academy player usage?",
+      "scopeTitle": "Scope",
+      "scope": "33 LaLiga seasons, from 1993/94 through 2025/26, split by coaching era (Guardiola, post-Messi, Xavi, Flick) so patterns from very different periods don't get diluted by mixing them together.",
       "dataSourcesTitle": "Data sources",
       "dataSources": [
-        "datahub.io — historical LaLiga results going back to the 1993-94 season",
+        "datahub.io — historical LaLiga results back to the 1993-94 season",
         "FBref — possession and xG per season, extracted with BeautifulSoup and Pandas",
-        "Kaggle and manual compilation — transfer spending and squad value, with cross-validation wherever automated coverage wasn't reliable"
+        "Kaggle and manual compilation — transfer spending and squad value, cross-validated by hand wherever automated coverage wasn't reliable"
       ],
-      "limitationsTitle": "Limitations",
-      "limitations": "Some seasons have weaker data coverage than others, especially in the 90s, and a few are outliers due to off-field context (institutional crises, board changes) that no statistical variable captures well. I'd rather state that explicitly than let the analysis look more certain than it is.",
-      "dashboardTitle": "Dashboards",
-      "dashboardIntro": "Four linked dashboards on Tableau Public, each covering a different phase of the analysis.",
+      "methodologyTitle": "Methodology",
+      "methodology": "I tested five variables against each season's performance (net transfer spending, coaching continuity, La Masía academy minutes, squad market value, and coaching changes) using Pearson correlation and ANOVA, to separate what's statistically significant from what only looks like a trend. I was careful not to confuse correlation with causation: a bigger transfer budget in a given year can be a result of the club already being in a strong position, not the cause of the season that follows.",
+      "findingsTitle": "Findings",
+      "findings": "Transfer spending and academy usage don't explain performance in a statistically significant way. Coaching continuity and squad market value do.",
+      "dashboardsTitle": "Dashboards",
+      "dashboardsIntro": "Four linked dashboards on Tableau Public, each covering a different phase of the analysis.",
       "dashboards": {
         "overview": {
-          "title": "Performance, spending, and coach per season",
-          "description": "The starting point: how performance, net transfer spending, and coaching changes move together across the 33 seasons."
+          "title": "Performance, spending & coaching per season",
+          "description": "The starting point: how performance, net transfer spending and coaching changes move together across 33 seasons."
         },
         "academy": {
           "title": "Academy usage",
@@ -139,87 +203,44 @@
         },
         "squadValue": {
           "title": "Squad value",
-          "description": "Squad market value per season, one of the two variables that did turn out to be statistically significant."
+          "description": "Squad market value per season, one of the two variables that turned out to be statistically significant."
         },
         "conclusions": {
           "title": "Conclusions",
-          "description": "Results of the Pearson correlation and ANOVA across the five variables, with the methodological limitations documented."
+          "description": "Results of the Pearson correlation and ANOVA across all five variables, with methodological limitations documented."
         }
-      }
+      },
+      "limitationsTitle": "Limitations",
+      "limitations": "Data coverage is weaker for some 90s seasons, and a few seasons are statistical outliers because of off-field context (institutional crises, board changes) that no variable in this analysis captures. I'd rather state that plainly than let the results look more certain than they are.",
+      "stack": "Python and Pandas for data collection and cleaning, SciPy for the statistical tests, Tableau Public for the four published dashboards."
     },
-    "messi": {
+    "messiOutlier": {
       "title": "Messi: the statistically unrepeatable at World Cups",
-      "status": "In progress",
-      "statusNote": "This project doesn't have any data collected or a dashboard yet. What you're seeing here is the full outline; the analysis and visuals come next.",
-      "tags": ["Python", "Pandas", "Tableau"],
-      "questionLabel": "Business question",
-      "question": "Is there a historical World Cup player who comes close to the simultaneous combination of excellence across functional roles that are normally mutually exclusive, or is Messi a true statistical outlier?",
-      "thesisTitle": "The important precision behind this thesis",
-      "thesis": [
-        "The point of this analysis isn't that Messi is the number one in every individual category. In fact, he isn't: Mbappé ended up with more total World Cup goals than him after 2026.",
-        "The actual point is different: football demands roles that require almost mutually exclusive skill sets, and what's statistically abnormal isn't winning a single category, it's showing up in the top range (top 3-5) of several different functional roles at the same time."
-      ],
-      "rolesTitle": "The four functional roles being compared",
-      "rolesIntro": "Functional roles, not nominal positions on the pitch, since the same player shifts position over the course of a career.",
-      "roles": [
-        {
-          "name": "Finisher",
-          "description": "Converts chances into goals: goals, xG, shot conversion, shots on target."
-        },
-        {
-          "name": "Unbalancer",
-          "description": "Creates individual danger by taking on defenders: successful dribbles, fouls drawn, progressive carries."
-        },
-        {
-          "name": "Playmaker (the final pass)",
-          "description": "Creates the direct chance: assists, key passes, xA, big chances created."
-        },
-        {
-          "name": "Deep-lying orchestrator",
-          "description": "Circulates the ball and progresses the attack from deeper zones: progressive passes, pass completion rate, passes into the final third."
-        }
-      ],
+      "description": "Research in progress: comparing World Cup performance across four functional roles that are normally mutually exclusive.",
+      "statusNote": "No data has been collected yet and there is no dashboard. This page shows the full research outline; results will replace this note once the analysis exists.",
+      "questionTitle": "Research question",
+      "question": "Is there a historical World Cup player who comes close to standing out across several mutually exclusive functional roles at once, or is that combination a true statistical outlier?",
+      "thesisTitle": "The precision that matters here",
+      "thesis": "The point isn't that Messi ranks first in every individual category, he doesn't: Mbappé ended up with more total World Cup goals after 2026. The point is that football demands roles with almost mutually exclusive skill sets, and what's statistically unusual is showing up in the top range of several different roles at the same time, not winning one category outright.",
+      "rolesTitle": "Four functional roles",
+      "rolesIntro": "Functional roles, not fixed pitch positions, since the same player shifts position across a career.",
+      "roles": {
+        "finisher": "Finisher — converts chances into goals: goals, xG, shot conversion, shots on target.",
+        "unbalancer": "Unbalancer — creates individual danger by taking on defenders: successful dribbles, fouls drawn, progressive carries.",
+        "playmaker": "Playmaker — creates the direct chance: assists, key passes, xA, big chances created.",
+        "orchestrator": "Deep-lying orchestrator — circulates the ball and progresses the attack from deeper zones: progressive passes, completion rate, passes into the final third."
+      },
       "comparisonTitle": "Comparison players",
-      "comparisonPlayers": "Cristiano Ronaldo, Neymar, Mbappé, Ronaldinho, and Maradona (still need to confirm whether the same level of statistical detail is available for the 1986 World Cup).",
+      "comparisonPlayers": "Cristiano Ronaldo, Neymar, Mbappé, Ronaldinho and Maradona, pending confirmation that 1986 World Cup data has the same level of statistical detail available.",
       "dataSourcesTitle": "Planned data sources",
       "dataSources": [
         "SofaScore — event-level stats documented back to the 1966 World Cup, no official API",
         "FBref — reliable advanced metrics from the 2018 World Cup onward",
-        "Kaggle — base goal data per match and per World Cup"
+        "Kaggle — base goal data per match and per tournament"
       ],
       "noteTitle": "An honest caveat",
-      "note": "The idea that this means Messi is \"underrated\" is my own personal reflection, not a conclusion that follows directly from the data. I'm presenting it separately from the objective findings of the analysis."
-    },
-    "pulperia": {
-      "title": "Store credit system for a family grocery store",
-      "status": "Done",
-      "tags": ["React", "Firebase", "Vercel"],
-      "problemTitle": "The real problem",
-      "problem": [
-        "My family's corner store kept track of \"fiado\" (informal customer credit) in a paper notebook, with everything that implies: illegible handwriting, lost pages, no way to audit who wrote what or when, and no backup if the notebook got damaged or lost.",
-        "I built this app to replace that notebook with a system the store staff could use just as naturally as they used paper, but with real traceability and access from any device. It's in active daily use by the store staff."
-      ],
-      "featuresTitle": "What it does",
-      "features": [
-        "Real-time updates with Firebase Realtime Database: multiple people can log sales and payments at the same time and see updates instantly on every device.",
-        "A single shared Firebase Authentication account for the whole store, with a PIN-based profile selector: whoever is on shift picks their name and enters a 4-digit PIN, so every action stays tied to a specific person without needing individual accounts.",
-        "Full traceability: nothing gets permanently deleted (deleted clients can be restored), every record keeps track of who created or edited it and when.",
-        "Reversible account suspension for customers who stop paying, without losing their history or mixing them in with active accounts.",
-        "Daily summary broken down by payment method (cash, card, SINPE) to balance the register, with 80mm thermal receipt printing and a one-tap copy for WhatsApp.",
-        "A separate Node.js service, running with PM2 on the store's computer, that listens for database changes and sends automatic WhatsApp and email alerts to each customer whenever a purchase or payment is logged.",
-        "Automatic daily database backup to Google Cloud Storage."
-      ],
-      "screenshotsTitle": "Screenshots",
-      "screenshotsIntro": "Real usage flow, with customer names, phone numbers, and photos blurred out. Amounts without an attached name aren't sensitive information.",
-      "screenshots": {
-        "profileSelector": "Profile selector: whoever is on shift picks their name and enters their PIN.",
-        "clientList": "Customer list, sorted by debt, with the overall credit total and how much of it is on suspended accounts.",
-        "clientDetail": "A customer's detail page: current debt, credit limit, historical stats, and the buttons to log a purchase or a payment.",
-        "dailySummary": "Daily summary by payment method, for balancing the register, with print or copy-for-WhatsApp options.",
-        "dailyMovements": "Feed of every transaction for the day, in chronological order."
-      },
-      "stackTitle": "Tech stack",
-      "stack": "React and Vite on the front end, Firebase (Realtime Database and Authentication) as the backend, a separate Node.js service for automatic notifications, deployed on Vercel with continuous deployment from GitHub. All the infrastructure runs on each service's free tier."
+      "note": "Reading this as proof that Messi is \"underrated\" is a personal reflection, not a conclusion the data itself supports. It's kept separate from the objective findings once they exist.",
+      "stack": "Python and Pandas planned for data collection, Tableau Public for a percentile-based scatter plot comparing all five players across the four roles."
     }
   }
 }

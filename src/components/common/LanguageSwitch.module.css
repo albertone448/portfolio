@@ -1,0 +1,31 @@
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.option {
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--fs-tiny);
+  letter-spacing: 0.04em;
+  padding: 6px 12px;
+  border-radius: 999px;
+  min-height: 30px;
+  transition: background var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+
+.option[data-active='true'] {
+  background: var(--color-accent-soft);
+  color: var(--color-accent-strong);
+}
+
+.option:hover:not([data-active='true']) {
+  color: var(--color-text-secondary);
+}

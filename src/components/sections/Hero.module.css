@@ -1,0 +1,146 @@
+.hero {
+  position: relative;
+  padding-block: 64px 96px;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 640px;
+  height: 640px;
+  background: radial-gradient(circle, rgba(115, 124, 255, 0.16), transparent 65%);
+  pointer-events: none;
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  gap: 56px;
+  align-items: center;
+}
+
+.content {
+  max-width: 620px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+}
+
+.name {
+  font-size: var(--fs-hero);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+  margin-top: 12px;
+}
+
+.tagline {
+  margin-top: 22px;
+  font-size: var(--fs-lead);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  max-width: 52ch;
+}
+
+.pillars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.pillars li {
+  font-family: var(--font-mono);
+  font-size: var(--fs-tiny);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 7px 14px;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.panelStack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panel {
+  position: relative;
+  padding: 22px 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: linear-gradient(180deg, var(--color-surface-elevated), var(--color-surface));
+  box-shadow: var(--shadow-card);
+}
+
+.panel[data-panel='software'] {
+  margin-right: 0;
+}
+
+.panel[data-panel='quality'] {
+  margin-left: 24px;
+}
+
+.panel[data-panel='data'] {
+  margin-right: 24px;
+}
+
+.panelLabel {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-tiny);
+  color: var(--color-accent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.panelHeadline {
+  margin-top: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.panelDetail {
+  margin-top: 6px;
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 960px) {
+  .hero {
+    padding-block: 88px 120px;
+    min-height: 82vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .grid {
+    grid-template-columns: 7fr 5fr;
+  }
+
+  .panelStack {
+    gap: 20px;
+  }
+
+  .panel[data-panel='quality'] {
+    margin-left: 48px;
+  }
+
+  .panel[data-panel='data'] {
+    margin-right: 48px;
+  }
+}
