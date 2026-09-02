@@ -1,10 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { ArrowRight, Download } from 'lucide-react';
 import { Button } from '../common/Button';
+import { useResumeUrl } from '../../hooks/useResumeUrl';
 import styles from './Hero.module.css';
 
 export function Hero() {
   const { t } = useTranslation();
+  const resumeUrl = useResumeUrl();
   const pillars = t('hero.pillars', { returnObjects: true }) as string[];
 
   return (
@@ -28,7 +30,7 @@ export function Hero() {
             </Button>
             <Button
               variant="secondary"
-              href="/resume/Alberto_Nunez_Trejos_Resume.pdf"
+              href={resumeUrl}
               icon={<Download size={16} strokeWidth={2} />}
             >
               {t('hero.ctaResume')}

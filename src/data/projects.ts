@@ -46,13 +46,17 @@ export const projects: Project[] = [
   {
     slug: 'messi-outlier',
     category: 'data',
-    status: 'in-progress',
+    status: 'completed',
     year: '2026',
-    stack: ['Python', 'Pandas', 'Tableau Public'],
+    stack: ['Python', 'Pandas', 'ScraperFC', 'Tableau Public'],
     accent: 'var(--accent-messi)',
-    githubUrl: null,
-    liveUrl: null,
-    dashboards: [],
+    githubUrl: 'https://github.com/albertone448/messi-outlier',
+    liveUrl: 'https://public.tableau.com/views/MessiOutlier/Dash1Loscuatrorolessonrealmentedistintos',
+    dashboards: [
+      { path: 'MessiOutlier/Dash1Loscuatrorolessonrealmentedistintos', titleKey: 'rolesDistinct' },
+      { path: 'MessiOutlier/Dash2Elhallazgocentral', titleKey: 'centralFinding' },
+      { path: 'MessiOutlier/Dash3Perfiles', titleKey: 'profiles' },
+    ],
   },
 ];
 

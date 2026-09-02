@@ -133,18 +133,28 @@ All four were run against this exact codebase before delivery.
 - **Store Credit Management System** — production app, in active use.
   Content sourced from the real CV and the existing app; the five gallery
   screenshots are the real ones supplied, with customer names/phones/photos
-  already blurred.
+  already blurred. Its project accent is the actual purple used by the
+  app's own brand ("Minisúper El Puente / Fiado"), sampled directly from a
+  screenshot.
 - **Always Barça** — completed statistical analysis (33 LaLiga seasons,
-  Pearson correlation + ANOVA). Findings and methodology are taken directly
-  from the CV and prior project notes; the four dashboards link to the real
-  Tableau Public workbook paths.
-- **Messi: the statistically unrepeatable at World Cups** — explicitly
-  `in-progress`. No dataset, dashboard, or finding exists yet, so the page
-  shows the research outline and a visible status note instead of
-  fabricated results. When the analysis is done, replace the `dashboards`
-  array in `data/projects.ts` and add the findings/dashboard copy to
-  `projectDetail.messiOutlier` in both locale files — no component changes
-  needed.
+  five variables: net spending, coaching, academy usage, squad value,
+  presidency). Findings, exact r/p values, and the final variance-explained
+  summary table are taken directly from the project's own README and
+  methodology notes, not paraphrased from memory. The four dashboards link
+  to the real Tableau Public workbook paths.
+- **Messi: Outlier** — completed statistical analysis comparing Messi's
+  World Cup profile against the full population of 5,636 historical
+  outfield players (not a hand-picked comparison set). Content, including
+  the closing personal note about Messi's August 2026 retirement, comes
+  directly from the finished project's own README. The 3-part dashboard
+  links to the real Tableau Public workbook paths.
+
+## Résumé by language
+
+The "Download résumé" links (header, hero, experience section) resolve to
+`Alberto_Nunez_Trejos_Resume.pdf` (English) or
+`Alberto_Nunez_Trejos_Resume_ES.pdf` (Spanish) based on the active UI
+language, via `hooks/useResumeUrl.ts`. Both PDFs live in `public/resume/`.
 
 ## Deployment
 

@@ -1,10 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { FileText } from 'lucide-react';
 import { experienceEntries } from '../../data/experience';
+import { useResumeUrl } from '../../hooks/useResumeUrl';
 import styles from './Experience.module.css';
 
 export function Experience() {
   const { t } = useTranslation();
+  const resumeUrl = useResumeUrl();
 
   return (
     <section id="experience" className={styles.section}>
@@ -13,7 +15,7 @@ export function Experience() {
           <p className="eyebrow">{t('experience.eyebrow')}</p>
           <h2 className={styles.title}>{t('experience.title')}</h2>
           <p className={`measure ${styles.intro}`}>{t('experience.intro')}</p>
-          <a href="/resume/Alberto_Nunez_Trejos_Resume.pdf" download className={styles.cvLink}>
+          <a href={resumeUrl} download className={styles.cvLink}>
             <FileText size={15} strokeWidth={1.75} />
             {t('experience.viewCv')}
           </a>

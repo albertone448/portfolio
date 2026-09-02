@@ -15,7 +15,11 @@
     "name": "Alberto Núñez Trejos",
     "role": "Systems Engineer",
     "tagline": "I build production software, automate the testing around it, and analyze the data it generates.",
-    "pillars": ["Software Engineering", "QA Automation", "Data Analysis"],
+    "pillars": [
+      "Software Engineering",
+      "QA Automation",
+      "Data Analysis"
+    ],
     "ctaWork": "View selected work",
     "ctaResume": "Download résumé",
     "location": "Costa Rica",
@@ -52,23 +56,43 @@
         "category": "Software",
         "title": "Store Credit Management System",
         "description": "A production app that replaced the paper credit ledger my family's grocery store used every day, built and deployed from scratch and still in active use by staff.",
-        "highlights": ["Real-time sync across devices", "Full audit trail on every record", "Automatic WhatsApp & email alerts"]
+        "highlights": [
+          "Real-time sync across devices",
+          "Full audit trail on every record",
+          "Automatic WhatsApp & email alerts"
+        ]
       },
       "alwaysBarca": {
         "category": "Data analysis",
         "title": "Always Barça: what explains the successful seasons?",
         "description": "33 seasons of FC Barcelona tested with Pearson correlation and ANOVA to find out whether transfer spending, coaching, or squad value actually predicts performance.",
-        "highlights": ["33 seasons analyzed", "4 linked Tableau dashboards", "Coaching & squad value, not spending"],
+        "highlights": [
+          "33 seasons analyzed",
+          "4 linked Tableau dashboards",
+          "Coaching & squad value, not spending"
+        ],
         "visualEyebrow": "Tableau Public · 4 dashboards",
-        "visualFacts": ["Pearson correlation across 5 variables", "ANOVA by coaching era", "1993/94 – 2025/26"]
+        "visualFacts": [
+          "Pearson correlation across 5 variables",
+          "ANOVA by coaching era",
+          "1993/94 – 2025/26"
+        ]
       },
       "messiOutlier": {
         "category": "Data analysis",
-        "title": "Messi: the statistically unrepeatable at World Cups",
-        "description": "A comparative analysis of World Cup performance across functional roles that are normally mutually exclusive, still in the research phase.",
-        "highlights": ["Research in progress", "5 comparison players", "No fabricated results yet"],
-        "visualEyebrow": "Research in progress",
-        "visualFacts": ["4 functional roles", "5 comparison players", "No results published yet"]
+        "title": "Messi: Outlier",
+        "description": "A statistical comparison of Messi's World Cup profile against the full population of 5,636 historical outfield players, across four functional roles, not a handful of hand-picked names.",
+        "highlights": [
+          "5,636 players analyzed (1966–2026)",
+          "3-part Tableau Public dashboard",
+          "No better-supported rival found"
+        ],
+        "visualEyebrow": "Tableau Public · 3 dashboards",
+        "visualFacts": [
+          "Elite status in 3 of 4 roles: 8 players",
+          "Highest avg. role percentile: Messi",
+          "270-minute floor, tested to 1500"
+        ]
       }
     }
   },
@@ -81,17 +105,28 @@
       "grupoEulalia": {
         "role": "Frontend Developer, Professional Internship",
         "description": "Built a React work order module for a truck repair workshop, turning basic inventory logging into a full maintenance system with cost analysis, mechanic efficiency tracking and failure pattern identification.",
-        "metrics": ["30+ vehicles tracked", "40% faster decisions", "85%+ Jest coverage"]
+        "metrics": [
+          "30+ vehicles tracked",
+          "40% faster decisions",
+          "85%+ Jest coverage"
+        ]
       },
       "ticotek": {
         "role": "Full-Stack Developer, Professional Internship",
         "description": "Designed a normalized MySQL schema and a PHP REST API for a shipment control system, then built the React front end for real-time delivery, driver and payment tracking.",
-        "metrics": ["60% faster queries", "50+ weekly deliveries", "95%+ test reliability"]
+        "metrics": [
+          "60% faster queries",
+          "50+ weekly deliveries",
+          "95%+ test reliability"
+        ]
       },
       "foundever": {
         "role": "Customer Service Representative",
         "description": "Bilingual support for a bank's credit card department: billing disputes, fraud cases and technical issues, plus onboarding new team members.",
-        "metrics": ["92% first-call resolution", "4.7/5 satisfaction score"]
+        "metrics": [
+          "92% first-call resolution",
+          "4.7/5 satisfaction score"
+        ]
       }
     }
   },
@@ -150,7 +185,13 @@
       "role": "I designed, built and deployed the entire system alone: data model, front end, notification service and infrastructure, based on how the store staff actually work day to day.",
       "architectureTitle": "Architecture",
       "architectureIntro": "A React client talks to Firebase directly for reads and writes. A separate Node.js service, running continuously with PM2 on a machine at the store, listens for database changes and triggers outbound notifications.",
-      "architectureSteps": ["React client", "Firebase Authentication + PIN profiles", "Firebase Realtime Database", "Node.js notification service (PM2)", "WhatsApp & email alerts"],
+      "architectureSteps": [
+        "React client",
+        "Firebase Authentication + PIN profiles",
+        "Firebase Realtime Database",
+        "Node.js notification service (PM2)",
+        "WhatsApp & email alerts"
+      ],
       "featuresTitle": "Core features",
       "features": [
         "Real-time sync: multiple staff members can log sales and payments at the same time and see updates instantly on every device.",
@@ -175,21 +216,86 @@
     },
     "alwaysBarca": {
       "title": "Always Barça",
-      "description": "33 seasons. Multiple variables. One question: what actually explains FC Barcelona's successful seasons?",
+      "description": "33 seasons, five variables, one question: does transfer spending predict FC Barcelona's success better than academy usage, squad value, coaching, or the presidency?",
       "questionTitle": "Research question",
-      "question": "Does transfer spending predict FC Barcelona's sporting success better than other factors, like squad market value, coaching continuity, or academy player usage?",
+      "question": "What actually explains FC Barcelona's successful seasons: how much the club spends, or who is making the decisions? Net transfer spending, coaching continuity, academy usage, squad market value, and the presidency, tested against 33 seasons of sporting performance.",
       "scopeTitle": "Scope",
-      "scope": "33 LaLiga seasons, from 1993/94 through 2025/26, split by coaching era (Guardiola, post-Messi, Xavi, Flick) so patterns from very different periods don't get diluted by mixing them together.",
+      "scope": "33 LaLiga seasons, 1993/94 through 2025/26. The analysis deliberately avoids isolating a single era (like only the Guardiola years): that would shrink the sample and weaken any statistical pattern. Coach and president are treated as variables across the full range instead, so both the general pattern and era-by-era comparisons stay visible.",
       "dataSourcesTitle": "Data sources",
       "dataSources": [
-        "datahub.io — historical LaLiga results back to the 1993-94 season",
-        "FBref — possession and xG per season, extracted with BeautifulSoup and Pandas",
-        "Kaggle and manual compilation — transfer spending and squad value, cross-validated by hand wherever automated coverage wasn't reliable"
+        "Performance and spending, 2014/15–2025/26 — automated, via football-data.co.uk and a Transfermarkt dataset on Kaggle",
+        "Spending and league-wide totals, 1993/94–2013/14 — manual collection from Transfermarkt, cross-validated against two separate views of the site with an exact match",
+        "Coaches and presidents — hand-built tables from public sources, including several mid-season changes verified by date",
+        "Academy players — 103 players from Wikipedia's \"players formed at La Masía\" table, cross-referenced against Transfermarkt appearances (reliable from 2012/13)",
+        "Squad market value — Transfermarkt, reliable coverage from 2012/13 onward"
       ],
       "methodologyTitle": "Methodology",
-      "methodology": "I tested five variables against each season's performance (net transfer spending, coaching continuity, La Masía academy minutes, squad market value, and coaching changes) using Pearson correlation and ANOVA, to separate what's statistically significant from what only looks like a trend. I was careful not to confuse correlation with causation: a bigger transfer budget in a given year can be a result of the club already being in a strong position, not the cause of the season that follows.",
-      "findingsTitle": "Findings",
-      "findings": "Transfer spending and academy usage don't explain performance in a statistically significant way. Coaching continuity and squad market value do.",
+      "methodology": "Performance is measured two ways: a continuous scale (points earned over the maximum possible that season, normalized so it's comparable across eras with different point systems and calendars) and a categorical one adjusted to a club of Barça's scale, where missing the Champions League already counts as a failed season. Comparing net spending across three decades is misleading on its own, since the transfer market has inflated much faster than the general economy, so spending is expressed as Barça's share of that season's total LaLiga transfer spending, the same principle the CIES Football Observatory uses to measure transfer market inflation. The same logic applies to squad market value. Pearson correlation measures the continuous variables (spending, academy use, squad value); coach and president are categorical, so a one-way ANOVA and its derived eta-squared (η²) put them on the same explained-variance scale as r², the detail that makes the final five-variable comparison honest instead of apples-to-oranges.",
+      "phase1Title": "Phase 1 — performance, spending and coaching",
+      "phase1Findings": [
+        "Spending does not predict performance in a statistically significant way (r = 0.227, p = 0.204).",
+        "The coach is associated with more variation in performance than spending. Guardiola leads average performance (0.818, 3 titles in 4 seasons).",
+        "Attack explains more variance than defense (goals for r = 0.787 vs. goals against r = -0.660, both p < 0.001).",
+        "Three seasons carry explicitly documented atypical context: 2020/21 (pandemic, no fans at any match) and 2023/24–2024/25 (playing home matches at Montjuïc during the Camp Nou renovation).",
+        "Spending tends to concentrate at the start of a coaching cycle, more a renewal investment than a same-season predictor. Title seasons were won both with near-zero net spending (1997/98, 2025/26) and with significant investment."
+      ],
+      "phase2Title": "Phase 2 — academy usage (2012/13–2025/26)",
+      "phase2Findings": [
+        "Academy usage doesn't predict performance either (r = 0.274, p = 0.344).",
+        "No simple link to titles: Koeman had the group's second-highest academy usage without winning a title in his 2 seasons; Flick combined the highest usage with the best title record (2 of 2).",
+        "2024/25 and 2025/26 closed with net transfer spending near zero and the two highest squad values in the range, driven by home-grown players with no transfer cost (Yamal, Gavi, Fermín López, Balde) and low-cost reacquisitions (Eric García, a free agent in 2021)."
+      ],
+      "phase3Title": "Phase 3 — squad market value (2012/13–2025/26)",
+      "phase3Findings": [
+        "Unlike spending and academy usage, squad market value shows a strong, significant correlation with performance (r = 0.753, p = 0.002), the strongest relationship found up to that phase.",
+        "Squad value measures an accumulated asset (a \"stock\" variable), while net spending measures a single summer's movement (a \"flow\" variable); the accumulated one predicts better."
+      ],
+      "phase4Title": "Phase 4 — presidents and the board",
+      "phase4Findings": [
+        "Important methodological correction: average spending per president isn't the same as good or bad management. Joan Laporta took office twice amid financial crises inherited from his predecessors (€180M spent by Gaspart in 2000-01; a €1.35B debt inherited from Bartomeu in 2021 that blocked Messi's renewal).",
+        "Gaspart and Laporta have almost the same average spending (7.5%) with opposite performance outcomes, evidence that average spending without context can lead to the wrong conclusion about a president's management.",
+        "Sandro Rosell leads average performance, spending, and squad value, inheriting an already solid base built during Laporta's first term."
+      ],
+      "summaryTitle": "Consolidated summary: all five variables in the same unit",
+      "summaryIntro": "To compare numeric variables (spending, academy, squad value) fairly against categorical ones (coach, president), every variable is expressed as variance explained: r² for the continuous ones, η² for the categorical ones, the same conceptual quantity.",
+      "summaryTable": {
+        "headers": [
+          "Variable",
+          "Variance explained",
+          "Significant (p<0.05)"
+        ],
+        "rows": [
+          {
+            "label": "Net spending (% of market)",
+            "value": "0.052",
+            "significant": false
+          },
+          {
+            "label": "Academy usage (% of minutes)",
+            "value": "0.075",
+            "significant": false
+          },
+          {
+            "label": "Squad value (% of market)",
+            "value": "0.567",
+            "significant": true
+          },
+          {
+            "label": "President",
+            "value": "0.606",
+            "significant": true
+          },
+          {
+            "label": "Coach",
+            "value": "0.727",
+            "significant": true
+          }
+        ]
+      },
+      "conclusion": "The coach is the variable that explains the most performance in the entire project, ahead even of accumulated squad value. The president comes in a close second. Spending and academy usage, the two \"how much is invested\" variables, land well below the other three, all of which relate to who decides or what talent is already in hand. Neither spending nor academy usage predicts Barça's performance well across 33 years of history. Accumulated squad value does, and who is in charge, coach first and president second, explains even more. Confirming this with causal rigor would require comparable data from other clubs, outside this project's scope.",
+      "limitationsTitle": "Limitations",
+      "limitations": "Not every variable covers the same 33 seasons: performance, spending, coach and president are complete for 1993/94–2025/26, but academy usage and squad value only cover 2012/13–2025/26 (14 of 33 seasons), because Transfermarkt's appearance and valuation data isn't reliably covered before that. The gap was documented, not papered over with a lower-quality proxy. \"Academy player\" also has no single accepted definition, this project uses a broad one (anyone in Wikipedia's La Masía-formed table, including players who passed through the reserve team); a stricter definition would move the academy-usage numbers. One raw-data correction was applied by hand: the simplified standings model gave Barça a technical tie with Real Madrid in 2006/07, when the real title went to Madrid on head-to-head tiebreakers; the record was corrected to match reality. And throughout: correlation isn't causation, particularly for the presidency findings, where inherited financial context matters as much as the numbers themselves.",
+      "stack": "Python and Pandas for data collection and cleaning, SciPy for the statistical tests (Pearson, ANOVA), Tableau Public for the four published dashboards.",
       "dashboardsTitle": "Dashboards",
       "dashboardsIntro": "Four linked dashboards on Tableau Public, each covering a different phase of the analysis.",
       "dashboards": {
@@ -210,37 +316,69 @@
           "description": "Results of the Pearson correlation and ANOVA across all five variables, with methodological limitations documented."
         }
       },
-      "limitationsTitle": "Limitations",
-      "limitations": "Data coverage is weaker for some 90s seasons, and a few seasons are statistical outliers because of off-field context (institutional crises, board changes) that no variable in this analysis captures. I'd rather state that plainly than let the results look more certain than they are.",
-      "stack": "Python and Pandas for data collection and cleaning, SciPy for the statistical tests, Tableau Public for the four published dashboards."
+      "personalNoteTitle": "A personal note",
+      "personalNote": "This project didn't start from a convenient generic dataset, it started from being a culé. I'm writing this from Alajuela, Costa Rica, almost 8,970 km from Barcelona in a straight line, and that distance is part of the point: outside Spain, being a Barça fan loses the regional and political weight it carries at home, and what's left is something else entirely. It's a fitting moment to close this analysis too, with a new La Masía generation (Yamal, Cubarsí, Fermín López) already showing up in this project's own data."
     },
     "messiOutlier": {
-      "title": "Messi: the statistically unrepeatable at World Cups",
-      "description": "Research in progress: comparing World Cup performance across four functional roles that are normally mutually exclusive.",
-      "statusNote": "No data has been collected yet and there is no dashboard. This page shows the full research outline; results will replace this note once the analysis exists.",
+      "title": "Messi: Outlier",
+      "description": "How singular is Messi's World Cup profile? Measured against the full population of 5,636 historical World Cup outfield players, not a handful of hand-picked comparisons.",
       "questionTitle": "Research question",
-      "question": "Is there a historical World Cup player who comes close to standing out across several mutually exclusive functional roles at once, or is that combination a true statistical outlier?",
-      "thesisTitle": "The precision that matters here",
-      "thesis": "The point isn't that Messi ranks first in every individual category, he doesn't: Mbappé ended up with more total World Cup goals after 2026. The point is that football demands roles with almost mutually exclusive skill sets, and what's statistically unusual is showing up in the top range of several different roles at the same time, not winning one category outright.",
+      "question": "Does any historical World Cup player come close to combining, at the same time, the metrics that separate elite finishers, dribblers, chance creators and play organizers, or does Messi's profile stand out for appearing among the elite of several distinct functional roles at once?",
+      "thesisTitle": "A framing note, and the precise claim",
+      "thesis": "\"Outlier\" can suggest absolute uniqueness, and that's not quite what the data shows. Messi shares the highest ceiling actually observed in the population, elite status in 3 of 4 roles, with 7 other players. What the data does show, and what holds up under every threshold and sample-size cut tested, is more precise: across the full 1966–2026 World Cup population, no player's profile clearly exceeds or consistently matches his on the measure that matters most, average role percentile among players with a real career-length sample. That's a claim about the absence of a better-supported rival, not about mathematical uniqueness.",
+      "approachTitle": "Approach",
+      "approach": [
+        "Players are compared by functional role (finisher, dribbler, chance creator, play organizer), not nominal position, since a player's position often doesn't match what they actually do on the pitch. 16 metrics, checked against the data provider's own glossary, are assigned across the four roles.",
+        "Metrics are normalized per 90 minutes, aggregated at player-career level (one row per player, summing every World Cup match from 1966 to 2026), with a 270-minute minimum (three full matches) chosen by testing where small-sample noise actually stabilizes. Higher floors (900, 1500 minutes) are used throughout as a transparency check, not a replacement.",
+        "\"Elite\" is defined by percentile, not a fixed top-N, tested at the 90th, 95th and 99th percentiles rather than committing to one cutoff.",
+        "Percentiles are calculated against the full relevant player population (5,636 outfield players; 2,488 meet the 270-minute threshold), not only against a few reference players.",
+        "The hypothesis was allowed to fail, and did, in its strongest form: no player, including Messi, reaches elite status in all four roles at once at a genuine elite threshold."
+      ],
       "rolesTitle": "Four functional roles",
       "rolesIntro": "Functional roles, not fixed pitch positions, since the same player shifts position across a career.",
       "roles": {
         "finisher": "Finisher — converts chances into goals: goals, xG, shot conversion, shots on target.",
-        "unbalancer": "Unbalancer — creates individual danger by taking on defenders: successful dribbles, fouls drawn, progressive carries.",
-        "playmaker": "Playmaker — creates the direct chance: assists, key passes, xA, big chances created.",
-        "orchestrator": "Deep-lying orchestrator — circulates the ball and progresses the attack from deeper zones: progressive passes, completion rate, passes into the final third."
+        "unbalancer": "Dribbler — creates individual danger by taking on defenders: successful dribbles, fouls drawn, progressive carries.",
+        "playmaker": "Chance creator — creates the direct chance: assists, key passes, xA, big chances created.",
+        "orchestrator": "Play organizer — circulates the ball and progresses the attack from deeper zones: progressive passes, completion rate, passes into the final third."
       },
-      "comparisonTitle": "Comparison players",
-      "comparisonPlayers": "Cristiano Ronaldo, Neymar, Mbappé, Ronaldinho and Maradona, pending confirmation that 1986 World Cup data has the same level of statistical detail available.",
-      "dataSourcesTitle": "Planned data sources",
+      "resultsTitle": "Results",
+      "extractionTitle": "Phases 0–1 · data validation and extraction",
+      "extraction": "Confirmed, against a 1986 Maradona match and the 2022 final, that SofaScore's internal API has comparable event-level detail across the entire 1966–2026 range. Full extraction: 900 matches, 5,636 outfield players at career level.",
+      "correlationTitle": "Phase 4 · role correlations",
+      "correlation": "The three attacking roles (finisher, dribbler, chance creator) correlate moderately with each other (0.49–0.58). Play organizer is nearly independent of all three (0.02–0.30), confirming it as a genuinely distinct skill dimension — which led to a prediction, made before running any numbers, that organizer would be Messi's relative weak point.",
+      "centralFindingTitle": "Phase 5 · the central finding",
+      "centralFinding": "No player in the population reaches elite status in all 4 roles at a genuine threshold (90th percentile or higher). The real ceiling, elite in 3 of 4 roles, is shared by 8 players; Messi is one of them, with by far the largest career sample (6 World Cups, 34 matches, 3,054 minutes). Among players with a real career-length sample (900+ minutes), Messi has the highest average role percentile in the entire population. Maradona is a genuine, non-cherry-picked runner-up, with the gap explained almost entirely by play organizer, exactly as predicted in Phase 4. Cristiano Ronaldo, with a nearly identical career sample to Messi's, has the lowest average role score in the project's comparison sets, direct evidence the finding isn't simply a function of playing many World Cups.",
+      "specialistsTitle": "Phase 6 · role specialists",
+      "specialists": "Building the reference set for the radar charts surfaced its own finding: the organizer-role leader at the base 270-minute threshold turned out to be driven by a single match of high-volume, low-threat passing (Spain's 2018 round-of-16 exit to Russia), not genuine organizing quality. A stricter 900-minute floor was applied specifically for choosing which players get shown as \"leaders.\"",
+      "conclusionTitle": "Conclusion",
+      "conclusion": "No player's profile in the 1966–2026 World Cup population clearly exceeds or consistently matches Messi's across the four functional roles measured here. This isn't a claim of mathematical uniqueness, several other players share the observed ceiling, and Maradona is a real, well-supported runner-up. It's a claim about the absence of a better-supported rival, on the most robust measure this project could construct: average role percentile among players with a genuine career-length sample, tested across multiple percentile thresholds and multiple minimum-minutes floors, none of which changed the result. The one relative weakness found, play organizer, was predicted before the data was ever run, which strengthens the finding rather than undermining it. The declared limitation stands: this measures roughly 6 months of accumulated football (Messi's six World Cups) against a much longer career, a deliberate scope choice, not an oversight.",
+      "closingTitle": "Closing a chapter, while this project was closing too",
+      "closing": "On August 31, 2026, while this project was in the middle of being built, Lionel Messi officially announced his retirement from the Argentina national team, after playing his sixth World Cup. At 39 years old, in what turned out to be his last tournament, he scored 8 goals and gave 4 assists in 8 matches, taking Argentina all the way to the final. Those are numbers most footballers in history never reach even at their physical peak, and he produced them at the end of his career. His World Cup story is closed for good: six tournaments between 2006 and 2026, 34 matches, 21 goals. This wasn't planned. The project started as a Data Analytics portfolio exercise, and it ended up coinciding, without anyone intending it, with the real and final close of the World Cup career it analyzes. From here on, Messi's World Cup numbers won't change again, so this is a finished, complete record, not a snapshot of something still in motion. Thank you, Leo. And I will always carry December 18, 2022 in my heart, the day you fulfilled your childhood dream.",
+      "dataSourcesTitle": "Data sources",
       "dataSources": [
-        "SofaScore — event-level stats documented back to the 1966 World Cup, no official API",
-        "FBref — reliable advanced metrics from the 2018 World Cup onward",
-        "Kaggle — base goal data per match and per tournament"
+        "SofaScore — the project's sole data source. Match-level stats (passes, duels, touches, dribbles, shots) accessed through its internal API (no official public API exists), using the ScraperFC library, validated first against a 1986 Maradona match and the 2022 final.",
+        "FBref and Kaggle were considered as complementary sources early on but weren't ultimately needed; SofaScore's historical coverage covered everything the project's metrics required."
       ],
-      "noteTitle": "An honest caveat",
-      "note": "Reading this as proof that Messi is \"underrated\" is a personal reflection, not a conclusion the data itself supports. It's kept separate from the objective findings once they exist.",
-      "stack": "Python and Pandas planned for data collection, Tableau Public for a percentile-based scatter plot comparing all five players across the four roles."
-    }
+      "dashboardsTitle": "Dashboards",
+      "dashboardsIntro": "A 3-part interactive dashboard on Tableau Public.",
+      "dashboards": {
+        "rolesDistinct": {
+          "title": "Are the four roles really distinct?",
+          "description": "Role correlation heatmap and an interactive scatter of the weakest pair: chance creator vs. play organizer."
+        },
+        "centralFinding": {
+          "title": "The central finding",
+          "description": "Average role score vs. career minutes, with an interactive minimum-minutes control, and the distribution of how many roles each player reaches at the elite threshold."
+        },
+        "profiles": {
+          "title": "Profiles",
+          "description": "Messi against Phase 6's reference set, against each role's individual top 5, and against an editorially-selected set of historical GOAT candidates."
+        }
+      },
+      "stack": "Python, Pandas, Jupyter Notebook and Matplotlib for the analysis, ScraperFC for SofaScore extraction, Tableau Public for the 3-part dashboard."
+    },
+    "significantYes": "Yes",
+    "significantNo": "No"
   }
 }

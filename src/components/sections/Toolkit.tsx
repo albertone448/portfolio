@@ -15,7 +15,7 @@ export function Toolkit() {
 
         <div className={styles.grid}>
           {toolkitCategories.map((category) => (
-            <div key={category.id} className={styles.category}>
+            <div key={category.id} className={styles.category} data-featured={category.featured}>
               <h3 className={styles.categoryTitle}>{t(`toolkit.categories.${category.id}`)}</h3>
               <ul className={styles.items}>
                 {category.items.map((item) => (

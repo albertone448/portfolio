@@ -2,14 +2,15 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { GithubIcon, LinkedinIcon } from '../common/BrandIcons';
 import { LanguageSwitch } from '../common/LanguageSwitch';
+import { useResumeUrl } from '../../hooks/useResumeUrl';
 import styles from './Header.module.css';
 
 const GITHUB_URL = 'https://github.com/albertone448';
 const LINKEDIN_URL = 'https://linkedin.com/in/albertone448';
-const RESUME_URL = '/resume/Alberto_Nunez_Trejos_Resume.pdf';
 
 export function Header() {
   const { t } = useTranslation();
+  const resumeUrl = useResumeUrl();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -43,7 +44,7 @@ export function Header() {
             <LinkedinIcon size={18} />
           </a>
           <LanguageSwitch />
-          <a href={RESUME_URL} download className={styles.resumeLink}>
+          <a href={resumeUrl} download className={styles.resumeLink}>
             {t('nav.resume')}
           </a>
         </div>
