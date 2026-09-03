@@ -1,11 +1,10 @@
 import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
 import { getProjectBySlug } from '../data/projects';
 import { ProjectHero } from '../components/projects/ProjectHero';
 import { CaseStudySection } from '../components/projects/CaseStudySection';
 import { ArchitectureDiagram } from '../components/media/ArchitectureDiagram';
 import { BulletList } from '../components/projects/BulletList';
-import { Gallery } from '../components/media/Gallery';
+import { Carousel } from '../components/media/Carousel';
 import { ProjectPreviewFrame } from '../components/media/ProjectPreviewFrame';
 import { NextProjectNav } from '../components/projects/NextProjectNav';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
@@ -15,9 +14,6 @@ const project = getProjectBySlug('store-credit')!;
 export function ProjectStoreCredit() {
   const { t } = useTranslation();
 
-  useEffect(() => {
-    window.scrollTo({ top: 0 });
-  }, []);
 
   useDocumentMeta(t('projectDetail.storeCredit.title'), t('projectDetail.storeCredit.description'));
 
@@ -73,11 +69,17 @@ export function ProjectStoreCredit() {
       <CaseStudySection
         eyebrow={t('projectDetail.storeCredit.screenshotsTitle')}
         title={t('projectDetail.storeCredit.screenshotsTitle')}
-        wide
         tone="elevated"
       >
         <p style={{ maxWidth: '62ch', marginBottom: 32 }}>{t('projectDetail.storeCredit.screenshotsIntro')}</p>
-        <Gallery images={project.gallery ?? []} captions={galleryCaptions} accent={project.accent} />
+        <Carousel
+          images={project.gallery ?? []}
+          captions={galleryCaptions}
+          accent={project.accent}
+          prevLabel={t('projectDetail.storeCredit.carouselPrev')}
+          nextLabel={t('projectDetail.storeCredit.carouselNext')}
+          goToLabel={(n) => t('projectDetail.storeCredit.carouselGoTo', { n })}
+        />
       </CaseStudySection>
 
       <CaseStudySection eyebrow={t('projectDetail.storeCredit.outcomeTitle')} title={t('projectDetail.storeCredit.outcomeTitle')}>

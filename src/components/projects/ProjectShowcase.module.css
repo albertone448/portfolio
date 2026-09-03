@@ -1,8 +1,7 @@
 .showcase {
   display: grid;
-  gap: 32px;
-  align-items: center;
-  padding-block: 56px;
+  gap: 20px;
+  padding-block: 40px;
   border-top: 1px solid var(--color-border);
 }
 
@@ -10,16 +9,10 @@
   border-top: none;
 }
 
-.visual {
-  min-height: 260px;
-}
-
-.content {
-  max-width: 480px;
-}
-
 .meta {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   gap: 12px;
 }
@@ -45,8 +38,26 @@
   border-color: color-mix(in srgb, var(--color-success) 40%, transparent);
 }
 
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.stack span {
+  font-family: var(--font-mono);
+  font-size: var(--fs-tiny);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 3px 8px;
+}
+
+.content {
+  max-width: 720px;
+}
+
 .title {
-  margin-top: 14px;
   font-size: var(--fs-project-title);
   font-weight: 650;
   letter-spacing: -0.01em;
@@ -54,22 +65,22 @@
 }
 
 .description {
-  margin-top: 16px;
+  margin-top: 14px;
   color: var(--color-text-secondary);
   line-height: 1.6;
 }
 
 .highlights {
-  margin-top: 20px;
+  margin-top: 18px;
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 10px 24px;
 }
 
 .highlights li {
   font-size: var(--fs-small);
   color: var(--color-text-muted);
-  padding-left: 18px;
+  padding-left: 16px;
   position: relative;
 }
 
@@ -83,24 +94,8 @@
   background: var(--project-accent, var(--color-accent));
 }
 
-.stack {
-  margin-top: 22px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.stack span {
-  font-family: var(--font-mono);
-  font-size: var(--fs-tiny);
-  color: var(--color-text-secondary);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: 4px 10px;
-}
-
 .cta {
-  margin-top: 28px;
+  margin-top: 24px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -115,23 +110,25 @@
   color: var(--project-accent, var(--color-accent));
 }
 
-@media (min-width: 960px) {
+@media (min-width: 860px) {
   .showcase {
-    grid-template-columns: 7fr 5fr;
-    gap: 64px;
-    padding-block: 88px;
+    grid-template-columns: 200px 1fr;
+    gap: 48px;
+    padding-block: 48px;
   }
 
-  .showcase[data-reverse='true'] .visual {
-    order: 2;
+  .meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
   }
 
-  .showcase[data-reverse='true'] .content {
-    order: 1;
-    justify-self: end;
+  .stack {
+    flex-direction: column;
+    gap: 8px;
   }
 
-  .content {
-    justify-self: start;
+  .stack span {
+    width: fit-content;
   }
 }

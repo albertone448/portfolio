@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { GithubIcon, LinkedinIcon } from '../common/BrandIcons';
 import { LanguageSwitch } from '../common/LanguageSwitch';
 import { useResumeUrl } from '../../hooks/useResumeUrl';
@@ -23,17 +24,17 @@ export function Header() {
   return (
     <header className={styles.header} data-scrolled={scrolled}>
       <div className={styles.inner}>
-        <a href="#top" className={styles.wordmark}>
+        <Link to="/" className={styles.wordmark}>
           <span className={styles.wordmarkFull}>Alberto Núñez Trejos</span>
           <span className={styles.wordmarkShort} aria-hidden="true">
             ANT
           </span>
-        </a>
+        </Link>
 
         <nav className={styles.nav} aria-label="Primary">
-          <a href="#work">{t('nav.work')}</a>
-          <a href="#experience">{t('nav.experience')}</a>
-          <a href="#about">{t('nav.about')}</a>
+          <Link to="/#work">{t('nav.work')}</Link>
+          <Link to="/#experience">{t('nav.experience')}</Link>
+          <Link to="/#about">{t('nav.about')}</Link>
         </nav>
 
         <div className={styles.actions}>

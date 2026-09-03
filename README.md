@@ -9,10 +9,11 @@ Repository: https://github.com/albertone448/portfolio
 ## Overview
 
 A single-page, project-forward portfolio built to be read in under a minute
-by a recruiter and in a few minutes by an engineering manager. Three case
-studies carry most of the weight: a production app, a completed data
-analysis project with published Tableau dashboards, and a data analysis
-project that is honestly presented as still in progress. Everything else
+by a recruiter and in a few minutes by an engineering manager. Three
+finished case studies carry most of the weight, alternating data analysis
+and software so the portfolio doesn't read as one track: a completed
+statistical analysis, a production app, and another completed statistical
+analysis. Everything else
 (experience, toolkit, about, contact) supports those three projects rather
 than competing with them for attention.
 
@@ -46,53 +47,73 @@ src/
 │   ├── layout/        Header, Footer
 │   ├── sections/       Home page sections (Hero, SelectedWork, Experience, Toolkit, About, Contact)
 │   ├── projects/       Case-study building blocks (ProjectHero, CaseStudySection,
-│   │                    ProjectShowcase, BulletList, QuoteBlock, RoleGrid, StatusNote,
-│   │                    NextProjectNav, DataVisual)
-│   └── media/          ProjectPreviewFrame, Gallery (with lightbox), TableauShowcase,
-│                        ArchitectureDiagram
+│   │                    ProjectShowcase, BulletList, QuoteBlock, RoleGrid, StatsTable,
+│   │                    NextProjectNav)
+│   └── media/          ProjectBanner, ProjectPreviewFrame, Carousel, DashboardTabs,
+│                        TableauShowcase, ArchitectureDiagram
 ├── pages/              Home, ProjectStoreCredit, ProjectAlwaysBarca, ProjectMessiOutlier, NotFound
 ├── data/               Structural project/experience/toolkit data (no narrative copy)
 ├── i18n/                react-i18next setup + en.json / es.json dictionaries
-├── hooks/               useDocumentMeta (per-page <title>/<meta description>)
+├── hooks/               useDocumentMeta, useResumeUrl, useScrollToHash
 ├── styles/              tokens.css (design tokens), global.css (reset + utilities)
 └── types/               Shared TypeScript types (Project, etc.)
 ```
 
-**Content architecture.** All narrative copy — headlines, descriptions,
-findings, captions, experience bullets — lives in
+**Content architecture.** All narrative copy lives in
 `src/i18n/locales/{en,es}.json`. Structural data (slugs, status, stack,
 dashboard paths, screenshot filenames, real URLs) lives in `src/data/`.
-Components read both and render language-appropriate output; nothing
-user-facing is hardcoded in a single language inside a `.tsx` file.
+Nothing user-facing is hardcoded in a single language inside a `.tsx` file.
 
-**Why the project pages aren't one generic template.** Store Credit is a
-shipped product, so its case study reads like an engineering write-up:
-architecture diagram, feature list, real (privacy-blurred) screenshots,
-deployment notes. Always Barça is a finished analysis, so its case study
-reads like a research write-up: question, scope, data sources, methodology,
-findings, limitations, and the four Tableau dashboards embedded inline.
-Messi is unfinished, so its page is explicit about that — a status banner up
-top, the research outline, and no dashboard, no findings, no invented
-numbers anywhere on the page.
+**Project order.** `data/projects.ts` lists projects in the order they
+render everywhere: Messi: Outlier, Store Credit Management System, Always
+Barça, alternating data analysis / software / data analysis. The
+next-project navigation at the bottom of each case study follows the same
+cycle.
+
+**Case study structure.** Each project page is intentionally compact, not a
+mirror of its GitHub README: a short hero, the core question, a condensed
+methodology, one consolidated findings section (not one section per
+research phase), the dashboards, limitations where relevant, a conclusion,
+stack, and links. The full methodological detail lives in each project's
+own repository, linked from the hero.
+
+**Banners.** `components/media/ProjectBanner.tsx` renders a fixed-height
+(clamp between ~130–220px), full-width, `object-fit: cover` banner so
+Messi's and Always Barça's hero images share one compact visual system
+regardless of their native aspect ratios. Store Credit's hero still uses
+`ProjectPreviewFrame`, which locks to the screenshot's real aspect ratio
+instead, since that image is a UI capture where cropping would lose
+information.
+
+**Store Credit gallery.** `components/media/Carousel.tsx` shows one
+screenshot at a time with previous/next buttons, position indicators, a
+caption, and left/right arrow key support, instead of a stacked list of
+full-size images.
+
+**Dashboards.** `components/media/DashboardTabs.tsx` renders one dashboard
+at a time behind a row of tabs (used by both Always Barça's four
+dashboards and Messi's three), instead of stacking every `TableauShowcase`
+vertically. `TableauShowcase` itself only mounts the `<iframe>` on click,
+inside an `aspect-ratio`-locked container, so there's no horizontal
+overflow and no forced page weight on load.
+
+**Header navigation.** Header links point to `/#work`, `/#experience`,
+`/#about` (always with the leading `/`) so they work from any route, not
+just Home. `hooks/useScrollToHash.ts` watches the router's location and
+scrolls to the target section (or back to top, if there's no hash) once
+the route has rendered, since React Router doesn't do this automatically
+the way a full page load would. `scroll-margin-top` on the section ids
+(see `global.css`) keeps the sticky header from covering the heading.
+
+**Home showcases.** `components/projects/ProjectShowcase.tsx` is a single
+editorial row per project (category, status, stack, title, description,
+highlights, link) with no screenshot or chart, so all three Home entries
+share one visual system instead of mixing a real app screenshot with
+decorative bar charts.
 
 ## Project structure
 
-See the tree above. A few structural decisions worth noting:
-
-- `data/projects.ts` is the single source of truth for each project's slug,
-  status, stack, accent color, GitHub/Tableau URLs, and gallery/dashboard
-  references. The home page and the case study pages both read from it, so a
-  project's status or links only need to be updated in one place.
-- `TableauShowcase` renders each dashboard inside an `aspect-ratio`-locked
-  container and only mounts the `<iframe>` after the person clicks
-  "Open interactive dashboard." This avoids the horizontal-scrollbar problem
-  the previous implementation had (a `min-width: 1180px` iframe), keeps
-  initial page weight down, and always offers a direct link to the
-  dashboard on Tableau Public as a fallback.
-- `Gallery` renders a responsive mosaic (not a fixed-width carousel) and
-  opens a keyboard-accessible lightbox (`Escape`, click-outside, and focus
-  management) on click. Image aspect ratios are read from the real image
-  dimensions, not assumed, so `object-fit` never crops meaningful content.
+See the tree above.
 
 ## Local development
 
@@ -130,8 +151,14 @@ All four were run against this exact codebase before delivery.
 
 ## Project content
 
+- **Messi: Outlier** — completed statistical analysis comparing Messi's
+  World Cup profile against the full population of 5,636 historical
+  outfield players (not a hand-picked comparison set). Content, including
+  the closing personal note about Messi's August 2026 retirement, comes
+  directly from the finished project's own README. The 3-part dashboard
+  links to the real Tableau Public workbook paths.
 - **Store Credit Management System** — production app, in active use.
-  Content sourced from the real CV and the existing app; the five gallery
+  Content sourced from the real CV and the existing app; the five carousel
   screenshots are the real ones supplied, with customer names/phones/photos
   already blurred. Its project accent is the actual purple used by the
   app's own brand ("Minisúper El Puente / Fiado"), sampled directly from a
@@ -142,12 +169,6 @@ All four were run against this exact codebase before delivery.
   summary table are taken directly from the project's own README and
   methodology notes, not paraphrased from memory. The four dashboards link
   to the real Tableau Public workbook paths.
-- **Messi: Outlier** — completed statistical analysis comparing Messi's
-  World Cup profile against the full population of 5,636 historical
-  outfield players (not a hand-picked comparison set). Content, including
-  the closing personal note about Messi's August 2026 retirement, comes
-  directly from the finished project's own README. The 3-part dashboard
-  links to the real Tableau Public workbook paths.
 
 ## Résumé by language
 

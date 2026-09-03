@@ -8,9 +8,11 @@ import { ProjectStoreCredit } from './pages/ProjectStoreCredit';
 import { ProjectAlwaysBarca } from './pages/ProjectAlwaysBarca';
 import { ProjectMessiOutlier } from './pages/ProjectMessiOutlier';
 import { NotFound } from './pages/NotFound';
+import { useScrollToHash } from './hooks/useScrollToHash';
 
 export function App() {
   const { i18n, t } = useTranslation();
+  useScrollToHash();
 
   useEffect(() => {
     document.documentElement.lang = i18n.resolvedLanguage ?? 'en';

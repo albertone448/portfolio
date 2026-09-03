@@ -25,7 +25,7 @@ export function Hero() {
           </ul>
 
           <div className={styles.ctas}>
-            <Button href="#work" icon={<ArrowRight size={16} strokeWidth={2} />}>
+            <Button to="/#work" icon={<ArrowRight size={16} strokeWidth={2} />}>
               {t('hero.ctaWork')}
             </Button>
             <Button
