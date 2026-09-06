@@ -34,7 +34,7 @@ export function ProjectMessiOutlier() {
         description={t('projectDetail.messiOutlier.description')}
         visual={
           <ProjectBanner
-            src="/images/projects/messi-outlier/banner.jpeg"
+            src="/images/projects/messi-outlier/panner.jpg"
             accent={project.accent}
             focalPoint="left 70%"
           />
