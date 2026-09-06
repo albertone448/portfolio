@@ -5,15 +5,16 @@ import { CaseStudySection } from '../components/projects/CaseStudySection';
 import { ArchitectureDiagram } from '../components/media/ArchitectureDiagram';
 import { BulletList } from '../components/projects/BulletList';
 import { Carousel } from '../components/media/Carousel';
-import { ProjectPreviewFrame } from '../components/media/ProjectPreviewFrame';
+import { StoreCreditBannerArt } from '../components/media/StoreCreditBannerArt';
 import { NextProjectNav } from '../components/projects/NextProjectNav';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
+import { sectionStep } from '../utils/caseStudySteps';
 
 const project = getProjectBySlug('store-credit')!;
+const TOTAL_STEPS = 7;
 
 export function ProjectStoreCredit() {
   const { t } = useTranslation();
-
 
   useDocumentMeta(t('projectDetail.storeCredit.title'), t('projectDetail.storeCredit.description'));
 
@@ -28,31 +29,27 @@ export function ProjectStoreCredit() {
         category={t('work.items.storeCredit.category')}
         title={t('projectDetail.storeCredit.title')}
         description={t('projectDetail.storeCredit.description')}
-        visual={
-          <ProjectPreviewFrame accent={project.accent} chrome aspectRatio="16 / 9">
-            <img src="/images/projects/store-credit/02-lista-clientes.jpg" alt="" />
-          </ProjectPreviewFrame>
-        }
+        visual={<StoreCreditBannerArt accent={project.accent} />}
       />
 
-      <CaseStudySection eyebrow={t('projectDetail.storeCredit.overviewTitle')} title={t('projectDetail.storeCredit.overviewTitle')}>
+      <CaseStudySection eyebrow={sectionStep(1, TOTAL_STEPS)} title={t('projectDetail.storeCredit.overviewTitle')}>
         <p>{t('projectDetail.storeCredit.overview')}</p>
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow={t('projectDetail.storeCredit.problemTitle')}
+        eyebrow={sectionStep(2, TOTAL_STEPS)}
         title={t('projectDetail.storeCredit.problemTitle')}
         tone="elevated"
       >
         <p>{t('projectDetail.storeCredit.problem')}</p>
       </CaseStudySection>
 
-      <CaseStudySection eyebrow={t('projectDetail.storeCredit.roleTitle')} title={t('projectDetail.storeCredit.roleTitle')}>
+      <CaseStudySection eyebrow={sectionStep(3, TOTAL_STEPS)} title={t('projectDetail.storeCredit.roleTitle')}>
         <p>{t('projectDetail.storeCredit.role')}</p>
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow={t('projectDetail.storeCredit.architectureTitle')}
+        eyebrow={sectionStep(4, TOTAL_STEPS)}
         title={t('projectDetail.storeCredit.architectureTitle')}
         tone="elevated"
       >
@@ -62,12 +59,12 @@ export function ProjectStoreCredit() {
         </div>
       </CaseStudySection>
 
-      <CaseStudySection eyebrow={t('projectDetail.storeCredit.featuresTitle')} title={t('projectDetail.storeCredit.featuresTitle')}>
+      <CaseStudySection eyebrow={sectionStep(5, TOTAL_STEPS)} title={t('projectDetail.storeCredit.featuresTitle')}>
         <BulletList items={features} accent={project.accent} />
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow={t('projectDetail.storeCredit.screenshotsTitle')}
+        eyebrow={sectionStep(6, TOTAL_STEPS)}
         title={t('projectDetail.storeCredit.screenshotsTitle')}
         tone="elevated"
       >
@@ -82,7 +79,7 @@ export function ProjectStoreCredit() {
         />
       </CaseStudySection>
 
-      <CaseStudySection eyebrow={t('projectDetail.storeCredit.outcomeTitle')} title={t('projectDetail.storeCredit.outcomeTitle')}>
+      <CaseStudySection eyebrow={sectionStep(7, TOTAL_STEPS)} title={t('projectDetail.storeCredit.outcomeTitle')}>
         <p>{t('projectDetail.storeCredit.outcome')}</p>
         <p style={{ marginTop: 24, fontFamily: 'var(--font-mono)', fontSize: 'var(--fs-small)', color: 'var(--color-text-muted)' }}>
           {t('projectDetail.stackLabel')}: {t('projectDetail.storeCredit.stack')}

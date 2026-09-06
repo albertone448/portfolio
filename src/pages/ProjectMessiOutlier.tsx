@@ -9,8 +9,10 @@ import { DashboardTabs } from '../components/media/DashboardTabs';
 import { ProjectBanner } from '../components/media/ProjectBanner';
 import { NextProjectNav } from '../components/projects/NextProjectNav';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
+import { sectionStep } from '../utils/caseStudySteps';
 
 const project = getProjectBySlug('messi-outlier')!;
+const TOTAL_STEPS = 7;
 
 export function ProjectMessiOutlier() {
   const { t } = useTranslation();
@@ -41,8 +43,8 @@ export function ProjectMessiOutlier() {
         }
       />
 
-      <CaseStudySection eyebrow={t('projectDetail.messiOutlier.questionTitle')} title={t('projectDetail.messiOutlier.questionTitle')}>
-        <QuoteBlock label={t('projectDetail.messiOutlier.questionTitle')} accent={project.accent} tone="question">
+      <CaseStudySection eyebrow={sectionStep(1, TOTAL_STEPS)} title={t('projectDetail.messiOutlier.questionTitle')}>
+        <QuoteBlock accent={project.accent} tone="question">
           {t('projectDetail.messiOutlier.question')}
         </QuoteBlock>
         <p style={{ marginTop: 24 }}>
@@ -52,20 +54,20 @@ export function ProjectMessiOutlier() {
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow={t('projectDetail.messiOutlier.approachTitle')}
+        eyebrow={sectionStep(2, TOTAL_STEPS)}
         title={t('projectDetail.messiOutlier.approachTitle')}
         tone="elevated"
       >
         <BulletList items={approach} accent={project.accent} />
       </CaseStudySection>
 
-      <CaseStudySection eyebrow={t('projectDetail.messiOutlier.rolesTitle')} title={t('projectDetail.messiOutlier.rolesTitle')}>
+      <CaseStudySection eyebrow={sectionStep(3, TOTAL_STEPS)} title={t('projectDetail.messiOutlier.rolesTitle')}>
         <p style={{ marginBottom: 24 }}>{t('projectDetail.messiOutlier.rolesIntro')}</p>
         <RoleGrid roles={roleList} accent={project.accent} />
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow={t('projectDetail.messiOutlier.findingsTitle')}
+        eyebrow={sectionStep(4, TOTAL_STEPS)}
         title={t('projectDetail.messiOutlier.findingsTitle')}
         tone="elevated"
       >
@@ -73,7 +75,7 @@ export function ProjectMessiOutlier() {
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow={t('projectDetail.messiOutlier.dashboardsTitle')}
+        eyebrow={sectionStep(5, TOTAL_STEPS)}
         title={t('projectDetail.messiOutlier.dashboardsTitle')}
         wide
       >
@@ -88,7 +90,7 @@ export function ProjectMessiOutlier() {
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow={t('projectDetail.messiOutlier.conclusionTitle')}
+        eyebrow={sectionStep(6, TOTAL_STEPS)}
         title={t('projectDetail.messiOutlier.conclusionTitle')}
         tone="elevated"
       >
@@ -98,8 +100,8 @@ export function ProjectMessiOutlier() {
         </p>
       </CaseStudySection>
 
-      <CaseStudySection eyebrow={t('projectDetail.messiOutlier.closingTitle')} title={t('projectDetail.messiOutlier.closingTitle')}>
-        <QuoteBlock label={t('projectDetail.messiOutlier.closingTitle')} accent={project.accent} tone="note">
+      <CaseStudySection eyebrow={sectionStep(7, TOTAL_STEPS)} title={t('projectDetail.messiOutlier.closingTitle')}>
+        <QuoteBlock accent={project.accent} tone="note">
           {t('projectDetail.messiOutlier.closing')}
         </QuoteBlock>
       </CaseStudySection>

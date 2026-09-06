@@ -1,3 +1,4 @@
+import { BannerFrame } from './BannerFrame';
 import styles from './ProjectBanner.module.css';
 
 interface ProjectBannerProps {
@@ -8,16 +9,15 @@ interface ProjectBannerProps {
 }
 
 /**
- * A short, wide banner used at the top of a case study. Unlike
- * ProjectPreviewFrame (which locks to a screenshot's native ratio so nothing
- * is cropped), this is meant for decorative wide photography: a fixed,
- * modest height keeps every project's hero visual the same scale regardless
- * of the source image's own aspect ratio.
+ * A short, wide banner used at the top of a case study, for projects that
+ * have an actual photograph to lead with. The photo is deliberately cropped
+ * to the shared BannerFrame height rather than shown at its native ratio,
+ * so it reads as decorative context, not evidence to inspect closely.
  */
 export function ProjectBanner({ src, accent, focalPoint = 'center' }: ProjectBannerProps) {
   return (
-    <div className={styles.banner} style={{ '--banner-accent': accent } as React.CSSProperties}>
-      <img src={src} alt="" style={{ objectPosition: focalPoint }} />
-    </div>
+    <BannerFrame accent={accent}>
+      <img className={styles.image} src={src} alt="" style={{ objectPosition: focalPoint }} />
+    </BannerFrame>
   );
 }

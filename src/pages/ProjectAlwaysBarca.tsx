@@ -9,8 +9,10 @@ import { DashboardTabs } from '../components/media/DashboardTabs';
 import { ProjectBanner } from '../components/media/ProjectBanner';
 import { NextProjectNav } from '../components/projects/NextProjectNav';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
+import { sectionStep } from '../utils/caseStudySteps';
 
 const project = getProjectBySlug('always-barca')!;
+const TOTAL_STEPS = 7;
 
 interface SummaryRow {
   label: string;
@@ -41,26 +43,26 @@ export function ProjectAlwaysBarca() {
         visual={<ProjectBanner src="/images/projects/always-barca/banner.png" accent={project.accent} />}
       />
 
-      <CaseStudySection eyebrow={t('projectDetail.alwaysBarca.questionTitle')} title={t('projectDetail.alwaysBarca.questionTitle')}>
-        <QuoteBlock label={t('projectDetail.alwaysBarca.questionTitle')} accent={project.accent} tone="question">
+      <CaseStudySection eyebrow={sectionStep(1, TOTAL_STEPS)} title={t('projectDetail.alwaysBarca.questionTitle')}>
+        <QuoteBlock accent={project.accent} tone="question">
           {t('projectDetail.alwaysBarca.question')}
         </QuoteBlock>
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow={t('projectDetail.alwaysBarca.methodologyTitle')}
+        eyebrow={sectionStep(2, TOTAL_STEPS)}
         title={t('projectDetail.alwaysBarca.methodologyTitle')}
         tone="elevated"
       >
         <p>{t('projectDetail.alwaysBarca.methodology')}</p>
       </CaseStudySection>
 
-      <CaseStudySection eyebrow={t('projectDetail.alwaysBarca.findingsTitle')} title={t('projectDetail.alwaysBarca.findingsTitle')}>
+      <CaseStudySection eyebrow={sectionStep(3, TOTAL_STEPS)} title={t('projectDetail.alwaysBarca.findingsTitle')}>
         <BulletList items={findings} accent={project.accent} />
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow={t('projectDetail.alwaysBarca.dashboardsTitle')}
+        eyebrow={sectionStep(4, TOTAL_STEPS)}
         title={t('projectDetail.alwaysBarca.dashboardsTitle')}
         wide
         tone="elevated"
@@ -76,7 +78,7 @@ export function ProjectAlwaysBarca() {
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow={t('projectDetail.alwaysBarca.summaryTitle')}
+        eyebrow={sectionStep(5, TOTAL_STEPS)}
         title={t('projectDetail.alwaysBarca.summaryTitle')}
       >
         <p style={{ marginBottom: 24 }}>{t('projectDetail.alwaysBarca.summaryIntro')}</p>
@@ -88,22 +90,22 @@ export function ProjectAlwaysBarca() {
           noLabel={t('projectDetail.significantNo')}
         />
         <div style={{ marginTop: 24 }}>
-          <QuoteBlock label={t('projectDetail.alwaysBarca.summaryTitle')} accent={project.accent} tone="finding">
+          <QuoteBlock accent={project.accent} tone="finding">
             {t('projectDetail.alwaysBarca.conclusion')}
           </QuoteBlock>
         </div>
       </CaseStudySection>
 
       <CaseStudySection
-        eyebrow={t('projectDetail.alwaysBarca.limitationsTitle')}
+        eyebrow={sectionStep(6, TOTAL_STEPS)}
         title={t('projectDetail.alwaysBarca.limitationsTitle')}
         tone="elevated"
       >
         <p>{t('projectDetail.alwaysBarca.limitations')}</p>
       </CaseStudySection>
 
-      <CaseStudySection eyebrow={t('projectDetail.alwaysBarca.personalNoteTitle')} title={t('projectDetail.alwaysBarca.personalNoteTitle')}>
-        <QuoteBlock label={t('projectDetail.alwaysBarca.personalNoteTitle')} accent={project.accent} tone="note">
+      <CaseStudySection eyebrow={sectionStep(7, TOTAL_STEPS)} title={t('projectDetail.alwaysBarca.personalNoteTitle')}>
+        <QuoteBlock accent={project.accent} tone="note">
           {t('projectDetail.alwaysBarca.personalNote')}
         </QuoteBlock>
         <p style={{ marginTop: 24, fontFamily: 'var(--font-mono)', fontSize: 'var(--fs-small)', color: 'var(--color-text-muted)' }}>
