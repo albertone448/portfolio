@@ -42,3 +42,47 @@
   font-size: var(--fs-small);
   color: var(--color-text-secondary);
 }
+
+.badge {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-tiny);
+  padding: 2px 10px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--diagram-accent, var(--color-accent)) 45%, transparent);
+  color: var(--diagram-accent, var(--color-accent));
+}
+
+/* Planned steps read as outlines: dimmer label and a dashed badge, so the
+   diagram shows the target architecture without implying it already exists. */
+.step[data-status='pending'] .label {
+  color: var(--color-text-muted);
+}
+
+.step[data-status='pending'] .index {
+  opacity: 0.6;
+}
+
+.step[data-status='pending'] .badge {
+  border-style: dashed;
+  border-color: var(--color-border-hover);
+  color: var(--color-text-muted);
+}
+
+/* On narrow screens the badge drops under its label instead of squeezing it,
+   keeping the index column aligned. Only steps with a status are affected. */
+@media (max-width: 480px) {
+  .step[data-status] {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 16px;
+    row-gap: 8px;
+  }
+
+  .step[data-status] .badge {
+    grid-column: 2;
+    justify-self: start;
+    margin-left: 0;
+  }
+}

@@ -7,6 +7,7 @@ import { Home } from './pages/Home';
 import { ProjectStoreCredit } from './pages/ProjectStoreCredit';
 import { ProjectAlwaysBarca } from './pages/ProjectAlwaysBarca';
 import { ProjectMessiOutlier } from './pages/ProjectMessiOutlier';
+import { ProjectBatazo } from './pages/ProjectBatazo';
 import { NotFound } from './pages/NotFound';
 import { useScrollToHash } from './hooks/useScrollToHash';
 
@@ -30,6 +31,7 @@ export function App() {
           <Route path="/projects/store-credit" element={<ProjectStoreCredit />} />
           <Route path="/projects/always-barca" element={<ProjectAlwaysBarca />} />
           <Route path="/projects/messi-outlier" element={<ProjectMessiOutlier />} />
+          <Route path="/projects/batazo" element={<ProjectBatazo />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

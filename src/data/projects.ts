@@ -6,7 +6,8 @@ import type { Project } from '../types/project';
  * so the same project can be fully bilingual without duplicating components.
  *
  * Order here is intentional and mirrors the Home page and the next-project
- * navigation cycle: data analysis, software, data analysis.
+ * navigation cycle: data analysis, software, data analysis, software. The
+ * one project still in progress goes last so finished work is read first.
  */
 export const projects: Project[] = [
   {
@@ -57,6 +58,19 @@ export const projects: Project[] = [
       { path: 'AlwaysBara/Fase3Valordeplantilla', titleKey: 'squadValue' },
       { path: 'AlwaysBara/Dashboard4', titleKey: 'conclusions' },
     ],
+  },
+  {
+    slug: 'batazo',
+    category: 'software',
+    status: 'in-progress',
+    year: '2026',
+    stack: ['.NET 10', 'ASP.NET Core', 'PostgreSQL', 'React', 'TypeScript'],
+    accent: 'var(--accent-batazo)',
+    githubUrl: 'https://github.com/albertone448/batazo',
+    // The Render deploy only serves a placeholder page until the pool features
+    // land, so it stays unlinked rather than sending visitors to a test screen.
+    liveUrl: null,
+    docsUrl: 'https://github.com/albertone448/batazo/blob/main/docs/decisiones-tecnicas.md',
   },
 ];
 

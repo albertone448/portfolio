@@ -114,9 +114,9 @@ export function ProjectAlwaysBarca() {
       </CaseStudySection>
 
       <NextProjectNav
-        slug="messi-outlier"
-        title={t('work.items.messiOutlier.title')}
-        accent="var(--accent-messi)"
+        slug="batazo"
+        title={t('work.items.batazo.title')}
+        accent="var(--accent-batazo)"
       />
     </article>
   );

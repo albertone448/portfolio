@@ -43,8 +43,8 @@
   },
   "work": {
     "eyebrow": "Proyectos destacados",
-    "title": "Tres proyectos, un mismo patrón de trabajo",
-    "intro": "Dos análisis estadísticos con dashboards publicados en Tableau, y un sistema en producción construido para un negocio real. Cada uno se presenta como realmente luce su evidencia.",
+    "title": "Cuatro proyectos, un mismo patrón de trabajo",
+    "intro": "Dos análisis estadísticos con dashboards publicados en Tableau, un sistema en producción construido para un negocio real y una app web en .NET que estoy desarrollando ahora. Cada uno se presenta como realmente luce su evidencia.",
     "viewCaseStudy": "Ver caso de estudio",
     "status": {
       "production": "En producción",
@@ -92,6 +92,16 @@
           "Élite en 3 de 4 roles: 8 jugadores",
           "Mayor percentil promedio: Messi",
           "Piso de 270 minutos, probado hasta 1500"
+        ]
+      },
+      "batazo": {
+        "category": "Software",
+        "title": "Batazo: quinielas de fútbol entre amigos",
+        "description": "App web de quinielas privadas para grupos de amigos, con ligas internacionales y la Primera División de Costa Rica en un mismo lugar. Proyecto en curso para retomar desarrollo backend con .NET.",
+        "highlights": [
+          "Desplegado con CI obligatoria",
+          "Errores de API estandarizados",
+          "Decisiones técnicas documentadas"
         ]
       }
     }
@@ -170,6 +180,7 @@
     "back": "Volver a proyectos",
     "repoLink": "Ver repositorio",
     "liveLink": "Abrir dashboard interactivo",
+    "docsLink": "Ver registro de decisiones",
     "yearLabel": "Año",
     "statusLabel": "Estado",
     "stackLabel": "Stack",
@@ -350,6 +361,90 @@
         "FBref y Kaggle se consideraron como fuentes complementarias pero finalmente no hicieron falta."
       ],
       "stack": "Python, Pandas, Jupyter Notebook y Matplotlib para el análisis, ScraperFC para la extracción de SofaScore, Tableau Public para el dashboard de 3 partes."
+    },
+    "batazo": {
+      "title": "Batazo: quinielas de fútbol entre amigos",
+      "description": "Batazo es una app web de quinielas de fútbol para grupos de amigos. La estoy construyendo con .NET 10 y React, por fases y documentando cada decisión.",
+      "statusNote": "Este proyecto está en desarrollo activo. Hoy está lista la base técnica y el despliegue; las funciones de quinielas llegan en la siguiente fase y esta página se actualiza conforme avanzo.",
+      "overviewTitle": "Contexto",
+      "overview": "Con mi grupo de amigos hacemos quinielas, y las apps que usábamos no traen la Primera División de Costa Rica. Las pocas que sí la tienen no nos convencían, así que terminábamos repartidos entre varias apps según la liga. La idea de Batazo es tener todo en un solo lugar: ligas grandes con resultados automáticos, la liga local y quinielas libres armadas por el propio grupo, con resultados ingresados a mano.",
+      "nameTitle": "Sobre el nombre",
+      "name": "Viene de \"batear\", una expresión costarricense que significa dar algo por hecho sin saberlo, tirarse un triple. Es justo lo que se hace en una quiniela.",
+      "problemTitle": "El problema",
+      "problem": "Un grupo pequeño necesita una quiniela privada donde cada quien prediga el marcador antes de que empiece el partido, nadie pueda cambiarlo después ni ver las predicciones de los demás antes de tiempo, y la tabla se calcule sola. Además tiene que funcionar con competiciones que ninguna API cubre, como la liga costarricense o un torneo armado entre amigos. Solo lleva puntos: no maneja dinero ni apuestas.",
+      "roleTitle": "Mi rol y forma de trabajo",
+      "role": "Es un proyecto personal que hago solo. El objetivo principal es retomar el desarrollo backend con C# y .NET y tener en el portafolio un sistema real con API propia, base de datos relacional, autenticación, integración con un servicio externo, pruebas y despliegue continuo. Uso la IA como tutor y revisor, no como autor: escribo el código yo, voy por pasos pequeños, pruebo cada uno antes de seguir y no hago commit de nada que no pueda explicar. Trabajo con un tablero Kanban en Jira, una rama y un pull request por tarea, y un registro de decisiones técnicas dentro del repositorio.",
+      "architectureTitle": "Arquitectura",
+      "architectureIntro": "Es un monolito en capas desplegado como una sola aplicación. ASP.NET Core sirve la API bajo /api y también el build de React, así que todo vive en el mismo dominio: no hace falta CORS y las cookies de sesión funcionan sin complicaciones. La solución tiene un proyecto de dominio (reglas de negocio, sin dependencias de base de datos ni de servicios externos), uno de infraestructura (EF Core) y uno de API. Como el plan gratuito de Render duerme el servidor sin tráfico, la sincronización de resultados no va a correr en segundo plano: un workflow programado de GitHub Actions va a llamar a un endpoint interno que la ejecuta.",
+      "architectureSteps": [
+        {
+          "label": "Navegador con React, servido por ASP.NET Core",
+          "status": "done"
+        },
+        {
+          "label": "API de ASP.NET Core en /api (por ahora, solo un endpoint de prueba)",
+          "status": "done"
+        },
+        {
+          "label": "Dominio: puntaje y cierre de predicciones",
+          "status": "pending"
+        },
+        {
+          "label": "EF Core y PostgreSQL en Neon",
+          "status": "done"
+        },
+        {
+          "label": "GitHub Actions programado llama al endpoint interno de sincronización",
+          "status": "pending"
+        },
+        {
+          "label": "football-data.org",
+          "status": "pending"
+        }
+      ],
+      "architectureStatus": {
+        "done": "Listo",
+        "pending": "Pendiente"
+      },
+      "decisionsTitle": "Reglas de negocio y decisiones técnicas",
+      "decisions": [
+        "Puntos 5, 3, 1 y 0: marcador exacto, ganador con diferencia de goles, solo el resultado, o fallo. Predecir 1-1 cuando termina 0-0 da 3, porque acierta el empate y la diferencia. Todas las apps que revisé usan tres niveles, y este esquema es simple de explicar al grupo.",
+        "Las predicciones se cierran a la hora de inicio y se valida en el servidor, nunca solo en el navegador. Si un partido ya empezó, sus predicciones no se reabren aunque se reprograme.",
+        "Las predicciones de los demás se ven cuando el partido termina. Así nadie copia ni ajusta su pronóstico mirando el de otros durante el partido.",
+        "En eliminatorias cuenta el marcador a los 90 minutos. football-data.org mezcla los penales en el marcador final (un 1-1 que se define 6-5 aparece como 7-6), así que hay que leer el campo del tiempo regular.",
+        "Una sola API (football-data.org, empezando por LaLiga) y todo lo demás manual, incluida la liga de Costa Rica. La API que sí la cubre limita su plan gratuito a temporadas viejas, y una integración bien hecha demuestra lo mismo que dos. Cada fuente va detrás de una interfaz, así que se puede agregar otra sin tocar el resto.",
+        "Login con ASP.NET Core Identity y cookie HttpOnly, sin tokens propios. El restablecimiento de contraseña usa el token de Identity enviado por correo y responde lo mismo exista o no la cuenta, para no revelar qué correos están registrados.",
+        "Todos los errores de la API usan ProblemDetails (RFC 9457) con un identificador de traza, y los mensajes de validación vienen en español desde el backend. El frontend interpreta un solo formato de error, y un error que ve un usuario se puede encontrar en los logs."
+      ],
+      "progressTitle": "Estado actual",
+      "doneTitle": "Ya funciona",
+      "done": [
+        "Solución .NET 10 en capas, con versiones de paquetes centralizadas y advertencias tratadas como errores.",
+        "PostgreSQL con EF Core, migraciones aplicadas al arrancar y nombres en snake_case.",
+        "Contrato de errores con ProblemDetails, validación de entrada con mensajes en español y health check en /health.",
+        "Logs en JSON en producción y configuración validada al arrancar.",
+        "Reloj inyectable (TimeProvider), con un analizador que prohíbe leer la hora del sistema directamente.",
+        "Imagen Docker multietapa que corre sin root.",
+        "CI en GitHub Actions (backend y frontend) obligatoria para integrar en main, y despliegue automático en Render con la base en Neon solo cuando la CI pasa.",
+        "Frontend con React y TypeScript estricto, un cliente HTTP tipado que interpreta los errores de la API y TanStack Query configurado."
+      ],
+      "nextTitle": "Siguiente",
+      "next": [
+        "Terminar la base del frontend: rutas públicas y protegidas, y componentes de carga, error y vacío.",
+        "Identidad visual de la interfaz.",
+        "Cuentas: registro, login y restablecimiento de contraseña por correo.",
+        "Equipos, competiciones, jornadas y partidos con carga manual.",
+        "Quinielas con invitación por código.",
+        "Predicciones con cierre, resultados con bitácora, puntaje y tabla general, con pruebas unitarias de cada regla.",
+        "Después: pruebas de integración, importación por CSV y escudos, y resultados automáticos con football-data.org."
+      ],
+      "lessonsTitle": "Retos y aprendizajes",
+      "lessons": [
+        "Validación en .NET: con un record posicional, los atributos de validación quedan en el parámetro del constructor y las claves de error salían con el nombre de C# (\"Message\") en vez del nombre del JSON (\"message\"). Cambié los DTO de entrada a records con propiedades init para que el frontend pudiera marcar el campo correcto. También descarté el modificador required de C#, porque el error llegaba como fallo de formato y sin el mensaje en español.",
+        "La CI fallaba en \"dotnet format\" por las migraciones que genera EF Core. Lo resolví marcándolas como código generado en vez de reformatearlas a mano cada vez.",
+        "Dos veces terminé haciendo commit en main por no crear la rama antes. Lo arreglé moviendo los commits a una rama y agregué un paso fijo para confirmar la rama actual antes de empezar cada tarea. Además, main está protegida: solo cambia por pull request con la CI en verde."
+      ],
+      "stack": "C# con .NET 10, ASP.NET Core Web API, Entity Framework Core con Npgsql, PostgreSQL (Docker en local, Neon en producción), React con TypeScript y Vite, TanStack Query, Docker, GitHub Actions y Render."
     },
     "significantYes": "Sí",
     "significantNo": "No"

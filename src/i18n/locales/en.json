@@ -43,8 +43,8 @@
   },
   "work": {
     "eyebrow": "Selected work",
-    "title": "Three projects, one working pattern",
-    "intro": "Two statistical analyses with published Tableau dashboards, and a production system built for a real business. Each one is presented the way its evidence actually looks.",
+    "title": "Four projects, one working pattern",
+    "intro": "Two statistical analyses with published Tableau dashboards, a production system built for a real business, and a .NET web app I'm building right now. Each one is presented the way its evidence actually looks.",
     "viewCaseStudy": "View case study",
     "status": {
       "production": "In production",
@@ -92,6 +92,16 @@
           "Elite status in 3 of 4 roles: 8 players",
           "Highest avg. role percentile: Messi",
           "270-minute floor, tested to 1500"
+        ]
+      },
+      "batazo": {
+        "category": "Software",
+        "title": "Batazo: football prediction pools for friends",
+        "description": "A web app for private football prediction pools among friends, with international leagues and Costa Rica's top division in one place. An ongoing project to get back into backend development with .NET.",
+        "highlights": [
+          "Deployed behind required CI checks",
+          "Standardized API error responses",
+          "Documented technical decisions"
         ]
       }
     }
@@ -170,6 +180,7 @@
     "back": "Back to work",
     "repoLink": "View repository",
     "liveLink": "Open interactive dashboard",
+    "docsLink": "View decision log",
     "yearLabel": "Year",
     "statusLabel": "Status",
     "stackLabel": "Stack",
@@ -350,6 +361,90 @@
         "FBref and Kaggle were considered as complementary sources but weren't ultimately needed."
       ],
       "stack": "Python, Pandas, Jupyter Notebook and Matplotlib for the analysis, ScraperFC for SofaScore extraction, Tableau Public for the 3-part dashboard."
+    },
+    "batazo": {
+      "title": "Batazo: football prediction pools for friends",
+      "description": "Batazo is a football prediction pool web app for groups of friends. I'm building it with .NET 10 and React, in phases, documenting every decision along the way.",
+      "statusNote": "This project is under active development. The technical foundation and deployment are done; the pool features come in the next phase, and I'll keep this page updated as I go.",
+      "overviewTitle": "Overview",
+      "overview": "My friends and I run prediction pools, and the apps we were using don't cover Costa Rica's Primera División. The few that do weren't good enough for us, so we ended up spread across several apps depending on the league. Batazo puts everything in one place: major leagues with automatic results, the local league, and custom pools the group sets up itself with results entered by hand.",
+      "nameTitle": "About the name",
+      "name": "It comes from \"batear\", Costa Rican slang for stating something as fact without actually knowing it, basically taking a wild guess. Which is exactly what you do when you predict a match.",
+      "problemTitle": "The problem",
+      "problem": "A small group needs a private pool where everyone predicts the score before kickoff, nobody can change it afterwards or peek at other people's picks too early, and the standings update on their own. It also has to work with competitions no API covers, like the Costa Rican league or a tournament the friends made up. It only tracks points: no money, no betting.",
+      "roleTitle": "My role and how I work",
+      "role": "It's a personal project I'm building on my own. The main goal is to get back into backend development with C# and .NET, and to have a real system in my portfolio: its own API, a relational database, authentication, an external service integration, tests, and continuous deployment. I use AI as a tutor and reviewer, not as the author: I write the code myself, work in small steps, test each one before moving on, and don't commit anything I can't explain. I track work on a Jira Kanban board, with one branch and one pull request per task, and keep a technical decision log in the repo.",
+      "architectureTitle": "Architecture",
+      "architectureIntro": "It's a layered monolith deployed as a single app. ASP.NET Core serves the API under /api and the React build too, so everything lives on the same domain: no CORS setup, and session cookies just work. The solution has a domain project (business rules, no dependency on the database or external services), an infrastructure project (EF Core), and an API project. Since Render's free tier puts the server to sleep without traffic, result syncing won't run in the background: a scheduled GitHub Actions workflow will call an internal endpoint that runs it.",
+      "architectureSteps": [
+        {
+          "label": "Browser running React, served by ASP.NET Core",
+          "status": "done"
+        },
+        {
+          "label": "ASP.NET Core API under /api (only a test endpoint for now)",
+          "status": "done"
+        },
+        {
+          "label": "Domain: scoring and prediction cutoff",
+          "status": "pending"
+        },
+        {
+          "label": "EF Core and PostgreSQL on Neon",
+          "status": "done"
+        },
+        {
+          "label": "Scheduled GitHub Actions calls the internal sync endpoint",
+          "status": "pending"
+        },
+        {
+          "label": "football-data.org",
+          "status": "pending"
+        }
+      ],
+      "architectureStatus": {
+        "done": "Done",
+        "pending": "Planned"
+      },
+      "decisionsTitle": "Business rules and technical decisions",
+      "decisions": [
+        "5, 3, 1, 0 scoring: exact score, correct winner and goal difference, correct outcome only, or a miss. Predicting 1-1 when it ends 0-0 earns 3, since you got both the draw and the goal difference. Every app I looked at uses three tiers, and this one is easy to explain to the group.",
+        "Predictions lock at kickoff, enforced on the server, never just in the browser. Once a match has started, its predictions never reopen, even if it gets rescheduled.",
+        "Other people's predictions show up once the match is over. That way nobody copies or tweaks their pick based on someone else's during the game.",
+        "In knockout matches, the 90-minute score counts. football-data.org folds penalties into the final score (a 1-1 decided 6-5 on penalties shows up as 7-6), so the provider has to read the regular-time field.",
+        "One API (football-data.org, starting with LaLiga) and everything else entered manually, including the Costa Rican league. The API that does cover it limits its free tier to old seasons, and one well-built integration shows the same skills as two. Each source sits behind an interface, so another one can be added without touching the rest.",
+        "Login through ASP.NET Core Identity with an HttpOnly cookie, no custom tokens. Password reset uses Identity's token sent by email, and responds the same way whether or not the account exists, so it doesn't leak which emails are registered.",
+        "Every API error uses ProblemDetails (RFC 9457) with a trace ID, and validation messages come in Spanish straight from the backend. The frontend only has to handle one error format, and an error a user sees can be traced in the logs."
+      ],
+      "progressTitle": "Current status",
+      "doneTitle": "Working now",
+      "done": [
+        "Layered .NET 10 solution with centralized package versions and warnings treated as errors.",
+        "PostgreSQL with EF Core, migrations applied on startup, snake_case naming.",
+        "ProblemDetails error contract, input validation with Spanish messages, and a /health check.",
+        "JSON logs in production and configuration validated at startup.",
+        "Injectable clock (TimeProvider), with an analyzer that bans reading the system time directly.",
+        "Multi-stage Docker image running as non-root.",
+        "GitHub Actions CI (backend and frontend) required to merge into main, and automatic deployment to Render with the database on Neon, only when CI passes.",
+        "React frontend with strict TypeScript, a typed HTTP client that understands the API's errors, and TanStack Query set up."
+      ],
+      "nextTitle": "Next",
+      "next": [
+        "Finish the frontend foundation: public and protected routes, plus loading, error, and empty state components.",
+        "UI visual identity.",
+        "Accounts: sign-up, login, and password reset by email.",
+        "Teams, competitions, matchdays, and matches entered manually.",
+        "Pools with invite codes.",
+        "Predictions with cutoff, results with an audit log, scoring, and overall standings, with unit tests for each rule.",
+        "After that: integration tests, CSV import and team crests, and automatic results from football-data.org."
+      ],
+      "lessonsTitle": "Challenges and lessons",
+      "lessons": [
+        "Validation in .NET: with a positional record, validation attributes end up on the constructor parameter, and error keys came out with the C# name (\"Message\") instead of the JSON name (\"message\"). I switched input DTOs to records with init properties so the frontend could highlight the right field. I also dropped C#'s required modifier, because the error surfaced as a parsing failure without the Spanish message.",
+        "CI kept failing on \"dotnet format\" because of the migrations EF Core generates. I fixed it by marking them as generated code instead of reformatting them by hand every time.",
+        "Twice I ended up committing straight to main because I hadn't created the branch first. I moved the commits to a branch and added a fixed step to check the current branch before starting each task. main is also protected now: it only changes through a pull request with green CI."
+      ],
+      "stack": "C# with .NET 10, ASP.NET Core Web API, Entity Framework Core with Npgsql, PostgreSQL (Docker locally, Neon in production), React with TypeScript and Vite, TanStack Query, Docker, GitHub Actions, and Render."
     },
     "significantYes": "Yes",
     "significantNo": "No"

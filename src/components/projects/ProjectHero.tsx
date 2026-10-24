@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ExternalLink, FileText } from 'lucide-react';
 import { GithubIcon } from '../common/BrandIcons';
 import type { Project } from '../../types/project';
 import styles from './ProjectHero.module.css';
@@ -57,6 +57,12 @@ export function ProjectHero({ project, category, title, description, visual }: P
                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className={styles.link}>
                   <ExternalLink size={16} strokeWidth={1.75} />
                   {t('projectDetail.liveLink')}
+                </a>
+              )}
+              {project.docsUrl && (
+                <a href={project.docsUrl} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                  <FileText size={16} strokeWidth={1.75} />
+                  {t('projectDetail.docsLink')}
                 </a>
               )}
             </div>

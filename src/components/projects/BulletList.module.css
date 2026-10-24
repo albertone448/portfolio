@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
+  /* Markers are drawn with ::before (dots or a counter), so the native ones go. */
+  list-style: none;
 }
 
 .list li {

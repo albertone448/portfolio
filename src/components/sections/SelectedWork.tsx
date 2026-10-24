@@ -3,12 +3,11 @@ import { projects } from '../../data/projects';
 import { ProjectShowcase } from '../projects/ProjectShowcase';
 import styles from './SelectedWork.module.css';
 
+/** Project slugs are kebab-case; their i18n blocks use camelCase keys. */
+const toCopyKey = (slug: string) => slug.replace(/-(\w)/g, (_, letter: string) => letter.toUpperCase());
+
 export function SelectedWork() {
   const { t } = useTranslation();
-
-  const messiOutlier = projects.find((p) => p.slug === 'messi-outlier')!;
-  const storeCredit = projects.find((p) => p.slug === 'store-credit')!;
-  const alwaysBarca = projects.find((p) => p.slug === 'always-barca')!;
 
   return (
     <section id="work" className={styles.section}>
@@ -20,29 +19,20 @@ export function SelectedWork() {
         </header>
 
         <div className={styles.list}>
-          <ProjectShowcase
-            project={messiOutlier}
-            title={t('work.items.messiOutlier.title')}
-            category={t('work.items.messiOutlier.category')}
-            description={t('work.items.messiOutlier.description')}
-            highlights={t('work.items.messiOutlier.highlights', { returnObjects: true }) as string[]}
-          />
+          {projects.map((project) => {
+            const key = `work.items.${toCopyKey(project.slug)}`;
 
-          <ProjectShowcase
-            project={storeCredit}
-            title={t('work.items.storeCredit.title')}
-            category={t('work.items.storeCredit.category')}
-            description={t('work.items.storeCredit.description')}
-            highlights={t('work.items.storeCredit.highlights', { returnObjects: true }) as string[]}
-          />
-
-          <ProjectShowcase
-            project={alwaysBarca}
-            title={t('work.items.alwaysBarca.title')}
-            category={t('work.items.alwaysBarca.category')}
-            description={t('work.items.alwaysBarca.description')}
-            highlights={t('work.items.alwaysBarca.highlights', { returnObjects: true }) as string[]}
-          />
+            return (
+              <ProjectShowcase
+                key={project.slug}
+                project={project}
+                title={t(`${key}.title`)}
+                category={t(`${key}.category`)}
+                description={t(`${key}.description`)}
+                highlights={t(`${key}.highlights`, { returnObjects: true }) as string[]}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

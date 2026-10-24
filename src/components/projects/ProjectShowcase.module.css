@@ -38,6 +38,11 @@
   border-color: color-mix(in srgb, var(--color-success) 40%, transparent);
 }
 
+.status[data-status='in-progress'] {
+  color: var(--color-in-progress);
+  border-color: color-mix(in srgb, var(--color-in-progress) 40%, transparent);
+}
+
 .stack {
   display: flex;
   flex-wrap: wrap;

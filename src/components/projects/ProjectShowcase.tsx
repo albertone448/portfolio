@@ -13,9 +13,9 @@ interface ProjectShowcaseProps {
 }
 
 /**
- * A compact, editorial row: no screenshot or chart, so all three Home
- * showcases (a real app, two data projects) share one visual system instead
- * of mixing a real UI capture with decorative bar charts.
+ * A compact, editorial row: no screenshot or chart, so every Home showcase
+ * (two apps, two data projects) shares one visual system instead of mixing
+ * a real UI capture with decorative bar charts.
  */
 export function ProjectShowcase({ project, title, category, description, highlights }: ProjectShowcaseProps) {
   const { t } = useTranslation();

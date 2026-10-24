@@ -18,7 +18,7 @@ export const toolkitCategories: ToolkitCategory[] = [
   },
   {
     id: 'databases',
-    items: ['SQL Server', 'MySQL', 'Firebase Realtime Database'],
+    items: ['SQL Server', 'PostgreSQL', 'MySQL', 'Firebase Realtime Database'],
   },
   {
     id: 'testingQuality',
@@ -26,6 +26,6 @@ export const toolkitCategories: ToolkitCategory[] = [
   },
   {
     id: 'workflow',
-    items: ['Git', 'GitHub', 'Bitbucket', 'Jira', 'Agile / Scrum'],
+    items: ['Git', 'GitHub', 'GitHub Actions', 'Docker', 'Bitbucket', 'Jira', 'Agile / Scrum'],
   },
 ];

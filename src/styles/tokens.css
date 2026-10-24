@@ -22,11 +22,13 @@
 
   /* Feedback */
   --color-success: #5fd0a3;
+  --color-in-progress: #e3b04b;
 
   /* Project accents (used only inside their own case study) */
   --accent-store-credit: #6b3fa0;
   --accent-always-barca: #a3123c;
   --accent-messi: #6cb4ee;
+  --accent-batazo: #3fae6d;
 
   /* Typography */
   --font-sans: 'Inter', 'Manrope', system-ui, -apple-system, sans-serif;

@@ -25,6 +25,8 @@ export interface ProjectSummary {
   heroImage?: string;
   githubUrl: string | null;
   liveUrl?: string | null;
+  /** Optional link to written project documentation, such as a decision log. */
+  docsUrl?: string;
 }
 
 export interface Project extends ProjectSummary {

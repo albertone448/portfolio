@@ -9,13 +9,14 @@ Repository: https://github.com/albertone448/portfolio
 ## Overview
 
 A single-page, project-forward portfolio built to be read in under a minute
-by a recruiter and in a few minutes by an engineering manager. Three
-finished case studies carry most of the weight, alternating data analysis
-and software so the portfolio doesn't read as one track: a completed
-statistical analysis, a production app, and another completed statistical
-analysis. Everything else
-(experience, toolkit, about, contact) supports those three projects rather
-than competing with them for attention.
+by a recruiter and in a few minutes by an engineering manager. Four
+case studies carry most of the weight, alternating data analysis and
+software so the portfolio doesn't read as one track: a completed
+statistical analysis, a production app, another completed statistical
+analysis, and a .NET web app still in development (Batazo), placed last so
+finished work is read first. Everything else (experience, toolkit, about,
+contact) supports those projects rather than competing with them for
+attention.
 
 Design direction: dark, editorial, restrained. One accent color for the
 site, with each project allowed its own accent strictly inside its own case
@@ -26,7 +27,7 @@ effects, no typewriter animations.
 
 - **React 19** + **TypeScript**, built with **Vite**
 - **React Router** (`react-router-dom`) for client-side routing across the
-  home page and the three project case studies
+  home page and the four project case studies
 - **react-i18next** + `i18next-browser-languagedetector` for the ES/EN
   bilingual system, with language persisted to `localStorage`
 - **lucide-react** for generic icons; GitHub/LinkedIn are hand-drawn SVGs
@@ -48,10 +49,10 @@ src/
 │   ├── sections/       Home page sections (Hero, SelectedWork, Experience, Toolkit, About, Contact)
 │   ├── projects/       Case-study building blocks (ProjectHero, CaseStudySection,
 │   │                    ProjectShowcase, BulletList, QuoteBlock, RoleGrid, StatsTable,
-│   │                    NextProjectNav)
+│   │                    NextProjectNav, StatusNote, ProgressBoard)
 │   └── media/          ProjectBanner, ProjectPreviewFrame, Carousel, DashboardTabs,
-│                        TableauShowcase, ArchitectureDiagram
-├── pages/              Home, ProjectStoreCredit, ProjectAlwaysBarca, ProjectMessiOutlier, NotFound
+│                        TableauShowcase, ArchitectureDiagram, BatazoBannerArt
+├── pages/              Home, ProjectStoreCredit, ProjectAlwaysBarca, ProjectMessiOutlier, ProjectBatazo, NotFound
 ├── data/               Structural project/experience/toolkit data (no narrative copy)
 ├── i18n/                react-i18next setup + en.json / es.json dictionaries
 ├── hooks/               useDocumentMeta, useResumeUrl, useScrollToHash
@@ -107,9 +108,16 @@ the way a full page load would. `scroll-margin-top` on the section ids
 
 **Home showcases.** `components/projects/ProjectShowcase.tsx` is a single
 editorial row per project (category, status, stack, title, description,
-highlights, link) with no screenshot or chart, so all three Home entries
-share one visual system instead of mixing a real app screenshot with
-decorative bar charts.
+highlights, link) with no screenshot or chart, so every Home entry shares
+one visual system instead of mixing a real app screenshot with decorative
+bar charts. `SelectedWork` maps over `data/projects.ts`, so adding a project
+only needs its data entry and its copy under `work.items.<camelCaseSlug>`.
+
+**Projects in progress.** A project with `status: 'in-progress'` opens its
+case study with `StatusNote`, marks unbuilt steps in `ArchitectureDiagram`
+as planned, and replaces the outcome and screenshots sections with
+`ProgressBoard` (what works today next to the build order). Nothing on the
+page should describe a feature that doesn't exist yet as if it did.
 
 ## Project structure
 
