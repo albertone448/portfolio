@@ -1,41 +1,48 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, BarChart3 } from 'lucide-react';
+import { GithubIcon } from '../common/BrandIcons';
 import type { Project } from '../../types/project';
 import styles from './ProjectShowcase.module.css';
 
 interface ProjectShowcaseProps {
   project: Project;
   title: string;
-  category: string;
+  /** Who the project was for, so personal work never reads as employment. */
+  context: string;
   description: string;
   highlights: string[];
 }
 
 /**
  * A compact, editorial row: no screenshot or chart, so every Home showcase
- * (two apps, two data projects) shares one visual system instead of mixing
- * a real UI capture with decorative bar charts.
+ * shares one visual system. Code and dashboard links sit on the row itself,
+ * so a reviewer who only wants the evidence doesn't have to open the case
+ * study first. Data projects link their dashboard; app links stay inside
+ * the case study, where their caveats are explained.
  */
-export function ProjectShowcase({ project, title, category, description, highlights }: ProjectShowcaseProps) {
+export function ProjectShowcase({ project, title, context, description, highlights }: ProjectShowcaseProps) {
   const { t } = useTranslation();
+  const dashboardUrl = project.category === 'data' ? project.liveUrl : null;
 
   return (
     <article className={styles.showcase} style={{ '--project-accent': project.accent } as React.CSSProperties}>
       <div className={styles.meta}>
-        <span className={styles.category}>{category}</span>
         <span className={styles.status} data-status={project.status}>
           {t(`work.status.${project.status}`)}
         </span>
-        <div className={styles.stack}>
+        <span className={styles.context}>{context}</span>
+        <ul className={styles.stack} aria-label={t('projectDetail.stackLabel')}>
           {project.stack.map((tech) => (
-            <span key={tech}>{tech}</span>
+            <li key={tech}>{tech}</li>
           ))}
-        </div>
+        </ul>
       </div>
 
       <div className={styles.content}>
-        <h3 className={styles.title}>{title}</h3>
+        <h4 className={styles.title}>
+          <Link to={`/projects/${project.slug}`}>{title}</Link>
+        </h4>
         <p className={styles.description}>{description}</p>
 
         <ul className={styles.highlights}>
@@ -44,10 +51,24 @@ export function ProjectShowcase({ project, title, category, description, highlig
           ))}
         </ul>
 
-        <Link to={`/projects/${project.slug}`} className={styles.cta}>
-          {t('work.viewCaseStudy')}
-          <ArrowUpRight size={16} strokeWidth={2} />
-        </Link>
+        <div className={styles.actions}>
+          <Link to={`/projects/${project.slug}`} className={styles.cta}>
+            {t('work.viewCaseStudy')}
+            <ArrowUpRight size={16} strokeWidth={2} aria-hidden="true" />
+          </Link>
+          {project.githubUrl && (
+            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className={styles.secondaryLink}>
+              <GithubIcon size={15} />
+              {t('work.codeLink')}
+            </a>
+          )}
+          {dashboardUrl && (
+            <a href={dashboardUrl} target="_blank" rel="noopener noreferrer" className={styles.secondaryLink}>
+              <BarChart3 size={15} strokeWidth={1.75} aria-hidden="true" />
+              {t('work.dashboardLink')}
+            </a>
+          )}
+        </div>
       </div>
     </article>
   );

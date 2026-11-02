@@ -86,11 +86,7 @@ export function ProjectStoreCredit() {
         </p>
       </CaseStudySection>
 
-      <NextProjectNav
-        slug="always-barca"
-        title={t('work.items.alwaysBarca.title')}
-        accent="var(--accent-always-barca)"
-      />
+      <NextProjectNav currentSlug="store-credit" />
     </article>
   );
 }

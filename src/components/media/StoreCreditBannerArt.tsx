@@ -20,8 +20,7 @@ export function StoreCreditBannerArt({ accent }: StoreCreditBannerArtProps) {
         preserveAspectRatio="xMidYMid meet"
         style={{ width: '100%', height: '100%', color: accent }}
         xmlns="http://www.w3.org/2000/svg"
-        role="img"
-        aria-label=""
+        aria-hidden="true"
       >
         {/* the paper ledger the pulpería used before, drawn a little worn and crooked */}
         <g transform="translate(250 40) rotate(-2)" opacity="0.75">

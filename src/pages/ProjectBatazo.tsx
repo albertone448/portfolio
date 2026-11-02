@@ -103,11 +103,7 @@ export function ProjectBatazo() {
         </p>
       </CaseStudySection>
 
-      <NextProjectNav
-        slug="messi-outlier"
-        title={t('work.items.messiOutlier.title')}
-        accent="var(--accent-messi)"
-      />
+      <NextProjectNav currentSlug="batazo" />
     </article>
   );
 }

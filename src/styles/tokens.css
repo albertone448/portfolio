@@ -31,7 +31,7 @@
   --accent-batazo: #3fae6d;
 
   /* Typography */
-  --font-sans: 'Inter', 'Manrope', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Inter Variable', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
 
   /* Fluid type scale */

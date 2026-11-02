@@ -40,7 +40,7 @@ export function ProjectAlwaysBarca() {
         category={t('work.items.alwaysBarca.category')}
         title={t('projectDetail.alwaysBarca.title')}
         description={t('projectDetail.alwaysBarca.description')}
-        visual={<ProjectBanner src="/images/projects/always-barca/banner.png" accent={project.accent} />}
+        visual={<ProjectBanner src="/images/projects/always-barca/banner.webp" accent={project.accent} />}
       />
 
       <CaseStudySection eyebrow={sectionStep(1, TOTAL_STEPS)} title={t('projectDetail.alwaysBarca.questionTitle')}>
@@ -83,6 +83,7 @@ export function ProjectAlwaysBarca() {
       >
         <p style={{ marginBottom: 24 }}>{t('projectDetail.alwaysBarca.summaryIntro')}</p>
         <StatsTable
+          label={t('projectDetail.alwaysBarca.summaryTitle')}
           headers={summaryHeaders}
           rows={summaryRows}
           accent={project.accent}
@@ -113,11 +114,7 @@ export function ProjectAlwaysBarca() {
         </p>
       </CaseStudySection>
 
-      <NextProjectNav
-        slug="batazo"
-        title={t('work.items.batazo.title')}
-        accent="var(--accent-batazo)"
-      />
+      <NextProjectNav currentSlug="always-barca" />
     </article>
   );
 }

@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { EMAIL, GITHUB_URL, LINKEDIN_URL } from '../../data/contact';
 import styles from './Footer.module.css';
 
 export function Footer() {
@@ -15,17 +16,17 @@ export function Footer() {
 
         <ul className={styles.links}>
           <li>
-            <a href="https://github.com/albertone448" target="_blank" rel="noopener noreferrer">
+            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
           </li>
           <li>
-            <a href="https://linkedin.com/in/albertone448" target="_blank" rel="noopener noreferrer">
+            <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
           </li>
           <li>
-            <a href="mailto:albertone448@gmail.com">albertone448@gmail.com</a>
+            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
           </li>
         </ul>
 

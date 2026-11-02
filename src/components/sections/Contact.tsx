@@ -1,14 +1,29 @@
+import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ArrowUpRight, Mail } from 'lucide-react';
+import { ArrowUpRight, FileText, Mail } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '../common/BrandIcons';
+import { EMAIL, GITHUB_URL, LINKEDIN_URL } from '../../data/contact';
+import { useResumeUrl } from '../../hooks/useResumeUrl';
 import styles from './Contact.module.css';
 
-const EMAIL = 'albertone448@gmail.com';
-const LINKEDIN_URL = 'https://linkedin.com/in/albertone448';
-const GITHUB_URL = 'https://github.com/albertone448';
+interface Channel {
+  href: string;
+  label: string;
+  value: string;
+  icon: ReactNode;
+  external: boolean;
+}
 
 export function Contact() {
   const { t } = useTranslation();
+  const resumeUrl = useResumeUrl();
+
+  const channels: Channel[] = [
+    { href: `mailto:${EMAIL}`, label: t('contact.emailLabel'), value: EMAIL, icon: <Mail size={18} strokeWidth={1.75} aria-hidden="true" />, external: false },
+    { href: LINKEDIN_URL, label: t('contact.linkedinLabel'), value: 'linkedin.com/in/albertone448', icon: <LinkedinIcon size={18} />, external: true },
+    { href: GITHUB_URL, label: t('contact.githubLabel'), value: 'github.com/albertone448', icon: <GithubIcon size={18} />, external: true },
+    { href: resumeUrl, label: t('contact.resumeLabel'), value: t('contact.resumeValue'), icon: <FileText size={18} strokeWidth={1.75} aria-hidden="true" />, external: true },
+  ];
 
   return (
     <section id="contact" className={styles.section}>
@@ -18,36 +33,22 @@ export function Contact() {
         <p className={`measure ${styles.intro}`}>{t('contact.intro')}</p>
 
         <ul className={styles.channels}>
-          <li>
-            <a href={`mailto:${EMAIL}`} className={styles.channel}>
-              <Mail size={18} strokeWidth={1.75} />
-              <span>
-                <span className={styles.channelLabel}>{t('contact.emailLabel')}</span>
-                <span className={styles.channelValue}>{EMAIL}</span>
-              </span>
-              <ArrowUpRight size={16} strokeWidth={2} className={styles.channelArrow} />
-            </a>
-          </li>
-          <li>
-            <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className={styles.channel}>
-              <LinkedinIcon size={18} />
-              <span>
-                <span className={styles.channelLabel}>{t('contact.linkedinLabel')}</span>
-                <span className={styles.channelValue}>linkedin.com/in/albertone448</span>
-              </span>
-              <ArrowUpRight size={16} strokeWidth={2} className={styles.channelArrow} />
-            </a>
-          </li>
-          <li>
-            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className={styles.channel}>
-              <GithubIcon size={18} />
-              <span>
-                <span className={styles.channelLabel}>{t('contact.githubLabel')}</span>
-                <span className={styles.channelValue}>github.com/albertone448</span>
-              </span>
-              <ArrowUpRight size={16} strokeWidth={2} className={styles.channelArrow} />
-            </a>
-          </li>
+          {channels.map(({ href, label, value, icon, external }) => (
+            <li key={label}>
+              <a
+                href={href}
+                className={styles.channel}
+                {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              >
+                {icon}
+                <span>
+                  <span className={styles.channelLabel}>{label}</span>
+                  <span className={styles.channelValue}>{value}</span>
+                </span>
+                <ArrowUpRight size={16} strokeWidth={2} className={styles.channelArrow} aria-hidden="true" />
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </section>

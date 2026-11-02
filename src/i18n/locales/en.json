@@ -1,50 +1,60 @@
 {
   "meta": {
-    "title": "Alberto Núñez Trejos | Systems Engineer",
-    "description": "Systems Engineer working across software engineering, QA automation and data analysis. Production systems in React, .NET and PHP, and data analysis with Python, Pandas and Tableau."
+    "title": "Alberto Núñez Trejos | Software Developer & Data Analyst",
+    "description": "Portfolio of Alberto Núñez Trejos, Systems Engineer from Universidad Nacional de Costa Rica. Software development with React, .NET and PHP, and data analysis with Python, Pandas and Tableau."
   },
   "nav": {
-    "work": "Work",
+    "work": "Projects",
     "experience": "Experience",
     "about": "About",
     "resume": "Resume",
     "langSwitch": "Switch language",
-    "skipToContent": "Skip to content"
+    "skipToContent": "Skip to content",
+    "skills": "Skills",
+    "contact": "Contact",
+    "primary": "Primary",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
   },
   "hero": {
     "name": "Alberto Núñez Trejos",
-    "role": "Systems Engineer",
-    "tagline": "I build production software, automate the testing around it, and analyze the data it generates.",
-    "pillars": [
-      "Software Engineering",
-      "QA Automation",
-      "Data Analysis"
+    "eyebrow": "Systems Engineer · Universidad Nacional de Costa Rica",
+    "roles": "Software Developer & Data Analyst",
+    "summary": "I completed two professional internships building web applications with React and PHP. On my own, I built a production app my family's business uses every day and published two statistical analyses on Tableau Public.",
+    "facts": [
+      "Alajuela, Costa Rica",
+      "Native Spanish",
+      "English C1"
     ],
-    "ctaWork": "View selected work",
-    "ctaResume": "Download résumé",
-    "location": "Costa Rica",
-    "panels": {
+    "ctaProjects": "View projects",
+    "ctaResume": "View resume",
+    "ctaContact": "Contact",
+    "routesLabel": "Professional areas",
+    "routes": {
       "software": {
-        "label": "Software",
-        "headline": "Store Credit Management System",
-        "detail": "React · Firebase · Node.js — in production"
-      },
-      "quality": {
-        "label": "QA Automation",
-        "headline": "85%+ Jest coverage",
-        "detail": "Selenium · PHPUnit · TDD"
+        "label": "Software development",
+        "items": [
+          "Store credit system in production, built with React, Firebase and Node.js",
+          "Batazo, a prediction pool app in .NET and PostgreSQL, in progress",
+          "Internships at Grupo Eulalia (React) and Ticotek (PHP, MySQL, React)"
+        ],
+        "cta": "View software projects"
       },
       "data": {
-        "label": "Data",
-        "headline": "33 seasons, Pearson & ANOVA",
-        "detail": "Python · Pandas · Tableau Public"
+        "label": "Data analysis",
+        "items": [
+          "Messi: 5,636 World Cup players compared across four roles",
+          "Always Barça: 33 seasons analyzed with Pearson and ANOVA",
+          "Seven dashboards published on Tableau Public"
+        ],
+        "cta": "View data projects"
       }
     }
   },
   "work": {
-    "eyebrow": "Selected work",
-    "title": "Four projects, one working pattern",
-    "intro": "Two statistical analyses with published Tableau dashboards, a production system built for a real business, and a .NET web app I'm building right now. Each one is presented the way its evidence actually looks.",
+    "eyebrow": "Projects",
+    "title": "What I've built and analyzed",
+    "intro": "Personal projects, grouped into the two areas I'm applying for. Each case study explains the problem, how I approached it, and links to the code. Work at companies is in the next section.",
     "viewCaseStudy": "View case study",
     "status": {
       "production": "In production",
@@ -104,72 +114,138 @@
           "Documented technical decisions"
         ]
       }
+    },
+    "groups": {
+      "software": {
+        "title": "Software development",
+        "intro": "An app a real business relies on every day, and a .NET app I'm building in phases."
+      },
+      "data": {
+        "title": "Data analysis",
+        "intro": "Two statistical analyses with data I collected and cleaned myself, published as dashboards on Tableau Public."
+      }
+    },
+    "codeLink": "Code",
+    "dashboardLink": "Dashboard",
+    "context": {
+      "storeCredit": "Personal project · family business",
+      "batazo": "Personal project",
+      "messiOutlier": "Personal project",
+      "alwaysBarca": "Personal project"
     }
   },
   "experience": {
     "eyebrow": "Experience",
-    "title": "Professional background",
-    "intro": "Two technical internships and three years of bilingual customer-facing work before that. Full detail, responsibilities and metrics are in the résumé.",
-    "viewCv": "View full résumé (PDF)",
+    "title": "Professional experience",
+    "intro": "Two professional internships in software development and, before that, a year and a half of bilingual support for a bank's customers. The resume has the full detail.",
+    "viewCv": "View full resume (PDF)",
     "items": {
       "grupoEulalia": {
-        "role": "Frontend Developer, Professional Internship",
-        "description": "Built a React work order module for a truck repair workshop, turning basic inventory logging into a full maintenance system with cost analysis, mechanic efficiency tracking and failure pattern identification.",
-        "metrics": [
-          "30+ vehicles tracked",
-          "40% faster decisions",
-          "85%+ Jest coverage"
+        "role": "Frontend Developer",
+        "description": "Built a React work order module for a truck repair workshop. It went from basic inventory records to a maintenance system that tracks each job from the incident report to completion, calculates costs automatically, and lets field staff report vehicle problems directly.",
+        "location": "Remote",
+        "highlights": [
+          "30+ vehicles with full maintenance history",
+          "40% faster response on maintenance decisions",
+          "85%+ code coverage with Jest"
         ]
       },
       "ticotek": {
-        "role": "Full-Stack Developer, Professional Internship",
-        "description": "Designed a normalized MySQL schema and a PHP REST API for a shipment control system, then built the React front end for real-time delivery, driver and payment tracking.",
-        "metrics": [
-          "60% faster queries",
-          "50+ weekly deliveries",
-          "95%+ test reliability"
+        "role": "Full Stack Developer",
+        "description": "Built a shipment control system from scratch for a technology retail store: a normalized MySQL schema, a PHP REST API for orders, deliveries, drivers and vehicles, and a React front end to track deliveries and payments. Automated testing of the critical flows with Selenium and worked with branches and pull requests on a 5-person team.",
+        "location": "Remote",
+        "highlights": [
+          "60% lower average query time",
+          "50+ weekly deliveries monitored",
+          "15+ hours of weekly manual reporting replaced"
         ]
       },
       "foundever": {
         "role": "Customer Service Representative",
-        "description": "Bilingual support for a bank's credit card department: billing disputes, fraud cases and technical issues, plus onboarding new team members.",
-        "metrics": [
+        "description": "Bilingual (Spanish and English) support for a bank's credit card department: account inquiries, billing disputes and fraud cases. Also trained 5 new team members.",
+        "location": "Heredia, Costa Rica",
+        "highlights": [
           "92% first-call resolution",
-          "4.7/5 satisfaction score"
+          "4.7 out of 5 customer satisfaction"
+        ]
+      }
+    },
+    "stackLabel": "Tools",
+    "types": {
+      "internship": "Professional internship",
+      "employment": "Employment"
+    }
+  },
+  "skills": {
+    "eyebrow": "Skills",
+    "title": "Technical skills",
+    "intro": "Grouped into the two areas I'm applying for. The first row in each area is what I've used most in internships and projects.",
+    "areas": {
+      "software": "Software development",
+      "data": "Data analysis"
+    },
+    "rows": {
+      "software": {
+        "core": "Core",
+        "backend": "Backend and services",
+        "databases": "Databases",
+        "testing": "Testing",
+        "tools": "Tools"
+      },
+      "data": {
+        "core": "Core",
+        "analysis": "Analysis and visualization",
+        "methods": "Methods",
+        "extraction": "Data extraction"
+      }
+    },
+    "translatedItems": {
+      "software": {
+        "testing": [
+          "Unit testing",
+          "Integration testing",
+          "TDD"
+        ],
+        "tools": [
+          "Agile / Scrum"
+        ]
+      },
+      "data": {
+        "methods": [
+          "Pearson correlation",
+          "ANOVA",
+          "Hypothesis testing",
+          "Data cleaning and validation"
         ]
       }
     }
   },
-  "toolkit": {
-    "eyebrow": "Technical toolkit",
-    "title": "What I build and analyze with",
-    "categories": {
-      "softwareEngineering": "Software Engineering",
-      "dataAnalytics": "Data & Analytics",
-      "databases": "Databases",
-      "testingQuality": "Testing & Quality",
-      "workflow": "Workflow"
-    }
-  },
   "about": {
     "eyebrow": "About",
-    "title": "Systems Engineering, applied broadly",
-    "paragraph": "I'm a Systems Engineer from Universidad Nacional de Costa Rica, with hands-on experience across the software lifecycle: building production systems in React, .NET and PHP, automating the tests that keep them reliable, and running the statistical analysis that explains what the data those systems produce actually means. I don't see software and data analysis as two separate tracks, I move between them depending on what the problem needs.",
+    "title": "Background",
+    "paragraph": "I'm a Systems Engineer from Universidad Nacional de Costa Rica, looking for roles as a software developer or data analyst. During my internships I worked on web applications for real companies, using React, PHP and MySQL, on teams that used Jira, Git and pull requests. In my personal projects I apply the same discipline to data: define a question, gather and clean the data, test the hypothesis with statistical methods, and publish results that make sense without a technical background.",
     "educationTitle": "Education",
     "university": "Universidad Nacional de Costa Rica",
     "degree": "Bachelor in Systems Engineering",
-    "diploma": "Diploma in Application Programming"
+    "diploma": "Diploma in Application Programming",
+    "languagesTitle": "Languages",
+    "languages": [
+      "Spanish (native)",
+      "English (C1, advanced)"
+    ]
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Let's build something useful.",
-    "intro": "Available for software engineering, QA automation and data analysis opportunities in Costa Rica.",
+    "title": "Let's talk about a role",
+    "intro": "I'm looking for software development or data analysis roles in Costa Rica. Email is the fastest way to reach me.",
     "emailLabel": "Email",
     "linkedinLabel": "LinkedIn",
-    "githubLabel": "GitHub"
+    "githubLabel": "GitHub",
+    "resumeLabel": "Resume",
+    "resumeValue": "View resume as PDF"
   },
   "footer": {
-    "tagline": "Systems Engineer · Software · QA · Data",
+    "tagline": "Software development · Data analysis",
     "rights": "All rights reserved."
   },
   "notFound": {

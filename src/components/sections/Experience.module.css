@@ -46,8 +46,13 @@
   border-bottom: 1px solid var(--color-border);
 }
 
-.entry[data-emphasis='compact'] {
-  opacity: 0.85;
+/* Non-technical role: same contrast, less visual weight. */
+.entry[data-emphasis='compact'] .role {
+  font-size: 1rem;
+}
+
+.entry[data-emphasis='compact'] .description {
+  font-size: var(--fs-small);
 }
 
 .entryHead {
@@ -59,6 +64,7 @@
 .role {
   font-weight: 600;
   font-size: 1.05rem;
+  line-height: 1.35;
 }
 
 .company {
@@ -67,9 +73,39 @@
   font-weight: 600;
 }
 
+.type {
+  width: fit-content;
+  margin-top: 6px;
+  font-size: var(--fs-tiny);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border-hover);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
 .period {
+  margin-top: 4px;
   font-family: var(--font-mono);
   font-size: var(--fs-tiny);
+  color: var(--color-text-muted);
+}
+
+.entryBody {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stack {
+  font-size: var(--fs-small);
+  color: var(--color-text-secondary);
+}
+
+.stackLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-tiny);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--color-text-muted);
 }
 
@@ -79,13 +115,13 @@
   max-width: 62ch;
 }
 
-.metrics {
+.highlights {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.metrics li {
+.highlights li {
   font-family: var(--font-mono);
   font-size: var(--fs-tiny);
   color: var(--color-text-secondary);

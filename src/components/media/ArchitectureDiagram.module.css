@@ -34,7 +34,8 @@
 .index {
   font-family: var(--font-mono);
   font-size: var(--fs-tiny);
-  color: var(--diagram-accent, var(--color-accent));
+  /* Mixed toward the text color so darker project accents keep enough contrast. */
+  color: color-mix(in srgb, var(--diagram-accent, var(--color-accent)) 55%, var(--color-text-primary));
   min-width: 24px;
 }
 
@@ -58,10 +59,6 @@
    diagram shows the target architecture without implying it already exists. */
 .step[data-status='pending'] .label {
   color: var(--color-text-muted);
-}
-
-.step[data-status='pending'] .index {
-  opacity: 0.6;
 }
 
 .step[data-status='pending'] .badge {

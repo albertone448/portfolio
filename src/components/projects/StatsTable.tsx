@@ -7,6 +7,8 @@ interface StatsTableRow {
 }
 
 interface StatsTableProps {
+  /** Accessible name for the scrollable region on narrow screens. */
+  label: string;
   headers: [string, string, string];
   rows: StatsTableRow[];
   accent?: string;
@@ -14,9 +16,16 @@ interface StatsTableProps {
   noLabel: string;
 }
 
-export function StatsTable({ headers, rows, accent, yesLabel, noLabel }: StatsTableProps) {
+export function StatsTable({ label, headers, rows, accent, yesLabel, noLabel }: StatsTableProps) {
   return (
-    <div className={styles.wrapper} style={{ '--table-accent': accent } as React.CSSProperties}>
+    // Focusable so keyboard users can scroll the table sideways on small screens.
+    <div
+      className={styles.wrapper}
+      style={{ '--table-accent': accent } as React.CSSProperties}
+      role="region"
+      aria-label={label}
+      tabIndex={0}
+    >
       <table className={styles.table}>
         <thead>
           <tr>

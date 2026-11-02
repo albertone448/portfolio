@@ -1,22 +1,23 @@
-# Alberto Núñez Trejos — Portfolio
+# Alberto Núñez Trejos, Portfolio
 
-Personal portfolio of Alberto Núñez Trejos, Systems Engineer working across
-software engineering, QA automation and data analysis.
+Personal portfolio of Alberto Núñez Trejos, Systems Engineer applying for
+Software Developer and Data Analyst roles.
 
-Live: https://nuneztrejos.vercel.app
+Live: https://alberto-nuneztrejos.vercel.app
 Repository: https://github.com/albertone448/portfolio
 
 ## Overview
 
-A single-page, project-forward portfolio built to be read in under a minute
-by a recruiter and in a few minutes by an engineering manager. Four
-case studies carry most of the weight, alternating data analysis and
-software so the portfolio doesn't read as one track: a completed
-statistical analysis, a production app, another completed statistical
-analysis, and a .NET web app still in development (Batazo), placed last so
-finished work is read first. Everything else (experience, toolkit, about,
-contact) supports those projects rather than competing with them for
-attention.
+A single-page portfolio built for recruiters first: the hero states the two
+target roles and links straight into the matching project group, so someone
+hiring for only one of them can skip the other. Testing (Jest, Selenium,
+PHPUnit) appears inside software projects, experience and skills, as part
+of how things were built, not as a separate career track.
+
+Home order: hero → projects (software group, then data group) →
+professional experience → skills (two groups) → about (education and
+languages) → contact. Personal projects and internships are labeled as
+such; nothing is presented as employment that wasn't.
 
 Design direction: dark, editorial, restrained. One accent color for the
 site, with each project allowed its own accent strictly inside its own case
@@ -28,6 +29,8 @@ effects, no typewriter animations.
 - **React 19** + **TypeScript**, built with **Vite**
 - **React Router** (`react-router-dom`) for client-side routing across the
   home page and the four project case studies
+- **Inter** and **IBM Plex Mono**, self-hosted through `@fontsource` so
+  every visitor sees the same type instead of a system fallback
 - **react-i18next** + `i18next-browser-languagedetector` for the ES/EN
   bilingual system, with language persisted to `localStorage`
 - **lucide-react** for generic icons; GitHub/LinkedIn are hand-drawn SVGs
@@ -46,14 +49,14 @@ src/
 ├── components/
 │   ├── common/       Button, LanguageSwitch, BrandIcons
 │   ├── layout/        Header, Footer
-│   ├── sections/       Home page sections (Hero, SelectedWork, Experience, Toolkit, About, Contact)
+│   ├── sections/       Home page sections (Hero, SelectedWork, Experience, Skills, About, Contact)
 │   ├── projects/       Case-study building blocks (ProjectHero, CaseStudySection,
 │   │                    ProjectShowcase, BulletList, QuoteBlock, RoleGrid, StatsTable,
 │   │                    NextProjectNav, StatusNote, ProgressBoard)
 │   └── media/          ProjectBanner, ProjectPreviewFrame, Carousel, DashboardTabs,
 │                        TableauShowcase, ArchitectureDiagram, BatazoBannerArt
 ├── pages/              Home, ProjectStoreCredit, ProjectAlwaysBarca, ProjectMessiOutlier, ProjectBatazo, NotFound
-├── data/               Structural project/experience/toolkit data (no narrative copy)
+├── data/               Structural project/experience/skills/contact data (no narrative copy)
 ├── i18n/                react-i18next setup + en.json / es.json dictionaries
 ├── hooks/               useDocumentMeta, useResumeUrl, useScrollToHash
 ├── styles/              tokens.css (design tokens), global.css (reset + utilities)
@@ -180,10 +183,20 @@ All four were run against this exact codebase before delivery.
 
 ## Résumé by language
 
-The "Download résumé" links (header, hero, experience section) resolve to
+The résumé links (header, hero, experience and contact sections) open
 `Alberto_Nunez_Trejos_Resume.pdf` (English) or
 `Alberto_Nunez_Trejos_Resume_ES.pdf` (Spanish) based on the active UI
-language, via `hooks/useResumeUrl.ts`. Both PDFs live in `public/resume/`.
+language, via `hooks/useResumeUrl.ts`, in a new tab. Both PDFs live in
+`public/resume/`.
+
+## SEO and sharing
+
+`index.html` holds the static title, description, Open Graph tags and
+JSON-LD that crawlers and LinkedIn previews read. The canonical domain is
+`alberto-nuneztrejos.vercel.app` (the one printed on the résumé); if the
+domain changes, update `index.html`, `public/robots.txt` and
+`public/sitemap.xml` together. `public/images/social/og-cover.png` is the
+1200×630 share image.
 
 ## Deployment
 

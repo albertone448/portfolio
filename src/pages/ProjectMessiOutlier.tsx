@@ -36,7 +36,7 @@ export function ProjectMessiOutlier() {
         description={t('projectDetail.messiOutlier.description')}
         visual={
           <ProjectBanner
-            src="/images/projects/messi-outlier/banner.jpg"
+            src="/images/projects/messi-outlier/banner.webp"
             accent={project.accent}
             focalPoint="left 70%"
           />
@@ -106,11 +106,7 @@ export function ProjectMessiOutlier() {
         </QuoteBlock>
       </CaseStudySection>
 
-      <NextProjectNav
-        slug="store-credit"
-        title={t('work.items.storeCredit.title')}
-        accent="var(--accent-store-credit)"
-      />
+      <NextProjectNav currentSlug="messi-outlier" />
     </article>
   );
 }

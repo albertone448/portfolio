@@ -1,10 +1,15 @@
 import { useTranslation } from 'react-i18next';
-import { projects } from '../../data/projects';
+import { getProjectsByCategory } from '../../data/projects';
+import type { ProjectCategory } from '../../types/project';
+import { projectCopyKey } from '../../utils/projectCopyKey';
 import { ProjectShowcase } from '../projects/ProjectShowcase';
 import styles from './SelectedWork.module.css';
 
-/** Project slugs are kebab-case; their i18n blocks use camelCase keys. */
-const toCopyKey = (slug: string) => slug.replace(/-(\w)/g, (_, letter: string) => letter.toUpperCase());
+/** Software first, matching the order of the two roles in the hero. */
+const GROUPS: { category: ProjectCategory; anchor: string }[] = [
+  { category: 'software', anchor: 'software-projects' },
+  { category: 'data', anchor: 'data-projects' },
+];
 
 export function SelectedWork() {
   const { t } = useTranslation();
@@ -18,22 +23,32 @@ export function SelectedWork() {
           <p className={`measure ${styles.intro}`}>{t('work.intro')}</p>
         </header>
 
-        <div className={styles.list}>
-          {projects.map((project) => {
-            const key = `work.items.${toCopyKey(project.slug)}`;
+        {GROUPS.map(({ category, anchor }) => (
+          <section key={category} id={anchor} className={styles.group} aria-labelledby={`${anchor}-title`}>
+            <div className={styles.groupHeader}>
+              <h3 id={`${anchor}-title`} className={styles.groupTitle}>
+                {t(`work.groups.${category}.title`)}
+              </h3>
+              <p className={styles.groupIntro}>{t(`work.groups.${category}.intro`)}</p>
+            </div>
 
-            return (
-              <ProjectShowcase
-                key={project.slug}
-                project={project}
-                title={t(`${key}.title`)}
-                category={t(`${key}.category`)}
-                description={t(`${key}.description`)}
-                highlights={t(`${key}.highlights`, { returnObjects: true }) as string[]}
-              />
-            );
-          })}
-        </div>
+            <div className={styles.list}>
+              {getProjectsByCategory(category).map((project) => {
+                const key = projectCopyKey(project.slug);
+                return (
+                  <ProjectShowcase
+                    key={project.slug}
+                    project={project}
+                    title={t(`work.items.${key}.title`)}
+                    context={t(`work.context.${key}`)}
+                    description={t(`work.items.${key}.description`)}
+                    highlights={t(`work.items.${key}.highlights`, { returnObjects: true }) as string[]}
+                  />
+                );
+              })}
+            </div>
+          </section>
+        ))}
       </div>
     </section>
   );

@@ -2,11 +2,13 @@ import { useTranslation } from 'react-i18next';
 import { FileText } from 'lucide-react';
 import { experienceEntries } from '../../data/experience';
 import { useResumeUrl } from '../../hooks/useResumeUrl';
+import { formatMonthRange } from '../../utils/formatMonthRange';
 import styles from './Experience.module.css';
 
 export function Experience() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const resumeUrl = useResumeUrl();
+  const locale = i18n.resolvedLanguage === 'es' ? 'es-CR' : 'en-US';
 
   return (
     <section id="experience" className={styles.section}>
@@ -15,30 +17,43 @@ export function Experience() {
           <p className="eyebrow">{t('experience.eyebrow')}</p>
           <h2 className={styles.title}>{t('experience.title')}</h2>
           <p className={`measure ${styles.intro}`}>{t('experience.intro')}</p>
-          <a href={resumeUrl} download className={styles.cvLink}>
-            <FileText size={15} strokeWidth={1.75} />
+          <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className={styles.cvLink}>
+            <FileText size={15} strokeWidth={1.75} aria-hidden="true" />
             {t('experience.viewCv')}
           </a>
         </header>
 
         <ol className={styles.timeline}>
           {experienceEntries.map((entry) => {
-            const metrics = t(`experience.items.${entry.id}.metrics`, { returnObjects: true }) as string[];
+            const copyKey = `experience.items.${entry.id}`;
+            const highlights = t(`${copyKey}.highlights`, { returnObjects: true }) as string[];
             return (
               <li key={entry.id} className={styles.entry} data-emphasis={entry.emphasis}>
                 <div className={styles.entryHead}>
-                  <p className={styles.role}>{t(`experience.items.${entry.id}.role`)}</p>
+                  <h3 className={styles.role}>{t(`${copyKey}.role`)}</h3>
                   <p className={styles.company}>{entry.company}</p>
-                  <p className={styles.period}>{entry.period}</p>
+                  <p className={styles.type} data-type={entry.type}>
+                    {t(`experience.types.${entry.type}`)}
+                  </p>
+                  <p className={styles.period}>
+                    {formatMonthRange(entry.start, entry.end, locale)} · {t(`${copyKey}.location`)}
+                  </p>
                 </div>
-                <p className={styles.description}>{t(`experience.items.${entry.id}.description`)}</p>
-                {metrics && (
-                  <ul className={styles.metrics}>
-                    {metrics.map((metric) => (
-                      <li key={metric}>{metric}</li>
+
+                <div className={styles.entryBody}>
+                  <p className={styles.description}>{t(`${copyKey}.description`)}</p>
+                  <ul className={styles.highlights}>
+                    {highlights.map((highlight) => (
+                      <li key={highlight}>{highlight}</li>
                     ))}
                   </ul>
-                )}
+                  {entry.stack && (
+                    <p className={styles.stack}>
+                      <span className={styles.stackLabel}>{t('experience.stackLabel')}:</span>{' '}
+                      {entry.stack.join(' · ')}
+                    </p>
+                  )}
+                </div>
               </li>
             );
           })}

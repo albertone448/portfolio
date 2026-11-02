@@ -63,7 +63,8 @@ button {
   cursor: pointer;
 }
 
-ul {
+ul,
+ol {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -122,11 +123,8 @@ ul {
   max-width: var(--measure);
 }
 
-#work,
-#experience,
-#about,
-#contact,
-#top {
+/* Every in-page anchor clears the sticky header when scrolled into view. */
+section[id] {
   scroll-margin-top: 84px;
 }
 
@@ -147,4 +145,10 @@ ul {
   height: 6px;
   border-radius: 50%;
   background: var(--color-accent);
+}
+
+/* Holds the page height while a lazily loaded case study arrives, so the
+   footer doesn't jump up and back down. */
+.route-fallback {
+  min-height: 100vh;
 }

@@ -40,8 +40,14 @@
 }
 
 @media (max-width: 420px) {
+  /* Visually swapped for the initials, but still the link's accessible name. */
   .wordmarkFull {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
   }
 
   .wordmarkShort {
@@ -123,14 +129,81 @@
   }
 }
 
-@media (max-width: 900px) {
+.menuButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+  border: none;
+  background: none;
+  color: var(--color-text-primary);
+  border-radius: var(--radius-sm);
+}
+
+.mobileNav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(11, 13, 18, 0.97);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobileNav[hidden] {
+  display: none;
+}
+
+.mobileNav ul {
+  max-width: var(--container-wide);
+  margin-inline: auto;
+  padding: 8px 24px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileNav li a {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobileSocial {
+  display: flex;
+  gap: 24px;
+}
+
+.mobileSocial a {
+  gap: 8px;
+  color: var(--color-text-secondary);
+  border-bottom: none !important;
+}
+
+@media (max-width: 960px) {
   .nav {
+    display: none;
+  }
+
+  .menuButton {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 961px) {
+  .mobileNav {
     display: none;
   }
 }
 
 @media (max-width: 480px) {
   .inner {
+    padding-inline: 16px;
+  }
+
+  .mobileNav ul {
     padding-inline: 16px;
   }
 

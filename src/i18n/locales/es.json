@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Alberto Núñez Trejos | Ingeniero en Sistemas",
-    "description": "Ingeniero en Sistemas con experiencia en desarrollo de software, automatización de QA y análisis de datos. Sistemas en producción con React, .NET y PHP, y análisis de datos con Python, Pandas y Tableau."
+    "title": "Alberto Núñez Trejos | Desarrollador de software y analista de datos",
+    "description": "Portafolio de Alberto Núñez Trejos, Ingeniero en Sistemas de la Universidad Nacional de Costa Rica. Desarrollo de software con React, .NET y PHP, y análisis de datos con Python, Pandas y Tableau."
   },
   "nav": {
     "work": "Proyectos",
@@ -9,42 +9,52 @@
     "about": "Sobre mí",
     "resume": "CV",
     "langSwitch": "Cambiar idioma",
-    "skipToContent": "Saltar al contenido"
+    "skipToContent": "Saltar al contenido",
+    "skills": "Habilidades",
+    "contact": "Contacto",
+    "primary": "Principal",
+    "menuOpen": "Abrir menú",
+    "menuClose": "Cerrar menú"
   },
   "hero": {
     "name": "Alberto Núñez Trejos",
-    "role": "Ingeniero en Sistemas",
-    "tagline": "Construyo software en producción, automatizo las pruebas que lo respaldan, y analizo los datos que genera.",
-    "pillars": [
-      "Desarrollo de software",
-      "Automatización de QA",
-      "Análisis de datos"
+    "eyebrow": "Ingeniero en Sistemas · Universidad Nacional de Costa Rica",
+    "roles": "Desarrollador de software y analista de datos",
+    "summary": "Hice dos prácticas profesionales construyendo aplicaciones web con React y PHP. Por mi cuenta construí una app en producción que usa a diario el negocio de mi familia y publiqué dos análisis estadísticos en Tableau Public.",
+    "facts": [
+      "Alajuela, Costa Rica",
+      "Español nativo",
+      "Inglés C1"
     ],
-    "ctaWork": "Ver proyectos destacados",
-    "ctaResume": "Descargar CV",
-    "location": "Costa Rica",
-    "panels": {
+    "ctaProjects": "Ver proyectos",
+    "ctaResume": "Ver CV",
+    "ctaContact": "Contacto",
+    "routesLabel": "Áreas profesionales",
+    "routes": {
       "software": {
-        "label": "Software",
-        "headline": "Sistema de fiado para pulpería",
-        "detail": "React · Firebase · Node.js — en producción"
-      },
-      "quality": {
-        "label": "Automatización de QA",
-        "headline": "85%+ de cobertura con Jest",
-        "detail": "Selenium · PHPUnit · TDD"
+        "label": "Desarrollo de software",
+        "items": [
+          "Sistema de fiado en producción con React, Firebase y Node.js",
+          "Batazo, app de quinielas en .NET y PostgreSQL, en desarrollo",
+          "Prácticas en Grupo Eulalia (React) y Ticotek (PHP, MySQL, React)"
+        ],
+        "cta": "Ver proyectos de software"
       },
       "data": {
-        "label": "Datos",
-        "headline": "33 temporadas, Pearson y ANOVA",
-        "detail": "Python · Pandas · Tableau Public"
+        "label": "Análisis de datos",
+        "items": [
+          "Messi: 5,636 jugadores de Mundiales comparados en cuatro roles",
+          "Always Barça: 33 temporadas analizadas con Pearson y ANOVA",
+          "Siete dashboards publicados en Tableau Public"
+        ],
+        "cta": "Ver proyectos de datos"
       }
     }
   },
   "work": {
-    "eyebrow": "Proyectos destacados",
-    "title": "Cuatro proyectos, un mismo patrón de trabajo",
-    "intro": "Dos análisis estadísticos con dashboards publicados en Tableau, un sistema en producción construido para un negocio real y una app web en .NET que estoy desarrollando ahora. Cada uno se presenta como realmente luce su evidencia.",
+    "eyebrow": "Proyectos",
+    "title": "Lo que he construido y analizado",
+    "intro": "Proyectos personales, separados en las dos áreas que busco. Cada caso de estudio explica el problema, cómo lo resolví y enlaza al código. La experiencia en empresas está en la sección siguiente.",
     "viewCaseStudy": "Ver caso de estudio",
     "status": {
       "production": "En producción",
@@ -104,72 +114,138 @@
           "Decisiones técnicas documentadas"
         ]
       }
+    },
+    "groups": {
+      "software": {
+        "title": "Desarrollo de software",
+        "intro": "Una app que usa un negocio real todos los días y una app en .NET que estoy construyendo por fases."
+      },
+      "data": {
+        "title": "Análisis de datos",
+        "intro": "Dos análisis estadísticos con datos que recolecté y limpié yo mismo, publicados como dashboards en Tableau Public."
+      }
+    },
+    "codeLink": "Código",
+    "dashboardLink": "Dashboard",
+    "context": {
+      "storeCredit": "Proyecto personal · negocio familiar",
+      "batazo": "Proyecto personal",
+      "messiOutlier": "Proyecto personal",
+      "alwaysBarca": "Proyecto personal"
     }
   },
   "experience": {
     "eyebrow": "Experiencia",
-    "title": "Trayectoria profesional",
-    "intro": "Dos pasantías técnicas, y antes de eso tres años de atención al cliente bilingüe. El detalle completo, con responsabilidades y métricas, está en el CV.",
+    "title": "Experiencia profesional",
+    "intro": "Dos prácticas profesionales en desarrollo de software y, antes de eso, un año y medio de soporte bilingüe a clientes de un banco. El CV tiene el detalle completo.",
     "viewCv": "Ver CV completo (PDF)",
     "items": {
       "grupoEulalia": {
-        "role": "Frontend Developer, Pasantía Profesional",
-        "description": "Construí un módulo de órdenes de trabajo en React para un taller de reparación de camiones, convirtiendo registros básicos de inventario en un sistema completo de mantenimiento con análisis de costos, evaluación de eficiencia por mecánico e identificación de patrones de falla.",
-        "metrics": [
-          "30+ vehículos monitoreados",
-          "40% más rápido en decisiones",
-          "85%+ de cobertura con Jest"
+        "role": "Desarrollador Frontend",
+        "description": "Construí en React un módulo de órdenes de trabajo para un taller de reparación de camiones. Pasó de registros básicos de inventario a un sistema de mantenimiento con seguimiento desde el reporte del incidente hasta el cierre del trabajo, cálculo automático de costos y una interfaz para que el personal de campo reportara problemas de los vehículos.",
+        "location": "Remoto",
+        "highlights": [
+          "Más de 30 vehículos con historial de mantenimiento",
+          "40% menos tiempo de respuesta en decisiones de mantenimiento",
+          "Más de 85% de cobertura de código con Jest"
         ]
       },
       "ticotek": {
-        "role": "Full-Stack Developer, Pasantía Profesional",
-        "description": "Diseñé un esquema normalizado en MySQL y una API REST en PHP para un sistema de control de envíos, y construí el frontend en React para el seguimiento en tiempo real de entregas, conductores y pagos.",
-        "metrics": [
-          "60% más rápido en consultas",
-          "50+ entregas semanales",
-          "95%+ de confiabilidad en pruebas"
+        "role": "Desarrollador Full Stack",
+        "description": "Construí desde cero un sistema de control de envíos para una tienda de tecnología: esquema normalizado en MySQL, API REST en PHP para pedidos, entregas, conductores y vehículos, y un frontend en React para dar seguimiento a entregas y pagos. Automaticé las pruebas de los flujos críticos con Selenium y trabajé con ramas y pull requests en un equipo de 5 personas.",
+        "location": "Remoto",
+        "highlights": [
+          "60% menos tiempo promedio de consulta",
+          "Más de 50 entregas semanales monitoreadas",
+          "Más de 15 horas semanales de reportes manuales reemplazadas"
         ]
       },
       "foundever": {
         "role": "Representante de Servicio al Cliente",
-        "description": "Soporte bilingüe para el departamento de tarjetas de crédito de un banco: disputas de facturación, casos de fraude y problemas técnicos, además de capacitar a nuevos miembros del equipo.",
-        "metrics": [
+        "description": "Soporte bilingüe (español e inglés) para el departamento de tarjetas de crédito de un banco: consultas de cuenta, disputas de facturación y casos de fraude. También capacité a 5 personas nuevas del equipo.",
+        "location": "Heredia, Costa Rica",
+        "highlights": [
           "92% de resolución en la primera llamada",
-          "4.7/5 en satisfacción"
+          "4.7 de 5 en satisfacción del cliente"
+        ]
+      }
+    },
+    "stackLabel": "Tecnologías",
+    "types": {
+      "internship": "Práctica profesional",
+      "employment": "Empleo"
+    }
+  },
+  "skills": {
+    "eyebrow": "Habilidades",
+    "title": "Habilidades técnicas",
+    "intro": "Agrupadas en las dos áreas que busco. La primera fila de cada área es la que más he usado en prácticas y proyectos.",
+    "areas": {
+      "software": "Desarrollo de software",
+      "data": "Análisis de datos"
+    },
+    "rows": {
+      "software": {
+        "core": "Principal",
+        "backend": "Backend y servicios",
+        "databases": "Bases de datos",
+        "testing": "Pruebas",
+        "tools": "Herramientas"
+      },
+      "data": {
+        "core": "Principal",
+        "analysis": "Análisis y visualización",
+        "methods": "Métodos",
+        "extraction": "Extracción de datos"
+      }
+    },
+    "translatedItems": {
+      "software": {
+        "testing": [
+          "Pruebas unitarias",
+          "Pruebas de integración",
+          "TDD"
+        ],
+        "tools": [
+          "Agile / Scrum"
+        ]
+      },
+      "data": {
+        "methods": [
+          "Correlación de Pearson",
+          "ANOVA",
+          "Pruebas de hipótesis",
+          "Limpieza y validación de datos"
         ]
       }
     }
   },
-  "toolkit": {
-    "eyebrow": "Herramientas técnicas",
-    "title": "Con qué construyo y analizo",
-    "categories": {
-      "softwareEngineering": "Desarrollo de software",
-      "dataAnalytics": "Datos y analítica",
-      "databases": "Bases de datos",
-      "testingQuality": "Testing y calidad",
-      "workflow": "Flujo de trabajo"
-    }
-  },
   "about": {
     "eyebrow": "Sobre mí",
-    "title": "Ingeniería en Sistemas, aplicada con amplitud",
-    "paragraph": "Soy Ingeniero en Sistemas graduado de la Universidad Nacional de Costa Rica, con experiencia práctica a lo largo de todo el ciclo de software: construyo sistemas en producción con React, .NET y PHP, automatizo las pruebas que los mantienen confiables, y hago el análisis estadístico que explica qué significan realmente los datos que esos sistemas generan. No veo el desarrollo y el análisis de datos como dos caminos separados, me muevo entre ambos según lo que el problema necesite.",
+    "title": "Formación y perfil",
+    "paragraph": "Soy Ingeniero en Sistemas graduado de la Universidad Nacional de Costa Rica y busco puestos como desarrollador de software o analista de datos. En las prácticas trabajé en aplicaciones web para empresas reales, con React, PHP y MySQL, en equipos que usaban Jira, Git y pull requests. En mis proyectos personales aplico lo mismo a los datos: definir una pregunta, conseguir y limpiar los datos, probar la hipótesis con métodos estadísticos y publicar resultados que se puedan leer sin formación técnica.",
     "educationTitle": "Educación",
     "university": "Universidad Nacional de Costa Rica",
     "degree": "Bachillerato en Ingeniería en Sistemas",
-    "diploma": "Diplomado en Programación de Aplicaciones"
+    "diploma": "Diplomado en Programación de Aplicaciones",
+    "languagesTitle": "Idiomas",
+    "languages": [
+      "Español (nativo)",
+      "Inglés (C1, avanzado)"
+    ]
   },
   "contact": {
     "eyebrow": "Contacto",
-    "title": "Construyamos algo útil.",
-    "intro": "Disponible para oportunidades de desarrollo de software, automatización de QA y análisis de datos en Costa Rica.",
+    "title": "Hablemos de una vacante",
+    "intro": "Busco puestos de desarrollo de software o de análisis de datos en Costa Rica. El correo es la forma más rápida de contactarme.",
     "emailLabel": "Correo",
     "linkedinLabel": "LinkedIn",
-    "githubLabel": "GitHub"
+    "githubLabel": "GitHub",
+    "resumeLabel": "CV",
+    "resumeValue": "Ver CV en PDF"
   },
   "footer": {
-    "tagline": "Ingeniero en Sistemas · Software · QA · Datos",
+    "tagline": "Desarrollo de software · Análisis de datos",
     "rights": "Todos los derechos reservados."
   },
   "notFound": {

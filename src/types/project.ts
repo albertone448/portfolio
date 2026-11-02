@@ -22,7 +22,6 @@ export interface ProjectSummary {
   year: string;
   stack: string[];
   accent: string;
-  heroImage?: string;
   githubUrl: string | null;
   liveUrl?: string | null;
   /** Optional link to written project documentation, such as a decision log. */

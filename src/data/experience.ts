@@ -1,32 +1,47 @@
+export type EmploymentType = 'internship' | 'employment';
+
 export interface ExperienceEntry {
   id: string;
   company: string;
-  period: string;
+  type: EmploymentType;
+  /** ISO year-month, formatted per language at render time. Copied from the CV. */
+  start: string;
+  end: string;
+  /** Tools actually used in this role, as listed in the CV. Omitted for non-technical roles. */
+  stack?: string[];
   emphasis: 'primary' | 'compact';
 }
 
 /**
- * Dates are copied verbatim from the CV. Role titles, descriptions and
- * metric badges live in i18n under `experience.items.<id>` so nothing
- * user-facing is hardcoded to a single language here.
+ * Role titles, locations, descriptions and highlights live in i18n under
+ * `experience.items.<id>`. Internships stay labeled as internships: the CV
+ * calls them "Professional Internship" and the site should not upgrade them.
  */
 export const experienceEntries: ExperienceEntry[] = [
   {
     id: 'grupoEulalia',
     company: 'Grupo Eulalia',
-    period: 'Jul 2025 – Dec 2025',
+    type: 'internship',
+    start: '2025-07',
+    end: '2025-12',
+    stack: ['React', 'Jest', 'Jira', 'Bitbucket'],
     emphasis: 'primary',
   },
   {
     id: 'ticotek',
     company: 'Ticotek',
-    period: 'Jan 2024 – Jun 2025',
+    type: 'internship',
+    start: '2024-01',
+    end: '2025-06',
+    stack: ['PHP', 'MySQL', 'React', 'REST API', 'Selenium', 'Git'],
     emphasis: 'primary',
   },
   {
     id: 'foundever',
     company: 'Foundever',
-    period: 'Aug 2021 – Feb 2023',
+    type: 'employment',
+    start: '2021-08',
+    end: '2023-02',
     emphasis: 'compact',
   },
 ];
