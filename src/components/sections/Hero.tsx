@@ -2,7 +2,9 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, BarChart3, Code2, FileText, Mail } from 'lucide-react';
 import { Button } from '../common/Button';
-import { useResumeUrl } from '../../hooks/useResumeUrl';
+import { ResumeMenu } from '../common/ResumeMenu';
+import { useResumes } from '../../hooks/useResumes';
+import buttonStyles from '../common/Button.module.css';
 import styles from './Hero.module.css';
 
 const ROUTES = [
@@ -18,7 +20,7 @@ const ROUTES = [
  */
 export function Hero() {
   const { t } = useTranslation();
-  const resumeUrl = useResumeUrl();
+  const resumes = useResumes();
   const facts = t('hero.facts', { returnObjects: true }) as string[];
 
   return (
@@ -41,16 +43,12 @@ export function Hero() {
             <Button to="/#work" icon={<ArrowRight size={16} strokeWidth={2} />}>
               {t('hero.ctaProjects')}
             </Button>
-            <Button
-              variant="secondary"
-              href={resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              icon={<FileText size={16} strokeWidth={2} />}
-              iconPosition="start"
-            >
-              {t('hero.ctaResume')}
-            </Button>
+            <ResumeMenu
+              label={t('hero.ctaResume')}
+              triggerClassName={`${buttonStyles.button} ${buttonStyles.secondary}`}
+              align="start"
+              showIcon
+            />
             <Button variant="ghost" to="/#contact" icon={<Mail size={16} strokeWidth={2} />} iconPosition="start">
               {t('hero.ctaContact')}
             </Button>
@@ -60,6 +58,7 @@ export function Hero() {
         <nav className={styles.routes} aria-label={t('hero.routesLabel')}>
           {ROUTES.map(({ id, anchor, Icon }) => {
             const items = t(`hero.routes.${id}.items`, { returnObjects: true }) as string[];
+            const resume = resumes.find((link) => link.track === id);
             return (
               <article key={id} className={styles.route} data-route={id}>
                 <h2 className={styles.routeLabel}>
@@ -71,10 +70,18 @@ export function Hero() {
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
-                <Link to={anchor} className={styles.routeLink}>
-                  {t(`hero.routes.${id}.cta`)}
-                  <ArrowUpRight size={15} strokeWidth={2} aria-hidden="true" />
-                </Link>
+                <div className={styles.routeLinks}>
+                  <Link to={anchor} className={styles.routeLink}>
+                    {t(`hero.routes.${id}.cta`)}
+                    <ArrowUpRight size={15} strokeWidth={2} aria-hidden="true" />
+                  </Link>
+                  {resume && (
+                    <a href={resume.href} target="_blank" rel="noopener noreferrer" className={styles.routeResume}>
+                      <FileText size={15} strokeWidth={1.75} aria-hidden="true" />
+                      {resume.label}
+                    </a>
+                  )}
+                </div>
               </article>
             );
           })}

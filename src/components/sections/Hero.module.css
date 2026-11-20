@@ -131,8 +131,28 @@
   background: var(--color-accent);
 }
 
+.routeLinks {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.routeResume {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  font-size: var(--fs-small);
+  color: var(--color-text-secondary);
+}
+
+.routeResume:hover {
+  color: var(--color-text-primary);
+}
+
 .routeLink {
-  margin-top: 20px;
   display: inline-flex;
   align-items: center;
   gap: 6px;

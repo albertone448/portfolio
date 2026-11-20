@@ -1,6 +1,7 @@
 # Alberto Núñez Trejos, Portfolio
 
-Personal portfolio of Alberto Núñez Trejos, Systems Engineer applying for
+Personal portfolio of Alberto Núñez Trejos, Information Systems Engineer
+(Universidad Nacional de Costa Rica, 2026) applying for
 Software Developer and Data Analyst roles.
 
 Live: https://alberto-nuneztrejos.vercel.app
@@ -181,13 +182,21 @@ All four were run against this exact codebase before delivery.
   methodology notes, not paraphrased from memory. The four dashboards link
   to the real Tableau Public workbook paths.
 
-## Résumé by language
+## Résumés
 
-The résumé links (header, hero, experience and contact sections) open
-`Alberto_Nunez_Trejos_Resume.pdf` (English) or
-`Alberto_Nunez_Trejos_Resume_ES.pdf` (Spanish) based on the active UI
-language, via `hooks/useResumeUrl.ts`, in a new tab. Both PDFs live in
-`public/resume/`.
+There are two résumés, one ordered for software development and one for
+data analysis, each in English and Spanish (`public/resume/`). The facts,
+dates and titles are identical in both; only the order and emphasis change.
+`hooks/useResumes.ts` maps track and language to the right PDF:
+
+- The hero route cards and each project group link the résumé for their
+  track.
+- The header "CV" button, the hero "View resume" button, the experience
+  section and the contact section offer both, labeled by track.
+- The language always follows the page.
+
+When a résumé changes, replace the PDF with the same file name and check
+that the site copy (experience, skills, education) still matches it.
 
 ## SEO and sharing
 

@@ -109,6 +109,11 @@
 }
 
 .resumeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  color: var(--color-text-primary);
   font-size: var(--fs-small);
   font-weight: 600;
   padding: 9px 16px;

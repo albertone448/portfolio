@@ -18,27 +18,27 @@ export interface SkillGroup {
 /**
  * Two groups only, matching the two roles the site targets. Testing lives
  * inside software development as part of how things get built, not as its
- * own professional track. Everything listed here appears in the CV or in a
- * project on this site; nothing is added just because it is in demand.
+ * own professional track. The lists mirror the skills sections of the two
+ * résumés, so nothing appears here that an interviewer can't ask about.
  */
 export const skillGroups: SkillGroup[] = [
   {
     area: 'software',
     rows: [
       { id: 'core', items: ['React', 'JavaScript', 'TypeScript', 'C# / .NET', 'Node.js', 'PHP'], primary: true },
-      { id: 'backend', items: ['ASP.NET Core', 'REST APIs', 'Java / Spring Boot', 'Firebase'] },
-      { id: 'databases', items: ['SQL Server', 'MySQL', 'PostgreSQL', 'Entity Framework Core'] },
-      { id: 'testing', items: ['Jest', 'Selenium', 'PHPUnit'], translated: true },
-      { id: 'tools', items: ['Git', 'GitHub Actions', 'Docker', 'Jira', 'Bitbucket'], translated: true },
+      { id: 'backend', items: ['ASP.NET Core', 'REST APIs', 'HTML', 'CSS'] },
+      { id: 'databases', items: ['MySQL', 'PostgreSQL', 'Firebase Realtime Database', 'Entity Framework Core'], translated: true },
+      { id: 'testing', items: ['Jest', 'xUnit', 'Selenium', 'PHPUnit'] },
+      { id: 'tools', items: ['Git', 'GitHub', 'GitHub Actions', 'Docker', 'Jira', 'Bitbucket', 'Vercel'], translated: true },
     ],
   },
   {
     area: 'data',
     rows: [
-      { id: 'core', items: ['Python', 'Pandas', 'SQL', 'Tableau'], primary: true },
-      { id: 'analysis', items: ['SciPy', 'Jupyter Notebook', 'Matplotlib'] },
+      { id: 'core', items: ['SQL', 'Python', 'Pandas', 'Tableau'], primary: true },
+      { id: 'analysis', items: ['SciPy', 'Matplotlib', 'Jupyter Notebook'], translated: true },
       { id: 'methods', translated: true },
-      { id: 'extraction', items: ['BeautifulSoup', 'ScraperFC'] },
+      { id: 'extraction', items: ['BeautifulSoup', 'ScraperFC'], translated: true },
     ],
   },
 ];

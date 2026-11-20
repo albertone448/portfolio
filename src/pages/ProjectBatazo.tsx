@@ -10,6 +10,7 @@ import { BatazoBannerArt } from '../components/media/BatazoBannerArt';
 import { NextProjectNav } from '../components/projects/NextProjectNav';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { sectionStep } from '../utils/caseStudySteps';
+import { formatMonthYear } from '../utils/formatMonthRange';
 
 const project = getProjectBySlug('batazo')!;
 const TOTAL_STEPS = 7;
@@ -20,7 +21,10 @@ const TOTAL_STEPS = 7;
  * lessons instead, and every section stays limited to what exists today.
  */
 export function ProjectBatazo() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const updatedLabel = project.updatedAt
+    ? formatMonthYear(project.updatedAt, i18n.resolvedLanguage === 'es' ? 'es-CR' : 'en-US')
+    : null;
 
   useDocumentMeta(t('projectDetail.batazo.title'), t('projectDetail.batazo.description'));
 
@@ -46,7 +50,15 @@ export function ProjectBatazo() {
 
       <CaseStudySection eyebrow={sectionStep(1, TOTAL_STEPS)} title={t('projectDetail.batazo.overviewTitle')}>
         <div style={{ marginBottom: 28 }}>
-          <StatusNote accent={project.accent}>{t('projectDetail.batazo.statusNote')}</StatusNote>
+          <StatusNote accent={project.accent}>
+            {t('projectDetail.batazo.statusNote')}
+            {updatedLabel && (
+              <>
+                {' '}
+                <strong>{t('projectDetail.lastUpdated', { date: updatedLabel })}.</strong>
+              </>
+            )}
+          </StatusNote>
         </div>
         <p>{t('projectDetail.batazo.overview')}</p>
         <p style={{ marginTop: 24 }}>

@@ -4,7 +4,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '../common/BrandIcons';
 import { LanguageSwitch } from '../common/LanguageSwitch';
-import { useResumeUrl } from '../../hooks/useResumeUrl';
+import { ResumeMenu } from '../common/ResumeMenu';
+import { useResumes } from '../../hooks/useResumes';
 import { GITHUB_URL, LINKEDIN_URL } from '../../data/contact';
 import styles from './Header.module.css';
 
@@ -18,7 +19,7 @@ const NAV_ITEMS = [
 
 export function Header() {
   const { t } = useTranslation();
-  const resumeUrl = useResumeUrl();
+  const resumes = useResumes();
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   // The menu belongs to the location it was opened on, so any navigation
@@ -69,9 +70,7 @@ export function Header() {
             <LinkedinIcon size={18} />
           </a>
           <LanguageSwitch />
-          <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className={styles.resumeLink}>
-            {t('nav.resume')}
-          </a>
+          <ResumeMenu label={t('nav.resume')} triggerClassName={styles.resumeLink} />
           <button
             type="button"
             className={styles.menuButton}
@@ -98,6 +97,13 @@ export function Header() {
               <Link to={to} onClick={closeMenu}>
                 {t(`nav.${key}`)}
               </Link>
+            </li>
+          ))}
+          {resumes.map(({ track, href, label }) => (
+            <li key={track}>
+              <a href={href} target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
+                {label}
+              </a>
             </li>
           ))}
           <li className={styles.mobileSocial}>

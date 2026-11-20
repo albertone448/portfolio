@@ -4,18 +4,19 @@ export interface ExperienceEntry {
   id: string;
   company: string;
   type: EmploymentType;
-  /** ISO year-month, formatted per language at render time. Copied from the CV. */
+  /** ISO year-month, formatted per language at render time. Copied from the résumés. */
   start: string;
   end: string;
-  /** Tools actually used in this role, as listed in the CV. Omitted for non-technical roles. */
+  /** Tools actually used in this role, as listed in the résumés. Omitted for non-technical roles. */
   stack?: string[];
   emphasis: 'primary' | 'compact';
 }
 
 /**
  * Role titles, locations, descriptions and highlights live in i18n under
- * `experience.items.<id>`. Internships stay labeled as internships: the CV
- * calls them "Professional Internship" and the site should not upgrade them.
+ * `experience.items.<id>`, worded to match the résumés line for line. An
+ * entry can set `typeDetail` there when the generic type label isn't enough
+ * (Ticotek was a part-time, university-supervised internship).
  */
 export const experienceEntries: ExperienceEntry[] = [
   {

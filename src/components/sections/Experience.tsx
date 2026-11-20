@@ -1,13 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import { FileText } from 'lucide-react';
 import { experienceEntries } from '../../data/experience';
-import { useResumeUrl } from '../../hooks/useResumeUrl';
+import { useResumes } from '../../hooks/useResumes';
 import { formatMonthRange } from '../../utils/formatMonthRange';
 import styles from './Experience.module.css';
 
 export function Experience() {
   const { t, i18n } = useTranslation();
-  const resumeUrl = useResumeUrl();
+  const resumes = useResumes();
   const locale = i18n.resolvedLanguage === 'es' ? 'es-CR' : 'en-US';
 
   return (
@@ -17,10 +17,16 @@ export function Experience() {
           <p className="eyebrow">{t('experience.eyebrow')}</p>
           <h2 className={styles.title}>{t('experience.title')}</h2>
           <p className={`measure ${styles.intro}`}>{t('experience.intro')}</p>
-          <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className={styles.cvLink}>
-            <FileText size={15} strokeWidth={1.75} aria-hidden="true" />
-            {t('experience.viewCv')}
-          </a>
+          <ul className={styles.cvLinks}>
+            {resumes.map(({ track, href, label }) => (
+              <li key={track}>
+                <a href={href} target="_blank" rel="noopener noreferrer" className={styles.cvLink}>
+                  <FileText size={15} strokeWidth={1.75} aria-hidden="true" />
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </header>
 
         <ol className={styles.timeline}>
@@ -33,7 +39,7 @@ export function Experience() {
                   <h3 className={styles.role}>{t(`${copyKey}.role`)}</h3>
                   <p className={styles.company}>{entry.company}</p>
                   <p className={styles.type} data-type={entry.type}>
-                    {t(`experience.types.${entry.type}`)}
+                    {t(`${copyKey}.typeDetail`, { defaultValue: t(`experience.types.${entry.type}`) })}
                   </p>
                   <p className={styles.period}>
                     {formatMonthRange(entry.start, entry.end, locale)} · {t(`${copyKey}.location`)}

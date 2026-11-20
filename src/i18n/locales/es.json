@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Alberto Núñez Trejos | Desarrollador de software y analista de datos",
-    "description": "Portafolio de Alberto Núñez Trejos, Ingeniero en Sistemas de la Universidad Nacional de Costa Rica. Desarrollo de software con React, .NET y PHP, y análisis de datos con Python, Pandas y Tableau."
+    "title": "Alberto Núñez Trejos | Ingeniero en Sistemas de Información · Desarrollo de software y análisis de datos",
+    "description": "Portafolio de Alberto Núñez Trejos, Ingeniero en Sistemas de Información (Universidad Nacional de Costa Rica, 2026). Desarrollo de software con React y .NET, y análisis de datos con SQL, Python y Tableau."
   },
   "nav": {
     "work": "Proyectos",
@@ -16,9 +16,14 @@
     "menuOpen": "Abrir menú",
     "menuClose": "Cerrar menú"
   },
+  "resume": {
+    "software": "CV · Desarrollo de software",
+    "data": "CV · Análisis de datos",
+    "menuHint": "Mismos datos, distinto enfoque"
+  },
   "hero": {
     "name": "Alberto Núñez Trejos",
-    "eyebrow": "Ingeniero en Sistemas · Universidad Nacional de Costa Rica",
+    "eyebrow": "Ingeniero en Sistemas de Información · Universidad Nacional de Costa Rica, 2026",
     "roles": "Desarrollador de software y analista de datos",
     "summary": "Hice dos prácticas profesionales construyendo aplicaciones web con React y PHP. Por mi cuenta construí una app en producción que usa a diario el negocio de mi familia y publiqué dos análisis estadísticos en Tableau Public.",
     "facts": [
@@ -67,9 +72,9 @@
         "title": "Sistema de fiado para pulpería",
         "description": "Una app en producción que reemplazó el libro de crédito en papel que usaba a diario la pulpería de mi familia, construida y desplegada desde cero, en uso activo por el personal.",
         "highlights": [
-          "Sincronización en tiempo real",
-          "Trazabilidad completa de cada registro",
-          "Alertas automáticas por WhatsApp y correo"
+          "En uso diario en una tienda real",
+          "Límites de crédito y pagos divididos con SINPE",
+          "Alertas y recordatorios por WhatsApp y correo"
         ]
       },
       "alwaysBarca": {
@@ -138,35 +143,35 @@
     "eyebrow": "Experiencia",
     "title": "Experiencia profesional",
     "intro": "Dos prácticas profesionales en desarrollo de software y, antes de eso, un año y medio de soporte bilingüe a clientes de un banco. El CV tiene el detalle completo.",
-    "viewCv": "Ver CV completo (PDF)",
     "items": {
       "grupoEulalia": {
         "role": "Desarrollador Frontend",
-        "description": "Construí en React un módulo de órdenes de trabajo para un taller de reparación de camiones. Pasó de registros básicos de inventario a un sistema de mantenimiento con seguimiento desde el reporte del incidente hasta el cierre del trabajo, cálculo automático de costos y una interfaz para que el personal de campo reportara problemas de los vehículos.",
+        "description": "Construí en React.js un módulo de órdenes de trabajo para un taller de reparación de camiones, que convirtió un sistema básico de inventario en uno de gestión de mantenimiento con seguimiento de cada trabajo, desde el reporte del incidente hasta su cierre. Automaticé el cálculo de costos por trabajo, construí una interfaz para que los choferes reportaran incidentes directamente al taller y estructuré el módulo para que la gerencia pudiera analizar costos por vehículo, eficiencia por mecánico y fallas recurrentes.",
         "location": "Remoto",
         "highlights": [
-          "Más de 30 vehículos con historial de mantenimiento",
-          "40% menos tiempo de respuesta en decisiones de mantenimiento",
-          "Más de 85% de cobertura de código con Jest"
+          "Seguimiento de cada trabajo, del reporte al cierre",
+          "Cálculo automático de costos por trabajo",
+          "Pruebas unitarias de componentes con Jest"
         ]
       },
       "ticotek": {
         "role": "Desarrollador Full Stack",
-        "description": "Construí desde cero un sistema de control de envíos para una tienda de tecnología: esquema normalizado en MySQL, API REST en PHP para pedidos, entregas, conductores y vehículos, y un frontend en React para dar seguimiento a entregas y pagos. Automaticé las pruebas de los flujos críticos con Selenium y trabajé con ramas y pull requests en un equipo de 5 personas.",
+        "description": "Construí, junto a un equipo de 5 personas, una aplicación web interna de control de envíos para una tienda de electrónica: pedidos, entregas, choferes, vehículos y pagos. Diseñé el esquema normalizado en MySQL y la API REST en PHP, construí el frontend en React y coordiné la planificación y asignación de tareas del equipo. También establecí el flujo de ramas en Git y pull requests, y automaticé pruebas de los flujos principales con Selenium.",
         "location": "Remoto",
         "highlights": [
-          "60% menos tiempo promedio de consulta",
-          "Más de 50 entregas semanales monitoreadas",
-          "Más de 15 horas semanales de reportes manuales reemplazadas"
-        ]
+          "Esquema MySQL y API REST en PHP",
+          "Coordinación de tareas en un equipo de 5",
+          "Reportes de autoservicio en lugar de manuales"
+        ],
+        "typeDetail": "Práctica supervisada por la universidad · medio tiempo"
       },
       "foundever": {
         "role": "Representante de Servicio al Cliente",
-        "description": "Soporte bilingüe (español e inglés) para el departamento de tarjetas de crédito de un banco: consultas de cuenta, disputas de facturación y casos de fraude. También capacité a 5 personas nuevas del equipo.",
+        "description": "Soporte bilingüe (español e inglés) por teléfono, correo y chat al departamento de tarjetas de crédito de un banco: consultas de cuenta, disputas de facturación y casos de fraude.",
         "location": "Heredia, Costa Rica",
         "highlights": [
-          "92% de resolución en la primera llamada",
-          "4.7 de 5 en satisfacción del cliente"
+          "Atención por teléfono, correo y chat",
+          "Explicaciones claras a clientes no técnicos"
         ]
       }
     },
@@ -187,35 +192,45 @@
     "rows": {
       "software": {
         "core": "Principal",
-        "backend": "Backend y servicios",
+        "backend": "Backend y web",
         "databases": "Bases de datos",
         "testing": "Pruebas",
-        "tools": "Herramientas"
+        "tools": "Herramientas y prácticas"
       },
       "data": {
         "core": "Principal",
         "analysis": "Análisis y visualización",
-        "methods": "Métodos",
-        "extraction": "Extracción de datos"
+        "methods": "Estadística",
+        "extraction": "Recolección y calidad de datos"
       }
     },
     "translatedItems": {
       "software": {
-        "testing": [
-          "Pruebas unitarias",
-          "Pruebas de integración",
-          "TDD"
+        "databases": [
+          "SQL Server (académico)"
         ],
         "tools": [
-          "Agile / Scrum"
+          "Agile / Scrum",
+          "Flujo con pull requests",
+          "Desarrollo asistido por IA, con revisión de cada cambio"
         ]
       },
       "data": {
+        "analysis": [
+          "Excel"
+        ],
         "methods": [
+          "Estadística descriptiva",
           "Correlación de Pearson",
           "ANOVA",
           "Pruebas de hipótesis",
-          "Limpieza y validación de datos"
+          "Análisis de percentiles",
+          "Normalización"
+        ],
+        "extraction": [
+          "Web scraping",
+          "Limpieza y validación",
+          "Conciliación entre fuentes"
         ]
       }
     }
@@ -223,11 +238,11 @@
   "about": {
     "eyebrow": "Sobre mí",
     "title": "Formación y perfil",
-    "paragraph": "Soy Ingeniero en Sistemas graduado de la Universidad Nacional de Costa Rica y busco puestos como desarrollador de software o analista de datos. En las prácticas trabajé en aplicaciones web para empresas reales, con React, PHP y MySQL, en equipos que usaban Jira, Git y pull requests. En mis proyectos personales aplico lo mismo a los datos: definir una pregunta, conseguir y limpiar los datos, probar la hipótesis con métodos estadísticos y publicar resultados que se puedan leer sin formación técnica.",
+    "paragraph": "Soy Ingeniero en Sistemas de Información, graduado en 2026 de la Universidad Nacional de Costa Rica, y busco puestos como desarrollador de software o analista de datos. En las prácticas construí aplicaciones web para empresas reales con React, PHP y MySQL, y en una de ellas coordiné las tareas de un equipo de 5 personas. En mis proyectos personales aplico lo mismo a los datos: definir una pregunta, conseguir y limpiar los datos, probar la hipótesis con métodos estadísticos y publicar resultados que se puedan leer sin formación técnica.",
     "educationTitle": "Educación",
     "university": "Universidad Nacional de Costa Rica",
-    "degree": "Bachillerato en Ingeniería en Sistemas",
-    "diploma": "Diplomado en Programación de Aplicaciones",
+    "degree": "Bachillerato en Ingeniería en Sistemas de Información, 2026",
+    "diploma": "Diplomado en Programación de Aplicaciones, 2026",
     "languagesTitle": "Idiomas",
     "languages": [
       "Español (nativo)",
@@ -241,8 +256,7 @@
     "emailLabel": "Correo",
     "linkedinLabel": "LinkedIn",
     "githubLabel": "GitHub",
-    "resumeLabel": "CV",
-    "resumeValue": "Ver CV en PDF"
+    "resumeValue": "Ver PDF"
   },
   "footer": {
     "tagline": "Desarrollo de software · Análisis de datos",
@@ -269,7 +283,7 @@
       "problemTitle": "El problema",
       "problem": "El cuaderno funcionaba hasta que dejaba de funcionar. Los saldos se contaban mal, había anotaciones en disputa, y no había forma de que más de una persona lo actualizara al mismo tiempo sin generar registros contradictorios. Construí esta app para resolver ese problema específico, no para armar un sistema de punto de venta genérico.",
       "roleTitle": "Mi rol",
-      "role": "Diseñé, construí y desplegué todo el sistema yo solo: modelo de datos, frontend, servicio de notificaciones e infraestructura, basado en cómo trabaja realmente el personal de la tienda día a día.",
+      "role": "Diseñé, construí y desplegué todo el sistema yo solo: modelo de datos, frontend, servicio de notificaciones e infraestructura, basado en cómo trabaja realmente el personal de la tienda día a día. Usé asistencia de IA durante el desarrollo: yo definí cada funcionalidad y revisé y aprobé cada cambio antes de integrarlo.",
       "architectureTitle": "Arquitectura",
       "architectureIntro": "Un cliente en React habla directamente con Firebase para lecturas y escrituras. Un servicio aparte en Node.js, corriendo de forma continua con PM2 en una máquina de la tienda, escucha cambios en la base de datos y dispara las notificaciones salientes.",
       "architectureSteps": [
@@ -282,11 +296,13 @@
       "featuresTitle": "Funcionalidades principales",
       "features": [
         "Sincronización en tiempo real: varias personas del personal pueden registrar ventas y pagos al mismo tiempo y ver los cambios al instante en cada dispositivo.",
-        "Una sola cuenta compartida de Firebase Authentication con un selector de perfil por PIN, así cada acción queda vinculada a una persona específica sin necesitar logins individuales.",
-        "Trazabilidad completa: nada se elimina de forma permanente, cada registro guarda quién lo creó o editó y cuándo, y las cuentas suspendidas se pueden restaurar.",
-        "Resumen diario desglosado por método de pago, con impresión de recibos térmicos de 80mm y copiado con un toque para WhatsApp.",
-        "Alertas automáticas por WhatsApp y correo a cada cliente en cada transacción, manejadas por el servicio de notificaciones aparte para que la app cliente nunca dependa de eso.",
-        "Respaldo automático diario de la base de datos hacia Google Cloud Storage."
+        "Perfiles con PIN sobre una sola cuenta compartida de Firebase Authentication, así cada acción queda vinculada a una persona específica sin necesitar logins individuales.",
+        "Límites de crédito por cliente con margen de tolerancia, clientes suspendidos que se pueden restaurar y registro de ventas esporádicas.",
+        "Pagos divididos entre efectivo, tarjeta y SINPE, con un resumen diario por método de pago para cuadrar la caja al cierre.",
+        "Impresión térmica de 80 mm para tiquetes y etiquetas de precio, con importación de productos desde el XML que exporta el sistema de ventas de la tienda.",
+        "Estadísticas para la tienda: ranking de clientes por deuda y resumen semanal.",
+        "Servicio aparte en Node.js que envía notificaciones por WhatsApp y correo en cada transacción, además de recordatorios semanales de saldo, sin que la app dependa de él.",
+        "Trazabilidad completa y respaldos: nada se elimina de forma permanente, cada registro guarda quién lo creó o editó y cuándo, y la base de datos se respalda automáticamente todos los días."
       ],
       "screenshotsTitle": "Capturas de pantalla",
       "screenshotsIntro": "El flujo real de uso, con nombres de clientes, teléfonos y fotos de perfil tapados (blur). Los montos sin un nombre asociado no son información sensible.",
@@ -430,7 +446,7 @@
       "conclusionTitle": "Conclusión",
       "conclusion": "Ningún perfil de jugador en la población mundialista 1966–2026 supera claramente ni iguala de forma consistente al de Messi en los cuatro roles medidos acá, probado en múltiples umbrales de percentil y pisos de minutos, ninguno de los cuales cambió el resultado. La única debilidad relativa encontrada, organizador de juego, se predijo antes de correr los datos, lo que refuerza el hallazgo en vez de debilitarlo. La limitación declarada se mantiene: esto mide aproximadamente 6 meses de fútbol acumulado contra una carrera mucho más larga, un recorte de alcance deliberado, no un descuido.",
       "closingTitle": "Cerrando un capítulo, mientras se cerraba este proyecto",
-      "closing": "El 31 de agosto de 2026, mientras este proyecto estaba en construcción, Lionel Messi anunció oficialmente su retiro de la selección argentina, después de disputar su sexto Mundial. Con 39 años, en lo que fue su última participación, convirtió 8 goles y dio 4 asistencias en 8 partidos, llevando a Argentina hasta la final. Su participación en Mundiales queda cerrada para siempre: seis torneos entre 2006 y 2026, 34 partidos, 21 goles. Esto no fue planeado, el proyecto arrancó como un ejercicio de portafolio y terminó coincidiendo con el cierre real y definitivo de la carrera que analiza. Gracias, Leo. Y por siempre voy a llevar el 18 de diciembre de 2022 en el corazón, el día en que cumpliste tu sueño de niño.",
+      "closing": "El 31 de agosto de 2026, mientras este proyecto estaba en construcción, Lionel Messi anunció oficialmente su retiro de la selección argentina, después de disputar su sexto Mundial. Con 39 años, en lo que fue su última participación, convirtió 8 goles y dio 4 asistencias en 8 partidos, llevando a Argentina hasta la final. Su participación en Mundiales queda cerrada para siempre: seis torneos entre 2006 y 2026, 34 partidos, 21 goles. Esto no fue planeado, el proyecto arrancó como un ejercicio de portafolio y terminó coincidiendo con el cierre real y definitivo de la carrera que analiza.",
       "dataSourcesTitle": "Fuentes de datos",
       "dataSources": [
         "SofaScore — la única fuente de datos del proyecto, estadísticas a nivel de partido accedidas a través de su API interna (no existe una API pública oficial), usando la librería ScraperFC.",
@@ -441,7 +457,7 @@
     "batazo": {
       "title": "Batazo: quinielas de fútbol entre amigos",
       "description": "Batazo es una app web de quinielas de fútbol para grupos de amigos. La estoy construyendo con .NET 10 y React, por fases y documentando cada decisión.",
-      "statusNote": "Este proyecto está en desarrollo activo. Hoy está lista la base técnica y el despliegue; las funciones de quinielas llegan en la siguiente fase y esta página se actualiza conforme avanzo.",
+      "statusNote": "Este proyecto está en desarrollo activo. La base técnica, el despliegue y el registro de usuarios ya funcionan; las funciones de quinielas llegan en las siguientes fases y esta página se actualiza conforme avanzo.",
       "overviewTitle": "Contexto",
       "overview": "Con mi grupo de amigos hacemos quinielas, y las apps que usábamos no traen la Primera División de Costa Rica. Las pocas que sí la tienen no nos convencían, así que terminábamos repartidos entre varias apps según la liga. La idea de Batazo es tener todo en un solo lugar: ligas grandes con resultados automáticos, la liga local y quinielas libres armadas por el propio grupo, con resultados ingresados a mano.",
       "nameTitle": "Sobre el nombre",
@@ -498,17 +514,15 @@
         "Solución .NET 10 en capas, con versiones de paquetes centralizadas y advertencias tratadas como errores.",
         "PostgreSQL con EF Core, migraciones aplicadas al arrancar y nombres en snake_case.",
         "Contrato de errores con ProblemDetails, validación de entrada con mensajes en español y health check en /health.",
-        "Logs en JSON en producción y configuración validada al arrancar.",
         "Reloj inyectable (TimeProvider), con un analizador que prohíbe leer la hora del sistema directamente.",
-        "Imagen Docker multietapa que corre sin root.",
-        "CI en GitHub Actions (backend y frontend) obligatoria para integrar en main, y despliegue automático en Render con la base en Neon solo cuando la CI pasa.",
-        "Frontend con React y TypeScript estricto, un cliente HTTP tipado que interpreta los errores de la API y TanStack Query configurado."
+        "CI en GitHub Actions obligatoria para integrar en main, y despliegue automático en Render con imagen Docker multietapa.",
+        "Frontend con rutas públicas y protegidas, layout con menú móvil, identidad visual propia y componentes base accesibles.",
+        "ASP.NET Core Identity configurado (reglas de contraseña, bloqueo por intentos y correo único) y registro de usuarios con validación en vivo y errores en español.",
+        "Pruebas unitarias con xUnit para las reglas de dominio que ya existen."
       ],
       "nextTitle": "Siguiente",
       "next": [
-        "Terminar la base del frontend: rutas públicas y protegidas, y componentes de carga, error y vacío.",
-        "Identidad visual de la interfaz.",
-        "Cuentas: registro, login y restablecimiento de contraseña por correo.",
+        "Inicio y cierre de sesión, y restablecimiento de contraseña por correo.",
         "Equipos, competiciones, jornadas y partidos con carga manual.",
         "Quinielas con invitación por código.",
         "Predicciones con cierre, resultados con bitácora, puntaje y tabla general, con pruebas unitarias de cada regla.",
@@ -523,6 +537,7 @@
       "stack": "C# con .NET 10, ASP.NET Core Web API, Entity Framework Core con Npgsql, PostgreSQL (Docker en local, Neon en producción), React con TypeScript y Vite, TanStack Query, Docker, GitHub Actions y Render."
     },
     "significantYes": "Sí",
-    "significantNo": "No"
+    "significantNo": "No",
+    "lastUpdated": "Última actualización: {{date}}"
   }
 }

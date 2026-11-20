@@ -26,6 +26,8 @@ export interface ProjectSummary {
   liveUrl?: string | null;
   /** Optional link to written project documentation, such as a decision log. */
   docsUrl?: string;
+  /** Year-month the case study last matched the repo; shown on in-progress projects. */
+  updatedAt?: string;
 }
 
 export interface Project extends ProjectSummary {

@@ -15,7 +15,7 @@ export const projects: Project[] = [
     slug: 'store-credit',
     category: 'software',
     status: 'production',
-    year: '2025',
+    year: '2026',
     stack: ['React', 'Vite', 'Firebase', 'Node.js', 'Vercel'],
     accent: 'var(--accent-store-credit)',
     githubUrl: 'https://github.com/albertone448/pulperia-fiado',
@@ -40,6 +40,8 @@ export const projects: Project[] = [
     // land, so it stays unlinked rather than sending visitors to a test screen.
     liveUrl: null,
     docsUrl: 'https://github.com/albertone448/batazo/blob/main/docs/decisiones-tecnicas.md',
+    // Bump this whenever the "working now" / "next" lists are brought in line with the repo.
+    updatedAt: '2026-11',
   },
   {
     slug: 'messi-outlier',
@@ -60,7 +62,7 @@ export const projects: Project[] = [
     slug: 'always-barca',
     category: 'data',
     status: 'completed',
-    year: '2025',
+    year: '2026',
     stack: ['Python', 'Pandas', 'SciPy', 'Tableau Public'],
     accent: 'var(--accent-always-barca)',
     githubUrl: 'https://github.com/albertone448/always-barca',

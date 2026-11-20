@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Alberto Núñez Trejos | Software Developer & Data Analyst",
-    "description": "Portfolio of Alberto Núñez Trejos, Systems Engineer from Universidad Nacional de Costa Rica. Software development with React, .NET and PHP, and data analysis with Python, Pandas and Tableau."
+    "title": "Alberto Núñez Trejos | Information Systems Engineer · Software Development & Data Analysis",
+    "description": "Portfolio of Alberto Núñez Trejos, Information Systems Engineer (Universidad Nacional de Costa Rica, 2026). Software development with React and .NET, and data analysis with SQL, Python and Tableau."
   },
   "nav": {
     "work": "Projects",
@@ -16,9 +16,14 @@
     "menuOpen": "Open menu",
     "menuClose": "Close menu"
   },
+  "resume": {
+    "software": "Resume · Software Development",
+    "data": "Resume · Data Analysis",
+    "menuHint": "Same facts, different focus"
+  },
   "hero": {
     "name": "Alberto Núñez Trejos",
-    "eyebrow": "Systems Engineer · Universidad Nacional de Costa Rica",
+    "eyebrow": "Information Systems Engineer · Universidad Nacional de Costa Rica, 2026",
     "roles": "Software Developer & Data Analyst",
     "summary": "I completed two professional internships building web applications with React and PHP. On my own, I built a production app my family's business uses every day and published two statistical analyses on Tableau Public.",
     "facts": [
@@ -67,9 +72,9 @@
         "title": "Store Credit Management System",
         "description": "A production app that replaced the paper credit ledger my family's grocery store used every day, built and deployed from scratch and still in active use by staff.",
         "highlights": [
-          "Real-time sync across devices",
-          "Full audit trail on every record",
-          "Automatic WhatsApp & email alerts"
+          "Used daily in a real store",
+          "Credit limits and split payments with SINPE",
+          "WhatsApp and email alerts and reminders"
         ]
       },
       "alwaysBarca": {
@@ -138,35 +143,35 @@
     "eyebrow": "Experience",
     "title": "Professional experience",
     "intro": "Two professional internships in software development and, before that, a year and a half of bilingual support for a bank's customers. The resume has the full detail.",
-    "viewCv": "View full resume (PDF)",
     "items": {
       "grupoEulalia": {
         "role": "Frontend Developer",
-        "description": "Built a React work order module for a truck repair workshop. It went from basic inventory records to a maintenance system that tracks each job from the incident report to completion, calculates costs automatically, and lets field staff report vehicle problems directly.",
+        "description": "Built a React.js work order module for a truck repair workshop, extending a basic inventory system into maintenance management that tracks each job from the incident report to completion. Automated per-job cost calculation, built an interface for drivers to report vehicle incidents directly to the workshop, and structured the module so management could analyze costs per vehicle, mechanic efficiency, and recurring failures.",
         "location": "Remote",
         "highlights": [
-          "30+ vehicles with full maintenance history",
-          "40% faster response on maintenance decisions",
-          "85%+ code coverage with Jest"
+          "Each job tracked from report to completion",
+          "Automated per-job cost calculation",
+          "Unit tests for components with Jest"
         ]
       },
       "ticotek": {
         "role": "Full Stack Developer",
-        "description": "Built a shipment control system from scratch for a technology retail store: a normalized MySQL schema, a PHP REST API for orders, deliveries, drivers and vehicles, and a React front end to track deliveries and payments. Automated testing of the critical flows with Selenium and worked with branches and pull requests on a 5-person team.",
+        "description": "Built, with a 5-person team, an internal shipment control web application for an electronics retailer, covering orders, deliveries, drivers, vehicles, and payments. Designed the normalized MySQL schema and the PHP REST API, built the React front end, and coordinated task planning and assignment within the team. Also set up the Git branching and pull request workflow, and automated tests for the main workflows with Selenium.",
         "location": "Remote",
         "highlights": [
-          "60% lower average query time",
-          "50+ weekly deliveries monitored",
-          "15+ hours of weekly manual reporting replaced"
-        ]
+          "MySQL schema and PHP REST API",
+          "Task coordination on a 5-person team",
+          "Self-service reports replacing manual ones"
+        ],
+        "typeDetail": "University-supervised internship · part-time"
       },
       "foundever": {
         "role": "Customer Service Representative",
-        "description": "Bilingual (Spanish and English) support for a bank's credit card department: account inquiries, billing disputes and fraud cases. Also trained 5 new team members.",
+        "description": "Bilingual (English and Spanish) support by phone, email, and chat for a bank's credit card department: account inquiries, billing disputes, and fraud cases.",
         "location": "Heredia, Costa Rica",
         "highlights": [
-          "92% first-call resolution",
-          "4.7 out of 5 customer satisfaction"
+          "Phone, email, and chat support",
+          "Clear explanations for non-technical customers"
         ]
       }
     },
@@ -187,35 +192,45 @@
     "rows": {
       "software": {
         "core": "Core",
-        "backend": "Backend and services",
+        "backend": "Backend and web",
         "databases": "Databases",
         "testing": "Testing",
-        "tools": "Tools"
+        "tools": "Tools and practices"
       },
       "data": {
         "core": "Core",
         "analysis": "Analysis and visualization",
-        "methods": "Methods",
-        "extraction": "Data extraction"
+        "methods": "Statistics",
+        "extraction": "Data collection and quality"
       }
     },
     "translatedItems": {
       "software": {
-        "testing": [
-          "Unit testing",
-          "Integration testing",
-          "TDD"
+        "databases": [
+          "SQL Server (academic)"
         ],
         "tools": [
-          "Agile / Scrum"
+          "Agile / Scrum",
+          "Pull request workflow",
+          "AI-assisted development, reviewing every change"
         ]
       },
       "data": {
+        "analysis": [
+          "Excel"
+        ],
         "methods": [
+          "Descriptive statistics",
           "Pearson correlation",
           "ANOVA",
           "Hypothesis testing",
-          "Data cleaning and validation"
+          "Percentile analysis",
+          "Normalization"
+        ],
+        "extraction": [
+          "Web scraping",
+          "Cleaning and validation",
+          "Cross-source reconciliation"
         ]
       }
     }
@@ -223,11 +238,11 @@
   "about": {
     "eyebrow": "About",
     "title": "Background",
-    "paragraph": "I'm a Systems Engineer from Universidad Nacional de Costa Rica, looking for roles as a software developer or data analyst. During my internships I worked on web applications for real companies, using React, PHP and MySQL, on teams that used Jira, Git and pull requests. In my personal projects I apply the same discipline to data: define a question, gather and clean the data, test the hypothesis with statistical methods, and publish results that make sense without a technical background.",
+    "paragraph": "I'm an Information Systems Engineer, graduated in 2026 from Universidad Nacional de Costa Rica, looking for roles as a software developer or data analyst. During my internships I built web applications for real companies with React, PHP and MySQL, and in one of them I coordinated the tasks of a 5-person team. In my personal projects I apply the same discipline to data: define a question, gather and clean the data, test the hypothesis with statistical methods, and publish results that make sense without a technical background.",
     "educationTitle": "Education",
     "university": "Universidad Nacional de Costa Rica",
-    "degree": "Bachelor in Systems Engineering",
-    "diploma": "Diploma in Application Programming",
+    "degree": "Bachelor's Degree in Information Systems Engineering (Bachillerato), 2026",
+    "diploma": "Diploma in Application Programming (Diplomado), 2026",
     "languagesTitle": "Languages",
     "languages": [
       "Spanish (native)",
@@ -241,8 +256,7 @@
     "emailLabel": "Email",
     "linkedinLabel": "LinkedIn",
     "githubLabel": "GitHub",
-    "resumeLabel": "Resume",
-    "resumeValue": "View resume as PDF"
+    "resumeValue": "View PDF"
   },
   "footer": {
     "tagline": "Software development · Data analysis",
@@ -269,7 +283,7 @@
       "problemTitle": "The problem",
       "problem": "The notebook worked until it didn't. Balances got miscounted, entries got disputed, and there was no way for more than one person to update it at the same time without creating conflicting records. I built this app to solve that specific problem, not to build a generic point-of-sale system.",
       "roleTitle": "My role",
-      "role": "I designed, built and deployed the entire system alone: data model, front end, notification service and infrastructure, based on how the store staff actually work day to day.",
+      "role": "I designed, built and deployed the entire system on my own: data model, front end, notification service and infrastructure, based on how the store staff actually work day to day. I used AI assistance during development: I defined every feature and reviewed and approved every change before merging it.",
       "architectureTitle": "Architecture",
       "architectureIntro": "A React client talks to Firebase directly for reads and writes. A separate Node.js service, running continuously with PM2 on a machine at the store, listens for database changes and triggers outbound notifications.",
       "architectureSteps": [
@@ -282,11 +296,13 @@
       "featuresTitle": "Core features",
       "features": [
         "Real-time sync: multiple staff members can log sales and payments at the same time and see updates instantly on every device.",
-        "A single shared Firebase Authentication account with a PIN-based profile selector, so every action stays tied to a specific person without individual logins.",
-        "Full audit trail: nothing is permanently deleted, every record keeps who created or edited it and when, and suspended accounts can be restored.",
-        "Daily summary broken down by payment method, with 80mm thermal receipt printing and one-tap copy for WhatsApp.",
-        "Automatic WhatsApp and email alerts sent to each customer on every transaction, handled by the separate notification service so the client app never blocks on it.",
-        "Automatic daily database backup to Google Cloud Storage."
+        "PIN-based staff profiles on top of a single shared Firebase Authentication account, so every action stays tied to a specific person without individual logins.",
+        "Per-customer credit limits with a tolerance margin, suspended customers that can be restored, and one-off sales.",
+        "Payments split across cash, card, and SINPE, with a daily summary by payment method to balance the register at closing.",
+        "80 mm thermal printing for receipts and shelf price labels, with product import from the XML export of the store's sales system.",
+        "Store statistics: customers ranked by debt and a weekly summary.",
+        "A separate Node.js service that sends WhatsApp and email notifications on every transaction, plus weekly balance reminders, so the app never depends on it.",
+        "Full audit trail and backups: nothing is permanently deleted, every record keeps who created or edited it and when, and the database is backed up automatically every day."
       ],
       "screenshotsTitle": "Screenshots",
       "screenshotsIntro": "The real usage flow, with customer names, phone numbers and profile photos blurred. Amounts without an attached name aren't sensitive.",
@@ -430,7 +446,7 @@
       "conclusionTitle": "Conclusion",
       "conclusion": "No player's profile in the 1966–2026 World Cup population clearly exceeds or consistently matches Messi's across the four roles measured here, tested across multiple percentile thresholds and minimum-minutes floors, none of which changed the result. The one relative weakness found, play organizer, was predicted before the data was ever run, which strengthens the finding rather than undermining it. The declared limitation stands: this measures roughly 6 months of accumulated football against a much longer career, a deliberate scope choice, not an oversight.",
       "closingTitle": "Closing a chapter, while this project was closing too",
-      "closing": "On August 31, 2026, while this project was in the middle of being built, Lionel Messi officially announced his retirement from the Argentina national team, after playing his sixth World Cup. At 39, in what turned out to be his last tournament, he scored 8 goals and gave 4 assists in 8 matches, taking Argentina to the final. His World Cup story is closed for good: six tournaments between 2006 and 2026, 34 matches, 21 goals. This wasn't planned, the project started as a portfolio exercise and ended up coinciding with the real, final close of the career it analyzes. Thank you, Leo. And I will always carry December 18, 2022 in my heart, the day you fulfilled your childhood dream.",
+      "closing": "On August 31, 2026, while this project was in the middle of being built, Lionel Messi officially announced his retirement from the Argentina national team, after playing his sixth World Cup. At 39, in what turned out to be his last tournament, he scored 8 goals and gave 4 assists in 8 matches, taking Argentina to the final. His World Cup story is closed for good: six tournaments between 2006 and 2026, 34 matches, 21 goals. This wasn't planned, the project started as a portfolio exercise and ended up coinciding with the real, final close of the career it analyzes.",
       "dataSourcesTitle": "Data sources",
       "dataSources": [
         "SofaScore — the project's sole data source, match-level stats accessed through its internal API (no official public API exists), via the ScraperFC library.",
@@ -441,7 +457,7 @@
     "batazo": {
       "title": "Batazo: football prediction pools for friends",
       "description": "Batazo is a football prediction pool web app for groups of friends. I'm building it with .NET 10 and React, in phases, documenting every decision along the way.",
-      "statusNote": "This project is under active development. The technical foundation and deployment are done; the pool features come in the next phase, and I'll keep this page updated as I go.",
+      "statusNote": "This project is under active development. The technical foundation, deployment, and user sign-up are working; the pool features come in the next phases, and I'll keep this page updated as I go.",
       "overviewTitle": "Overview",
       "overview": "My friends and I run prediction pools, and the apps we were using don't cover Costa Rica's Primera División. The few that do weren't good enough for us, so we ended up spread across several apps depending on the league. Batazo puts everything in one place: major leagues with automatic results, the local league, and custom pools the group sets up itself with results entered by hand.",
       "nameTitle": "About the name",
@@ -498,17 +514,15 @@
         "Layered .NET 10 solution with centralized package versions and warnings treated as errors.",
         "PostgreSQL with EF Core, migrations applied on startup, snake_case naming.",
         "ProblemDetails error contract, input validation with Spanish messages, and a /health check.",
-        "JSON logs in production and configuration validated at startup.",
         "Injectable clock (TimeProvider), with an analyzer that bans reading the system time directly.",
-        "Multi-stage Docker image running as non-root.",
-        "GitHub Actions CI (backend and frontend) required to merge into main, and automatic deployment to Render with the database on Neon, only when CI passes.",
-        "React frontend with strict TypeScript, a typed HTTP client that understands the API's errors, and TanStack Query set up."
+        "GitHub Actions CI required to merge into main, and automatic deployment to Render with a multi-stage Docker image.",
+        "Front end with public and protected routes, a layout with a mobile menu, its own visual identity, and accessible base components.",
+        "ASP.NET Core Identity configured (password rules, lockout, unique email) and user sign-up with live validation and errors in Spanish.",
+        "xUnit unit tests for the domain rules that exist so far."
       ],
       "nextTitle": "Next",
       "next": [
-        "Finish the frontend foundation: public and protected routes, plus loading, error, and empty state components.",
-        "UI visual identity.",
-        "Accounts: sign-up, login, and password reset by email.",
+        "Sign in, sign out, and password reset by email.",
         "Teams, competitions, matchdays, and matches entered manually.",
         "Pools with invite codes.",
         "Predictions with cutoff, results with an audit log, scoring, and overall standings, with unit tests for each rule.",
@@ -523,6 +537,7 @@
       "stack": "C# with .NET 10, ASP.NET Core Web API, Entity Framework Core with Npgsql, PostgreSQL (Docker locally, Neon in production), React with TypeScript and Vite, TanStack Query, Docker, GitHub Actions, and Render."
     },
     "significantYes": "Yes",
-    "significantNo": "No"
+    "significantNo": "No",
+    "lastUpdated": "Last updated: {{date}}"
   }
 }

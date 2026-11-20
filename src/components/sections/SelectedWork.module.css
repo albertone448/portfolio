@@ -48,6 +48,21 @@
   line-height: 1.6;
 }
 
+.groupResume {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--color-accent);
+}
+
+.groupResume:hover {
+  color: var(--color-accent-strong);
+}
+
 .list {
   margin-top: 8px;
   padding-bottom: 24px;

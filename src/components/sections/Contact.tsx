@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { ArrowUpRight, FileText, Mail } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '../common/BrandIcons';
 import { EMAIL, GITHUB_URL, LINKEDIN_URL } from '../../data/contact';
-import { useResumeUrl } from '../../hooks/useResumeUrl';
+import { useResumes } from '../../hooks/useResumes';
 import styles from './Contact.module.css';
 
 interface Channel {
@@ -16,13 +16,19 @@ interface Channel {
 
 export function Contact() {
   const { t } = useTranslation();
-  const resumeUrl = useResumeUrl();
+  const resumes = useResumes();
 
   const channels: Channel[] = [
     { href: `mailto:${EMAIL}`, label: t('contact.emailLabel'), value: EMAIL, icon: <Mail size={18} strokeWidth={1.75} aria-hidden="true" />, external: false },
     { href: LINKEDIN_URL, label: t('contact.linkedinLabel'), value: 'linkedin.com/in/albertone448', icon: <LinkedinIcon size={18} />, external: true },
     { href: GITHUB_URL, label: t('contact.githubLabel'), value: 'github.com/albertone448', icon: <GithubIcon size={18} />, external: true },
-    { href: resumeUrl, label: t('contact.resumeLabel'), value: t('contact.resumeValue'), icon: <FileText size={18} strokeWidth={1.75} aria-hidden="true" />, external: true },
+    ...resumes.map(({ href, label }) => ({
+      href,
+      label,
+      value: t('contact.resumeValue'),
+      icon: <FileText size={18} strokeWidth={1.75} aria-hidden="true" />,
+      external: true,
+    })),
   ];
 
   return (
